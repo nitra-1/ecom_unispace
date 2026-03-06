@@ -13,7 +13,8 @@ ecom_unispace/
 ├── Worker-APIs-2/              # Orders · Users services (planned)
 └── docs/
     ├── architecture.md         # System architecture, modules, API & data-flow
-    └── env-vars.md             # Required environment variables
+    ├── env-vars.md             # Required environment variables
+    └── readme.md               # .NET Core controllers reference
 ```
 
 ## Quick links
@@ -22,6 +23,7 @@ ecom_unispace/
 |---|---|
 | Architecture, modules, API structure, data flow | [docs/architecture.md](docs/architecture.md) |
 | Environment variables | [docs/env-vars.md](docs/env-vars.md) |
+| .NET Core controllers reference | [docs/readme.md](docs/readme.md) |
 
 ## Getting started
 
