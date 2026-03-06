@@ -25,6 +25,7 @@
 16. [Settings & Configuration](#16-settings--configuration)
 17. [Reporting & Dashboard](#17-reporting--dashboard)
 18. [Infrastructure](#18-infrastructure)
+19. [React App Folder Structure](#19-react-app-folder-structure)
 
 ---
 
@@ -1190,3 +1191,221 @@ Persists push-notification records triggered by admin actions.
 | `ReportsController` | Reporting | Admin panel |
 | `LogController` | Audit logging | Admin panel (automatic) |
 | `NotificationController` | Push notifications | Admin panel |
+
+---
+
+## 19. React App Folder Structure
+
+> The platform has two React-based front-ends.
+> * **`aparna-frontend-stagging/`** – customer-facing storefront built with **Next.js 14** (App Router, SSR/SSG).
+> * **`aparna-admin-stagging/`** – internal admin panel built with **React 18** bundled via **Webpack**.
+
+---
+
+### 19.1 Customer Storefront (`aparna-frontend-stagging`)
+
+```
+aparna-frontend-stagging/
+├── public/                  # Statically served assets (images, icons, robots.txt)
+│   ├── css/
+│   ├── icon/
+│   └── images/
+├── src/
+│   ├── app/                 # Next.js 14 App Router – every sub-folder is a route segment
+│   │   ├── layout.js        # Root HTML shell; loads fonts, Redux provider, category menu
+│   │   ├── page.js          # Home page (/)
+│   │   ├── loading.js       # Suspense loading UI shown during route transitions
+│   │   ├── not-found.js     # 404 page
+│   │   ├── ClientProvider.js# Client-only wrapper that hydrates server-fetched data into Redux
+│   │   ├── main.css         # Global stylesheet imported once by the root layout
+│   │   ├── api/             # Next.js Route Handlers (serverless API endpoints)
+│   │   │   ├── auth/        # next-auth sign-in / sign-out / session handlers
+│   │   │   ├── sitemap/     # Dynamic sitemap generation endpoint
+│   │   │   └── youtube/     # Proxy handler for YouTube data
+│   │   ├── [staticPage]/    # Catch-all route that renders CMS-driven static pages
+│   │   ├── brands/          # Brand listing and detail pages
+│   │   ├── cart/            # Shopping cart page
+│   │   ├── category/        # Category listing and filtered product pages
+│   │   ├── checkout/        # Multi-step checkout flow
+│   │   ├── collection/      # Curated collection pages
+│   │   ├── contact-us/      # Contact form page
+│   │   ├── explore/         # Explore / discovery page
+│   │   ├── inquiry/         # General product inquiry page
+│   │   ├── kitchenInquiry/  # Kitchen-specific inquiry page
+│   │   ├── landing/         # Campaign / promotional landing pages
+│   │   ├── locate-us/       # Store locator page
+│   │   ├── product/         # Product detail page ([productName] dynamic segment)
+│   │   ├── products/        # All-products listing page
+│   │   ├── reset/           # Password-reset page
+│   │   ├── services/        # Services overview page
+│   │   ├── specifcations/   # Product specifications page
+│   │   ├── thank-you/       # Order confirmation / thank-you page
+│   │   ├── user/            # Authenticated user account area (profile, orders, wishlist)
+│   │   └── youtubevideo/    # YouTube video gallery page
+│   ├── components/          # Reusable React components shared across pages
+│   │   ├── auth/            # Login / sign-up modals and guards
+│   │   ├── base/            # Low-level building blocks (buttons, inputs, typography)
+│   │   ├── homepage/        # Components exclusive to the home page (hero, banners, etc.)
+│   │   ├── layout/          # Header, footer, navigation, breadcrumbs
+│   │   ├── misc/            # Miscellaneous utility components
+│   │   ├── productFilter/   # Sidebar filter panel and filter badge components
+│   │   ├── skeleton/        # Skeleton / shimmer loading placeholders
+│   │   └── testimonial/     # Customer review and testimonial display
+│   ├── redux/               # Global client-side state management (Redux Toolkit)
+│   │   ├── store.js         # Configures the Redux store with redux-persist
+│   │   ├── provider.js      # `<Providers>` component that wraps the app with the store
+│   │   └── features/        # Redux slices (one file per domain)
+│   │       ├── userSlice.js         # Authenticated user / session state
+│   │       ├── cartSlice.js         # Shopping cart items and totals
+│   │       ├── wishlistSlice.js     # Wishlist items
+│   │       ├── addressSlice.js      # Saved delivery addresses
+│   │       ├── orderSlice.js        # Active order tracking state
+│   │       ├── categoryMenuSlice.js # Top-level navigation menu data
+│   │       └── toastSlice.js        # Global toast / notification queue
+│   ├── hooks/               # Custom React hooks
+│   │   ├── useDebounce.js         # Debounces a rapidly-changing value
+│   │   └── useEffectLegacy.js     # useEffect wrapper that skips the initial mount
+│   ├── lib/                 # Shared utilities and helper functions used across the app
+│   │   ├── AllGlobalFunction.jsx  # Collection of commonly used helper functions
+│   │   ├── AxiosProvider.jsx      # Configured Axios instance with base URL and interceptors
+│   │   ├── GetBaseUrl.jsx         # Resolves the correct API / site base URL per environment
+│   │   ├── ImagePath.jsx          # Builds full URLs for product / CMS images
+│   │   ├── Regex.jsx              # Shared regular-expression constants
+│   │   ├── checkTokenAuthentication.jsx # Checks whether the current auth token is still valid
+│   │   ├── exceptionMessage.jsx   # Maps API error codes to human-readable messages
+│   │   ├── handleLogout.jsx       # Clears session cookies and Redux state on logout
+│   │   ├── nookieProvider.js      # Thin wrapper around the `nookies` cookie library
+│   │   ├── tosterMessage.jsx      # Dispatches toast notifications via SweetAlert2
+│   │   ├── useDebounce.js         # Re-exported debounce hook (mirrors hooks/useDebounce)
+│   │   └── useEffectLegacy.js     # Re-exported legacy effect hook
+│   ├── security/            # Token handling and authentication guards
+│   │   ├── Token.js               # Server-side token fetching and cookie management
+│   │   └── client-side/
+│   │       ├── axios/             # Client-side Axios interceptors (auto-attaches Bearer token)
+│   │       └── client-token.js    # Reads the auth token from client cookies
+│   ├── utils/               # Low-level pure utilities
+│   │   ├── actionHandler.js       # Generic async action dispatcher with error handling
+│   │   └── helper/                # Domain-specific helper modules (formatting, calculations)
+│   ├── api-urls.js          # Central registry of every backend API endpoint path
+│   └── middleware.js        # Next.js middleware – enforces authentication on protected routes
+├── next.config.mjs          # Next.js configuration (image domains, redirects, env vars)
+├── tailwind.config.js       # Tailwind CSS design-token configuration
+├── postcss.config.js        # PostCSS plugins (Tailwind, Autoprefixer)
+├── jsconfig.json            # JS path aliases (e.g. `@/` → `src/`)
+└── package.json             # Dependencies and npm scripts
+```
+
+#### Key conventions
+
+| Pattern | Convention |
+|---|---|
+| Routing | Every folder inside `src/app/` is a URL segment; dynamic segments use `[param]` naming |
+| Data fetching | Server components fetch data directly with `fetchServerSideApi`; client components use Redux + Axios |
+| State management | Redux Toolkit slices in `src/redux/features/`; persisted to cookies via `redux-persist` |
+| Styling | Utility-first Tailwind CSS; global styles in `src/app/main.css` |
+| Path aliases | `@/` resolves to `src/` (configured in `jsconfig.json`) |
+
+---
+
+### 19.2 Admin Panel (`aparna-admin-stagging`)
+
+```
+aparna-admin-stagging/
+├── public/                  # Statically served assets copied to the Webpack output
+│   └── images/              # Static images referenced in HTML / CSS
+├── src/
+│   ├── index.js             # Application entry point – mounts `<App>` into the DOM
+│   ├── App.js               # Top-level component; sets up Redux Provider and router
+│   ├── AllRoutes.jsx        # Declares all React Router v6 routes and maps them to pages
+│   ├── reportWebVitals.js   # Web Vitals reporter (CRA-generated, optional)
+│   ├── pages/               # Full-page views, one folder per feature area
+│   │   ├── Dashboard/             # KPI charts and summary widgets
+│   │   ├── login/                 # Admin login page
+│   │   ├── forgot-password/       # Forgot / reset password flow
+│   │   ├── editProfile/           # Admin user profile editing
+│   │   ├── ChangePassword/        # In-app password change
+│   │   ├── product/               # Product management (list, create, edit, bulk upload)
+│   │   ├── category/              # Category and attribute management
+│   │   ├── ManageBrand/           # Brand management
+│   │   ├── Order/                 # Order list, detail, and status management
+│   │   ├── Reconciliation/        # Payment reconciliation reports
+│   │   ├── CustomerInvoice/       # Customer invoice generation and download
+│   │   ├── ManageUser/            # Admin user and role management
+│   │   ├── ManageReport/          # Exportable sales and inventory reports
+│   │   ├── ReviewsApproval/       # Moderation queue for customer product reviews
+│   │   ├── reviews/               # Approved reviews browser
+│   │   ├── contact/               # Customer contact / inquiry management
+│   │   ├── Notification/          # Push notification management
+│   │   ├── Logs/                  # Audit log viewer
+│   │   ├── InventoryModelManagement/ # Inventory model configuration
+│   │   ├── settings/              # Platform-wide settings (tax, shipping, return policies)
+│   │   ├── subscription/          # Newsletter subscription list
+│   │   ├── NotFound/              # 404 page
+│   │   └── redux/                 # Page-level Redux slices used only within specific pages
+│   ├── components/          # Reusable React components shared across pages
+│   │   ├── Header.jsx             # Top navigation bar with user menu
+│   │   ├── Sidebar.jsx            # Left sidebar with role-based navigation links
+│   │   ├── Footer.jsx             # Page footer
+│   │   ├── Loader.jsx             # Full-page loading spinner
+│   │   ├── LoderComponent.jsx     # Inline / section-level loading indicator
+│   │   ├── Modal.jsx              # Generic accessible modal wrapper
+│   │   ├── Table/                 # Data table with sorting, pagination, and row actions
+│   │   ├── Toast/                 # Toast notification system
+│   │   ├── auth/                  # Authentication guards and session-expiry handling
+│   │   ├── GridImageSection/      # Reusable image grid (used on homepage CMS editor)
+│   │   ├── ManageHomePage/        # Drag-and-drop CMS editor for the storefront home page
+│   │   ├── FormikControl.jsx      # Formik field wrapper that renders the correct input type
+│   │   ├── IpTextbox.jsx          # Styled text input with validation display
+│   │   ├── IpCheckbox.jsx         # Styled checkbox input
+│   │   ├── IpRadio.jsx            # Styled radio button group
+│   │   ├── IpSelect.jsx / HKSelect.jsx / ReactSelect.jsx # Various select / dropdown variants
+│   │   ├── FileUpload.jsx         # Drag-and-drop file / image uploader
+│   │   ├── ColorPicker.jsx        # HSL colour picker for product attributes
+│   │   ├── ReactCalendar.jsx      # Date-range calendar picker
+│   │   ├── Searchbox.jsx          # Debounced global search input
+│   │   ├── PageTitle.jsx          # Sets the `<title>` and renders a page heading
+│   │   ├── ProgressBar.jsx        # Linear progress indicator for uploads / long operations
+│   │   ├── Tooltip.jsx            # Accessible tooltip wrapper
+│   │   ├── ToggleBar/             # Toggle switch component
+│   │   ├── AllSvgIcon/            # Centralised SVG icon components
+│   │   ├── shimmering/            # Skeleton shimmer loading placeholders
+│   │   ├── validation/            # Yup schema helpers and reusable validation rules
+│   │   └── customStyles.jsx       # Shared react-select style overrides
+│   ├── hooks/               # Custom React hooks
+│   │   ├── useBeforeUnload.js        # Prompts the user before leaving a page with unsaved changes
+│   │   └── useSignalRConnection.js   # Manages a Microsoft SignalR WebSocket connection
+│   ├── lib/                 # Shared utilities and helper functions
+│   │   ├── AllGlobalFunction.jsx  # Commonly used helper functions (formatting, transforms)
+│   │   ├── AllPageNames.jsx       # Enumeration of every admin page name (used for RBAC)
+│   │   ├── AllStaticVariables.jsx # Application-wide constants (status codes, enums, etc.)
+│   │   ├── AxiosProvider.jsx      # Configured Axios instance with base URL
+│   │   ├── GetBaseUrl.jsx         # Resolves the correct API base URL per environment
+│   │   ├── HandleLogout.jsx       # Clears session and redirects to login on logout
+│   │   ├── ImagePath.jsx          # Builds full URLs for product / CMS images
+│   │   ├── Interceptors.jsx       # Axios request/response interceptors (token refresh on 401)
+│   │   ├── ProtectedRoute.js      # Higher-order component that enforces authentication
+│   │   ├── Regex.jsx              # Shared regular-expression constants
+│   │   ├── exceptionMessage.jsx   # Maps API error codes to human-readable messages
+│   │   ├── unitTypeUtils.js       # Unit conversion helpers (area, weight, etc.)
+│   │   ├── useDebounce.js         # Debounces a rapidly-changing value
+│   │   └── useEffectLegacy.js     # useEffect wrapper that skips the initial mount
+│   ├── config/              # Application-level configuration objects
+│   │   └── selectOptionConfig.jsx # Default option sets for react-select dropdowns
+│   ├── css/                 # Global and component-level stylesheets
+│   ├── icons/               # SVG icon assets (imported directly into components)
+│   └── images/              # Raster image assets (logos, placeholders, illustrations)
+├── webpack.config.js        # Webpack 5 bundle configuration (loaders, plugins, aliases)
+└── package.json             # Dependencies and npm scripts
+```
+
+#### Key conventions
+
+| Pattern | Convention |
+|---|---|
+| Routing | React Router v6; all routes declared centrally in `src/AllRoutes.jsx` |
+| Data fetching | Axios with a shared instance from `src/lib/AxiosProvider.jsx`; interceptors in `src/lib/Interceptors.jsx` auto-refresh tokens |
+| State management | Redux Toolkit; store configured in `src/pages/redux/`; persisted via `redux-persist` |
+| Forms | Formik + Yup; `src/components/FormikControl.jsx` selects the correct field component by type |
+| Access control | `src/lib/ProtectedRoute.js` wraps authenticated routes; `src/lib/AllPageNames.jsx` drives role-based menu visibility |
+| Styling | Bootstrap 5 + custom SCSS in `src/css/`; Ant Design (`antd`) for complex data-heavy components |
+| Bundler | Webpack 5 (configured in `webpack.config.js`) instead of Create React App's default setup |
