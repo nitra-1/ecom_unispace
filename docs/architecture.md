@@ -2,6 +2,7 @@
 
 > This document covers the backend architecture, frontend architecture, key modules, API structure, and data flow for the Aparna e-commerce platform.
 > For environment variables see [env-vars.md](env-vars.md).
+> For the full .NET Core controller reference see [readme.md](readme.md).
 
 ---
 
