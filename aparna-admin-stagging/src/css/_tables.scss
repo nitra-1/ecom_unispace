@@ -1,0 +1,196 @@
+/** Pagination Start **/
+.m-cst--pagination {
+  li {
+    display: inline-flex;
+    align-items: center;
+
+    a {
+      width: 2.1875rem;
+      height: 2.1875rem;
+      border-radius: 0.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & {
+      a:not([href]):is(:hover, :focus) {
+        background-color: var(--bs-gray-300);
+        color: var(--bs-dark);
+      }
+    }
+
+    &.selected {
+      a,
+      a:is(:hover, :focus) {
+        background-color: #dddfe1;
+        color: #fff;
+        color: #000;
+        font-weight: 600;
+        border: 1px solid #b8babd69;
+      }
+    }
+
+    &.disabled {
+      a {
+        cursor: no-drop;
+      }
+    }
+  }
+}
+
+/** PAgination End **/
+/** Search Box **/
+.search-form {
+  .input-group {
+    .input-group-text {
+      border-right: 0;
+    }
+
+    input {
+      padding-left: 0;
+      border-left: 0;
+      transition: none;
+      padding-right: 2.2rem;
+
+      &::placeholder {
+        color: #999;
+      }
+
+      &:is(:focus) {
+        outline: 0;
+        //border-color: $input-border-color;
+        box-shadow: none;
+      }
+    }
+    &:has(input:focus) .input-group-text {
+      border-color: $primary-color;
+    }
+  }
+}
+
+/** Search Box End **/
+table.table > :not(caption) > * > * {
+  padding: 0.5rem 0.5rem;
+  background-color: transparent;
+}
+
+table.table.table-list {
+  thead {
+    tr {
+      th {
+        font-size: 0.8125rem;
+        background-color: $modal-header-bg;
+        border-right: 0.0625rem solid #eee;
+        vertical-align: middle;
+        white-space: nowrap;
+
+        &:first-child {
+          border-top-left-radius: 0.5rem;
+        }
+
+        &:last-child {
+          border-top-right-radius: 0.5rem;
+          border-right: unset;
+        }
+      }
+    }
+  }
+
+  tbody {
+    box-shadow: 0 0 0 0.0625rem #eee inset;
+    background-color: $white;
+
+    tr:hover {
+      background-color: rgba($neutral10, 0.5);
+      td:first-child::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0.125rem;
+        transform: translate(-50%, 0%);
+        background-color: #4e586d;
+        height: 100%;
+        width: 0.3125rem;
+        border-radius: 0 0.625rem 0.625rem 0;
+      }
+    }
+
+    td {
+      position: relative;
+      border-right: 0.0625rem solid #eee;
+
+      &:last-child {
+        border-right: unset;
+        min-width: 40px;
+      }
+    }
+  }
+}
+
+// table view
+
+table.table-view {
+  table.table > :not(caption) > * > * {
+    border: 0px;
+  }
+  thead {
+    tr {
+      th {
+        font-size: 1rem;
+        background-color: $modal-header-bg;
+        border-right: 0.0625rem solid #eee;
+
+        &:first-child {
+          border-top-left-radius: 0.5rem;
+        }
+
+        &:last-child {
+          border-top-right-radius: 0.5rem;
+          border-right: unset;
+        }
+      }
+    }
+  }
+
+  tbody {
+    box-shadow: unset;
+
+    tr {
+      border-style: unset;
+      border-color: transparent;
+      &:hover {
+        background-color: #f9f9f9;
+        td:first-child::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0.125rem;
+          transform: translate(-50%, 0%);
+          background-color: #6d4e4e;
+          height: 100%;
+          width: 0.3125rem;
+          border-radius: 0 0.625rem 0.625rem 0;
+        }
+      }
+    }
+
+    td {
+      position: relative;
+      border-right: 0.0625rem solid #eee;
+
+      &:last-child {
+        border-right: unset;
+      }
+    }
+  }
+}
+
+table > tbody > .pv-productd-remhover:hover {
+  background-color: white !important;
+
+  :first-child::before {
+    content: '';
+    display: none;
+  }
+}

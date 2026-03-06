@@ -1,0 +1,184 @@
+.check-login {
+  @apply text-base font-semibold text-Gray;
+}
+.login-number {
+  @apply text-base font-medium text-TextTitle flex gap-2 mb-2;
+}
+.login-number span {
+  @apply text-Gray font-normal;
+}
+.lg_singin {
+  @apply text-14 underline mb-4 font-medium text-[#357cad] block;
+}
+.checkout_btn {
+  @apply bg-primary hover:bg-primary text-white mt-2 font-medium text-base;
+}
+.change-btn {
+  @apply text-primary text-base font-medium border border-DodgerBlue w-[5.75rem] h-10 rounded-md;
+}
+.check-login-main {
+  @apply flex max-w-6xl justify-between border border-lightGray rounded-md px-5 py-4 mb-5 sm:flex-row flex-col items-start sm:items-center sm:gap-0 gap-3;
+}
+.login-change-btn {
+  @apply pr-5;
+}
+.d-adress-title {
+  @apply ml-3 bg-bluishgreen bg-opacity-50 font-semibold text-darkgreen p-2 rounded-md;
+}
+.devlivery-title {
+  @apply text-base font-semibold text-Gray pb-2;
+}
+.delivery-address {
+  @apply text-14 font-normal text-TextTitle pl-6 py-2;
+}
+.check-delivery {
+  @apply flex flex-col border border-lightGray rounded-md px-5 py-4 mb-10;
+}
+.d-address-name {
+  @apply flex gap-1 border mb-3 border-lightGray bg-white px-4 py-4 sm:flex-row justify-between rounded-md;
+}
+.d-address-name .checkout_btn {
+  @apply hidden;
+}
+.d-address-name:has(.d-address-details input:checked) .checkout_btn {
+  @apply flex;
+}
+.d-address-name:has(.d-address-details input:checked)
+  .edit-btn-delivery_responsive {
+  @apply block;
+}
+.d-address-name:has(.pincode-error) .edit-btn-delivery_responsive {
+  @apply block;
+}
+.d-address-name:has(.d-address-details input:checked) {
+  @apply bg-white;
+}
+.edit-btn-delivery_responsive {
+  @apply hidden;
+}
+.deliver-here {
+  @apply bg-primary text-white px-4 py-2 rounded-md  ml-5 hover:bg-primary-hover;
+}
+.checkout_btn.deliver-here {
+  @apply bg-[#ffe869] hover:bg-[#f6d415] text-black;
+}
+.edit-btn-delivery {
+  @apply text-DodgerBlue hidden text-base font-medium border border-DodgerBlue w-[4.5rem] h-[2.2rem] rounded-md sm:block;
+}
+
+.new-address-btn {
+  @apply bg-[#FEFEFE] border border-primary text-base font-medium text-primary gap-4 justify-center w-full;
+}
+.add-new-address-btn {
+  @apply text-center mb-4;
+}
+.order-summary {
+  @apply flex gap-3 p-3  flex-col bg-white rounded;
+}
+.summary-title h1 {
+  @apply font-medium text-TextTitle pb-2 sm:text-18 text-base;
+}
+.summary-decription {
+  @apply font-medium text-TextTitle pb-2 sm:text-18 text-base;
+}
+.summary-size-color span {
+  @apply text-slategrey text-14 leading-[1.1394rem];
+}
+.summary-size-color b {
+  @apply pl-1 font-medium text-14 text-black;
+}
+.summary-seller {
+  @apply text-slategrey pb-2 flex items-baseline gap-1 text-base sm:text-14;
+}
+.summary-seller b {
+  @apply pl-1 text-14 font-medium text-black;
+}
+.check-summary-price strong {
+  @apply font-bold sm:text-[1rem] text-24;
+}
+.check-summary-price s {
+  @apply text-[0.9375rem] font-medium text-Scarlet;
+}
+.check-summary-price span {
+  @apply text-base font-semibold text-JungleGreen;
+}
+.summary-size-color {
+  @apply flex gap-10 pb-2;
+}
+.check-summary-price {
+  @apply flex gap-[0.625rem] items-center pb-2;
+}
+.delivery-left-day-btn {
+  @apply bg-bluishgreen text-JungleGreen text-[0.75rem] leading-6 font-normal px-2 py-1 rounded-md;
+}
+.order-summary-title {
+  @apply text-18 font-semibold text-Gray inline-block pl-4 pb-3;
+}
+.checkout-continue-btn {
+  @apply bg-primary text-white py-2 px-7 rounded-md text-base font-medium;
+}
+.summary-continue {
+  @apply text-center pb-2;
+}
+.d-edit-btn {
+  @apply text-center sm:text-start;
+}
+.m-edit-icon {
+  mask-image: url('/icon/edit.svg');
+  @apply bg-primary bg-center bg-no-repeat bg-cover;
+}
+.m-edit-icon {
+  mask-image: url('/icon/edit.svg');
+  @apply bg-primary bg-center bg-no-repeat bg-cover;
+}
+.m-delivery-icon {
+  mask-image: url('/icon/delivery.svg');
+  @apply bg-primary bg-center bg-no-repeat bg-cover w-8 h-4;
+}
+.input_form {
+  @apply flex flex-wrap justify-between sm:flex-row flex-col;
+}
+.input-wrapper-main.input_filed_50 {
+  @apply sm:w-[48%] w-full;
+}
+.input-wrapper-main.input_filed_100 {
+  @apply w-full;
+}
+.input-wrapper-main.input_filed_33 {
+  @apply sm:w-[32%] w-full;
+}
+.select-country {
+  @apply h-[2.5625rem] w-full px-[0.625rem] border border-lightGray rounded-md text-Gray font-normal text-14;
+}
+.select-country:focus {
+  @apply outline-none;
+}
+.input_form label {
+  @apply text-gray-700 font-normal text-14;
+}
+
+.payment_options_all {
+  @apply flex gap-5;
+}
+.payment_options_all .cod_disabled {
+  @apply bg-[#80808026] pointer-events-none cursor-not-allowed opacity-50;
+}
+.payment_options_all > div {
+  @apply basis-40 p-5 border border-gray-400 hover:border-primary cursor-pointer rounded-2xl;
+}
+.images_paymentgateway {
+  @apply w-full;
+}
+.codpayment_modalwrapper .checkout_btn {
+  @apply absolute bottom-0 left-0 right-0;
+}
+.accordion_content_check:has(.codpayment_modalwrapper) .modal-body {
+  @apply mb-[1.5625rem];
+}
+
+.paymentmode-cod-badge {
+  @apply flex text-center items-center  mb-3;
+}
+.paymentmode-cod-badge .cod-badge-charge {
+  @apply bg-red-700 px-2 rounded-lg font-medium text-white;
+}

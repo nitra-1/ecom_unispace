@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Attributes">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Attributes" clip-path="url(#clip-Attributes)">
+    <g id="Group_105" data-name="Group 105" transform="translate(-0.24 -1)">
+      <g id="MANAGE_ATTRIBUTES" data-name="MANAGE ATTRIBUTES" transform="translate(-25.495 -34.447)">
+        <g id="Group_53" data-name="Group 53" transform="translate(42.039 41.447)">
+          <g id="Group_52" data-name="Group 52" transform="translate(0 0)">
+            <g id="LINE_1" data-name="LINE 1" transform="translate(-7.393 5)">
+              <path id="Ellipse_1" data-name="Ellipse 1" d="M3.551,1.15a2.4,2.4,0,1,0,2.4,2.4,2.4,2.4,0,0,0-2.4-2.4m0-1.15A3.551,3.551,0,1,1,0,3.551,3.551,3.551,0,0,1,3.551,0Z" transform="translate(6.634)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="MANAGE_ATTRIBUTES-2" data-name="MANAGE ATTRIBUTES" transform="translate(-25.495 -14.328)">
+        <g id="Group_53-2" data-name="Group 53" transform="translate(42.039 41.447)">
+          <g id="Group_52-2" data-name="Group 52" transform="translate(0 0)">
+            <g id="LINE_1-2" data-name="LINE 1" transform="translate(-7.393 5)">
+              <path id="Ellipse_1-2" data-name="Ellipse 1" d="M3.551,1.15a2.4,2.4,0,1,0,2.4,2.4,2.4,2.4,0,0,0-2.4-2.4m0-1.15A3.551,3.551,0,1,1,0,3.551,3.551,3.551,0,0,1,3.551,0Z" transform="translate(6.634)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="MANAGE_ATTRIBUTES-3" data-name="MANAGE ATTRIBUTES" transform="translate(-11.039 -24.388)">
+        <g id="Group_53-3" data-name="Group 53" transform="translate(42.039 41.447)">
+          <g id="Group_52-3" data-name="Group 52" transform="translate(0 0)">
+            <g id="LINE_1-3" data-name="LINE 1" transform="translate(-7.393 5)">
+              <path id="Ellipse_1-3" data-name="Ellipse 1" d="M3.551,1.15a2.4,2.4,0,1,0,2.4,2.4,2.4,2.4,0,0,0-2.4-2.4m0-1.15A3.551,3.551,0,1,1,0,3.551,3.551,3.551,0,0,1,3.551,0Z" transform="translate(6.634)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <path id="_168bb1ba-6bb3-493d-9137-5126820a3e6c" data-name="168bb1ba-6bb3-493d-9137-5126820a3e6c" d="M8.257.65H-.431C-.552.65-.65.359-.65,0s.1-.65.219-.65H8.257c.121,0,.219.291.219.65S8.378.65,8.257.65Z" transform="translate(7.89 15.551)"/>
+      <path id="_168bb1ba-6bb3-493d-9137-5126820a3e6c-2" data-name="168bb1ba-6bb3-493d-9137-5126820a3e6c" d="M8.257.65H-.431C-.552.65-.65.359-.65,0s.1-.65.219-.65H8.257c.121,0,.219.291.219.65S8.378.65,8.257.65Z" transform="translate(7.89 35.67)"/>
+      <path id="_168bb1ba-6bb3-493d-9137-5126820a3e6c-3" data-name="168bb1ba-6bb3-493d-9137-5126820a3e6c" d="M19.469.65H-.155A.589.589,0,0,1-.65,0,.589.589,0,0,1-.155-.65H19.469a.589.589,0,0,1,.495.65A.589.589,0,0,1,19.469.65Z" transform="translate(22.89 15.551)"/>
+      <path id="_168bb1ba-6bb3-493d-9137-5126820a3e6c-4" data-name="168bb1ba-6bb3-493d-9137-5126820a3e6c" d="M19.469.65H-.155A.589.589,0,0,1-.65,0,.589.589,0,0,1-.155-.65H19.469a.589.589,0,0,1,.495.65A.589.589,0,0,1,19.469.65Z" transform="translate(22.89 35.67)"/>
+      <path id="_1dc2aa98-ca33-4fea-a414-b94cb1b78907" data-name="1dc2aa98-ca33-4fea-a414-b94cb1b78907" d="M22.8.65H-.073A.617.617,0,0,1-.65,0,.617.617,0,0,1-.073-.65H22.8A.617.617,0,0,1,23.38,0,.617.617,0,0,1,22.8.65Z" transform="translate(7.89 25.61)"/>
+      <path id="_1dc2aa98-ca33-4fea-a414-b94cb1b78907-2" data-name="1dc2aa98-ca33-4fea-a414-b94cb1b78907" d="M5.024.65H-.51C-.587.65-.65.359-.65,0s.063-.65.14-.65H5.024c.077,0,.14.291.14.65S5.1.65,5.024.65Z" transform="translate(37.691 25.61)"/>
+    </g>
+  </g>
+</svg>

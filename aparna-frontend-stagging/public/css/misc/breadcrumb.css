@@ -1,0 +1,22 @@
+/* breadcrumb */
+.breadcrumb_wrapper {
+  @apply rounded mb-4;
+}
+.breadcrumb_wrapper * {
+  @apply text-[.9rem] text-[#000] font-medium;
+}
+.breadcrumb_wrapper a {
+  @apply capitalize text-black;
+}
+.breadcrumb_wrapper a:hover {
+  @apply underline text-black;
+}
+.breadcrumb_wrapper a:last-child {
+  @apply text-primary;
+}
+.breadcrumb_active {
+  @apply text-primary;
+}
+.breadcrumb_seprator {
+  @apply inline-block mx-1 sm:mx-2 text-primary;
+}

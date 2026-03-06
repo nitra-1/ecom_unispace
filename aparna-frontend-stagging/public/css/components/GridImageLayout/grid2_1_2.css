@@ -1,0 +1,15 @@
+.grid_2-1-2 {
+  @apply grid gap-2.5 grid-cols-1 sm:grid-cols-3 grid-rows-2 focus:outline-none;
+}
+.grid_2-1-2 div:nth-child(2) {
+  @apply row-span-2;
+}
+.grid_2-1-2 img {
+  @apply w-full object-cover h-full;
+}
+.grid_2-1-2 a {
+  @apply w-full;
+}
+/* .grid_2-1-2 div {
+  @apply w-full h-full;
+} */

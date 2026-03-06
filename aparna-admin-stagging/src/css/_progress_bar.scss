@@ -1,0 +1,72 @@
+body:has(.progress-overlay) {
+  overflow-y: hidden;
+}
+.progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000006b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000000;
+  .card {
+    max-width: 500px;
+    width: 100%;
+    .card-body {
+      text-align: left;
+      padding: 50px 30px;
+    }
+  }
+  .progress_in {
+    width: 180px;
+  }
+  .progress_done {
+    width: 40px;
+    height: 40px;
+  }
+  .progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 6px;
+
+    .progress-bar {
+      height: 100%;
+      background-color: $primary-color;
+      transition: width 0.3s ease-in-out;
+    }
+  }
+
+  .progress-info {
+    color: #777;
+    display: flex;
+    justify-content: end;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .progress-note {
+    font-size: 14px;
+    color: $danger;
+    text-transform: capitalize;
+  }
+
+  .status-text {
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.p-prdlist__sidebar .m-prd-sidebar {
+  @apply w-[80%] fixed top-0 md:top-0 h-fit left-[-100%] md:left-0 z-10 bg-white md:bg-inherit md:z-0 md:relative md:w-full max-md:pt-3 max-md:px-3 max-md:pb-12;
+}
+
+.p-prdlist__sidebar {
+  @apply md:w-[22%];
+}
+
+.p-prdlist__sidebar.active .m-prd-sidebar {
+  @apply left-0;
+}
+body:has(.p-prdlist__sidebar.active) {
+  overflow: hidden;
+}
+.p-prdlist__sidebar.active::before {
+  @apply fixed inset-0 z-10 bg-black/50 content-[''];
+}
+
+.p-prdlist__sidebar.active .m-prd-sidebar {
+  @apply bg-white fixed z-10 overflow-y-auto h-[100dvh];
+}
+.p-prdlist-title-wrapper {
+  @apply inline-flex items-center gap-8;
+}
+
+.p-prd-total {
+  @apply text-primary  font-semibold	 text-base;
+}
+.p-prdlist-sortby {
+  @apply text-slategrey capitalize;
+}
+.p-prdlist-sortby .cancel-order-reason {
+  @apply hidden md:block ml-0;
+}
+.pv-comparecheckbox-main-true {
+  @apply mt-1  opacity-30 cursor-not-allowed rounded;
+}
+.pv-comparecheckbox-main-true .ip-checknox__input,
+.pv-comparecheckbox-main-true .ip-chekbox__lable {
+  @apply cursor-not-allowed;
+}
+
+.color_Varient
+  .ip-checkbox__wrapper
+  .ip-checknox__input:checked
+  + .ip-chekbox__lable::after {
+  @apply top-0 w-6 h-6;
+  mask-size: 80%;
+  mask-position: center;
+  mix-blend-mode: difference;
+}
+@keyframes fadeIn {
+  from {
+    @apply opacity-0;
+  }
+  to {
+    @apply opacity-100;
+  }
+}

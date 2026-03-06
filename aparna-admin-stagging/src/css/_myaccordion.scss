@@ -1,0 +1,16 @@
+.pv-accordion-main {
+  .accordion-item {
+    margin-bottom: 10px;
+    .accordion-header {
+      .accordion-button {
+        font-size: 1.1rem;
+        font-weight: 600;
+        background-color: rgba(0, 27, 90, 0.1);
+        &:focus {
+          border: unset;
+          box-shadow: unset;
+        }
+      }
+    }
+  }
+}

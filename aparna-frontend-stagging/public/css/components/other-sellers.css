@@ -1,0 +1,28 @@
+/* Product Details Other Sellers  */
+.prdt_other_sellers_wrapper{
+  @apply rounded-md border border-gray-300 bg-white;
+}
+.prdt_other_sellers_wrapper .title_other_sellers{
+  @apply p-3 border-b border-gray-300;
+}
+.prdt_other_seller_card{
+  @apply p-3;
+}
+.prdt_other_seller_card:not(:last-child){
+  @apply border-b border-gray-300;
+}
+.prdt_others_sellers_pricing_atc{
+  @apply flex items-center justify-between;
+}
+.other_sellers_pricing_product{
+  @apply text-[1.25rem] font-semibold;
+}
+.prdt_others_sellers_pricing_atc .btn-add-cart{
+  @apply font-medium;
+}
+.prdt_soldby_sellers{
+  @apply text-[#4B4B4B];
+}
+.prdt_soldbysellers_name{
+  @apply text-TextTitle ml-2 font-medium;
+}

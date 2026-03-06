@@ -1,0 +1,194 @@
+:root {
+  --dark: #34495e;
+  --light: #fff;
+  --success: #0abf30;
+  --error: #f24d4c;
+  --warning: #e9bd0c;
+  --info: #3498db;
+}
+
+.pv-customtoast :where(.toast, .column) {
+  display: flex;
+  align-items: center;
+}
+
+.pv-customtoast {
+  min-width: 400px;
+  max-width: 700px;
+  position: fixed;
+  overflow: hidden;
+  list-style: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background: var(--light);
+  justify-content: space-between;
+  animation: show_toast 0.3s ease forwards;
+  top: 16%;
+  right: 0%;
+  z-index: 10000;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  display: flex;
+  align-items: center;
+
+  .toast-message {
+    padding-left: 60px;
+  }
+}
+
+@keyframes show_toast {
+  0% {
+    transform: translateX(100%);
+  }
+
+  40% {
+    transform: translateX(-5%);
+  }
+
+  80% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.notifications .toast.hide {
+  animation: hide_toast 0.3s ease forwards;
+}
+
+@keyframes hide_toast {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  40% {
+    transform: translateX(0%);
+  }
+
+  80% {
+    transform: translateX(-5%);
+  }
+
+  100% {
+    transform: translateX(calc(100% + 20px));
+  }
+}
+
+.pv-customtoast::before {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  animation: progress 2s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    width: 0%;
+  }
+}
+
+.pv-customtoast.success::before,
+.btn#success {
+  background: var(--success);
+}
+
+.pv-customtoast.error::before,
+.btn#error {
+  background: var(--error);
+}
+
+.pv-customtoast.warning::before,
+.btn#warning {
+  background: var(--warning);
+}
+
+.pv-customtoast.info::before,
+.btn#info {
+  background: var(--info);
+}
+
+.pv-customtoast-icon {
+  height: 100%;
+  position: relative;
+  min-width: 60px;
+
+  &::after {
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: auto;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.pv-customtoast-icon.success {
+  background-color: var(--success);
+
+  &::after {
+    content: ' ';
+    background-image: url('..//icons/success.svg');
+  }
+}
+
+.pv-customtoast-icon.info {
+  background-color: var(--info);
+
+  &::after {
+    content: ' ';
+    background-image: url('https://img.icons8.com/?size=512&id=AmjB9UaIooPa&format=png');
+  }
+}
+.pv-customtoast-icon.error {
+  background-color: var(--error);
+
+  &::after {
+    content: ' ';
+    background-image: url('..//icons/error.svg');
+  }
+}
+.pv-customtoast-icon.warning {
+  background-color: var(--warning);
+
+  &::after {
+    content: ' ';
+    background-image: url('..//icons/warning.svg');
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .notifications {
+    width: 80%;
+  }
+
+  .notifications .toast {
+    width: 100%;
+    font-size: 1rem;
+    margin-left: 20px;
+  }
+
+  .buttons .btn {
+    margin: 0 1px;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+  }
+}
+
+.toast__close-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  margin-top: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}

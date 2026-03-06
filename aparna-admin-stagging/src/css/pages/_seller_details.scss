@@ -1,0 +1,234 @@
+.pv-seller-detail-main {
+  .pv-seller-detail-head {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--bs-black);
+  }
+
+  .pv-selr-head {
+    margin-bottom: 1.875rem;
+    color: var(--bs-black);
+  }
+
+  .pv-seller-detail-col:first-of-type {
+    .list-group {
+      position: sticky;
+      top: 5.5625rem !important;
+      list-style-type: none;
+      box-shadow: 0rem 0.0625rem 0.9375rem 0.0625rem rgb(62 57 107 / 7%);
+
+      li.active.list-group-item {
+        background-color: $primary-hover-color;
+        border-color: var(--bs-border-color);
+
+        a {
+          width: 100%;
+          display: inline-block;
+          color: #fff !important;
+          font-weight: 500;
+          font-size: 0.875rem;
+        }
+      }
+
+      li.list-group-item {
+        border-color: var(--bs-border-color);
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+          color: var(--bs-black);
+          font-weight: 600;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  .pv-seller-detail-col:last-of-type {
+    #PICKUP-ADDRESS {
+      scroll-margin-top: 5.5625rem;
+    }
+
+    .list-group {
+      .list-group-item + .list-group-item.active {
+        background-color: $theme-blue;
+      }
+    }
+
+    .pv-basicinfo-maintext {
+      scroll-margin-top: 5.5625rem;
+    }
+
+    .pv-basicinfo-main {
+      background-color: var(--bs-white);
+      padding: 1.5rem 1rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0rem 0.0625rem 0.9375rem 0.0625rem rgb(62 57 107 / 7%);
+
+      .pv-basicinfi-inner {
+        background-color: var(--bs-white);
+      }
+
+      .pv-basic-img {
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      table {
+        tbody {
+          th {
+            color: var(--bs-font-silver);
+            font-size: 0.9375rem;
+            font-weight: 500;
+          }
+
+          td {
+            font-weight: 400;
+            color: var(--bs-black);
+          }
+
+          .pv-seller-downloadbtn {
+            background-color: var(--bs-btndownload-color);
+            margin-right: 0.3125rem;
+          }
+        }
+      }
+    }
+
+    .pv-seller-submitbtn {
+      background-color: var(--bs-btn-blue);
+    }
+    .pv-download-btn {
+      p {
+        font-weight: 600;
+        color: var(--bs-font-silver);
+        margin-bottom: 0px;
+      }
+      button {
+        &:hover {
+          background-color: var(--bs-btn-blue);
+        }
+      }
+      button {
+        &:hover p {
+          color: var(--bs-white);
+        }
+      }
+      button {
+        &:hover svg {
+          color: var(--bs-white);
+        }
+      }
+    }
+  }
+
+  .card {
+    box-shadow: unset;
+    margin-bottom: 0.9375rem;
+    border: unset;
+
+    .card-body {
+      width: 100%;
+      p {
+        margin: 0px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--bs-font-silver);
+      }
+
+      strong {
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      table {
+        margin-bottom: 0px;
+        tbody {
+          th {
+            min-width: 110px;
+            padding: 0.3125rem;
+            line-height: 20px;
+            width: 130px;
+          }
+          td {
+            padding: 0.3125rem;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+a.active {
+  color: red;
+}
+
+li.active {
+  color: red;
+}
+
+.tax_wrapper {
+  margin: auto;
+  width: 45%;
+  box-shadow: 0px 0px 9px 0px rgba(204, 204, 204, 0.3882352941);
+  padding: 28px;
+  border-radius: 6px;
+}
+
+.pv-basicinfo-main {
+  background-color: var(--bs-white);
+  padding: 1.5rem 1rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0rem 0.0625rem 0.9375rem 0.0625rem rgb(62 57 107 / 7%);
+}
+
+.pv-basicinfo-maintext-sp {
+  box-shadow: 0rem 0.0625rem 0.9375rem 0.0625rem rgb(62 57 107 / 7%);
+  padding: 20px;
+  background-color: var(--bs-white);
+  margin-bottom: 1.25rem;
+
+  th {
+    color: var(--bs-font-silver);
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+}
+
+.pv-basicinfo-maintext-sp .pv-basicinfo-main {
+  box-shadow: none;
+}
+
+.drp_pending {
+  font-size: 12px;
+  color: #dbb056;
+  font-weight: 600;
+}
+.tb_custom_icon {
+  .m-icon {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+  }
+  .m_seller_account {
+    background-image: url('../icons/account.svg');
+  }
+  .m_seller_kyc {
+    background-image: url('../icons/kyc.svg');
+    filter: brightness(0.7);
+  }
+  .m_seller_tax {
+    background-image: url('../icons/tax.svg');
+  }
+  .m_seller_warehouse {
+    background-image: url('../icons/warehouse.svg');
+    filter: brightness(0.7);
+  }
+  .m_seller_approvedetail {
+    background-image: url('../icons/approve-detail.svg');
+  }
+}

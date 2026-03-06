@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Fix_Charges">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Fix_Charges" data-name="Fix Charges" clip-path="url(#clip-Fix_Charges)">
+    <g id="MANAGE_FIX_CHARGES_1.1" data-name="MANAGE FIX CHARGES 1.1" transform="translate(0 -0.179)">
+      <path id="Rectangle_16" data-name="Rectangle 16" d="M4,1.3A2.7,2.7,0,0,0,1.3,4V19A2.7,2.7,0,0,0,4,21.7H26A2.7,2.7,0,0,0,28.7,19V4A2.7,2.7,0,0,0,26,1.3H4M4,0H26a4,4,0,0,1,4,4V19a4,4,0,0,1-4,4H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0Z" transform="translate(10 22)"/>
+      <path id="Path_95" data-name="Path 95" d="M35.078,19.688l-.194-.01c-1.308-.07-2.709,0-2.723,0a.65.65,0,0,1-.066-1.3c.054,0,1.2-.06,2.42-.019a9.119,9.119,0,0,0,.1-2.616A11.316,11.316,0,0,0,33.1,10.839c-1.688-2.753-4.545-4.1-8.493-4-3.217.078-5.655,1.088-7.247,3-2.389,2.873-2.274,7.059-2.144,8.543h1.833a.65.65,0,0,1,0,1.3H14.078l-.089-.546a15.925,15.925,0,0,1-.081-3.532,11.748,11.748,0,0,1,2.442-6.59c1.842-2.219,4.607-3.388,8.22-3.476a11.161,11.161,0,0,1,7.635,2.3,10.177,10.177,0,0,1,3.239,5.2,13.913,13.913,0,0,1,.509,4.113c-.066,2.067-.549,2.347-.708,2.439Z"/>
+      <text id="_" data-name="₹" transform="translate(20 39)" font-size="17" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">₹</tspan></text>
+    </g>
+  </g>
+</svg>

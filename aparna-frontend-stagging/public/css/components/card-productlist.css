@@ -1,0 +1,67 @@
+.btn-whishlist {
+  @apply inline-flex items-center justify-center absolute top-3 right-3 p-2 z-[1];
+}
+.pd-list__card .btn-whishlist {
+  @apply sm:hidden;
+}
+.pd-list__card:hover .btn-whishlist,
+.pd-list__card .btn-whishlist:has(.wishlist-checked) {
+  @apply inline-flex;
+}
+.prd-list-title {
+  @apply text-xs sm:text-sm text-primary font-semibold uppercase;
+}
+.prd-list-contains {
+  @apply text-TextTitle font-medium capitalize text-base leading-5 2xl:text-lg 2xl:leading-6 line-clamp-2;
+}
+.prd-total-price {
+  @apply text-TextTitle font-semibold text-14 sm:text-lg 2xl:text-xl flex-shrink-0;
+}
+.prd-check-price {
+  @apply text-red-600 font-normal text-12 sm:text-14 flex-shrink-0;
+}
+.prd-list-offer {
+  @apply text-[#198754] font-normal text-12 sm:text-14 flex-shrink-0;
+}
+.prd-card-list__wrapper {
+  @apply relative;
+}
+.sort_productlist {
+  @apply list-none m-0 p-0 bg-[#fff] z-10;
+}
+.sortby {
+  @apply font-bold text-[#3e4152];
+}
+.sort_productlist span li {
+  @apply my-4 mx-auto;
+}
+.m-popularity {
+  @apply bg-[url('../../icon/popularity.svg')] bg-center bg-no-repeat bg-cover h-5 w-5;
+}
+.m-latest {
+  @apply bg-[url('../../icon/latest.svg')] bg-center bg-no-repeat bg-cover h-5 w-5;
+}
+.m-discount {
+  @apply bg-[url('../../icon/discount.svg')] bg-center bg-no-repeat bg-cover h-5 w-5;
+}
+.m-hightolow {
+  @apply bg-[url('../../icon/hightolow.svg')] bg-center bg-no-repeat bg-cover h-5 w-5;
+}
+.m-lowtohigh {
+  @apply bg-[url('../../icon/lowtohigh.svg')] bg-center bg-no-repeat bg-cover h-5 w-5;
+}
+.m-rating {
+  @apply bg-[url('../../icon/rating.svg')] bg-center bg-no-repeat bg-cover h-5 w-5;
+}
+.ripple-container .default {
+  @apply flex items-center gap-2;
+}
+.pv-productcard-main .swiper-wrapper {
+  /* @apply py-4; */
+}
+.pv-productcard-main .swiper-slide {
+  @apply h-auto;
+}
+.pv-productcard-main .prd-list-title {
+  @apply line-clamp-2;
+}

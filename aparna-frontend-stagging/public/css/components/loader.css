@@ -1,0 +1,53 @@
+.m-loader {
+  @apply fixed z-[999] inset-0;
+}
+
+.m-loader::before {
+  @apply content-[''] fixed block bg-[rgb(44_48_51_/_39%)] backdrop-blur-[1px] inset-0;
+}
+
+.m-loader--rounds {
+  @apply absolute -translate-x-2/4 -translate-y-2/4 w-[70px] h-[70px] left-2/4 top-2/4;
+}
+
+.m-loader--rounds span {
+  @apply w-[30%] h-[30%] absolute animate-[spin_2s_ease_infinite] opacity-100 m-0 rounded-[50%] border-0 left-2 top-2;
+}
+
+.m-loader--rounds span:first-child {
+  @apply bg-[#4aeaa4];
+  animation-delay: -1.5s;
+}
+
+.m-loader--rounds span:nth-child(2) {
+  @apply bg-[#5b0298];
+  animation-delay: -1s;
+}
+
+.m-loader--rounds span:nth-child(3) {
+  @apply bg-[#9d59fa];
+  animation-delay: -0.5s;
+}
+
+.m-loader--rounds span:last-child {
+  @apply bg-[#021770];
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(160%);
+  }
+
+  50% {
+    transform: translate(160%, 160%);
+  }
+
+  75% {
+    transform: translate(0, 160%);
+  }
+}

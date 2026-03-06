@@ -1,0 +1,53 @@
+.row-grid {
+  @apply grid grid-cols-12 gap-4;
+}
+.row-grid > div {
+  @apply overflow-hidden rounded-[0.3125rem];
+}
+.row-grid > div .custom_gridimg {
+  @apply transform transition-transform ease-in-out duration-500;
+}
+.col_12 {
+  @apply col-span-12;
+}
+.col_10 {
+  @apply col-span-12 sm:col-span-6 md:col-span-10;
+}
+
+.col_9 {
+  @apply col-span-12 sm:col-span-6 md:col-span-9;
+}
+.col_8 {
+  @apply col-span-12 sm:col-span-6 md:col-span-8;
+}
+.col_7 {
+  @apply col-span-12 sm:col-span-6 md:col-span-7;
+}
+.col_6 {
+  @apply col-span-12 sm:col-span-6;
+}
+.col_5 {
+  @apply col-span-12 sm:col-span-6 md:col-span-5;
+}
+.col_4 {
+  @apply col-span-12 sm:col-span-6 md:col-span-4;
+}
+.col_3 {
+  @apply col-span-12 sm:col-span-6 md:col-span-3;
+}
+.col_2 {
+  @apply col-span-12 sm:col-span-6 md:col-span-2;
+}
+.col_1 {
+  @apply col-span-12;
+}
+.custom_gridimg {
+  @apply w-full h-full object-fill;
+}
+.custom_grid_wrapper .row-grid:not(:last-child) {
+  @apply mb-6;
+}
+.row-grid .swiper,
+.row-grid .customSlider {
+  @apply h-full;
+}

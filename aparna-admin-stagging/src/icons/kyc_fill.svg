@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-KYC_Info">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="KYC_Info" data-name="KYC Info" clip-path="url(#clip-KYC_Info)">
+    <g id="Group_1092" data-name="Group 1092" transform="translate(15 15)">
+      <path id="Path_234" data-name="Path 234" d="M238,168h65.535v65.536H238Z" transform="translate(-199.029 -129.032)" fill="#fff"/>
+      <path id="Path_235" data-name="Path 235" d="M358.4,168h65.536v65.536H358.4Z" transform="translate(-243.264 -129.032)" fill="#fff"/>
+      <path id="Path_236" data-name="Path 236" d="M238,288.4h65.535v65.536H238Z" transform="translate(-199.029 -173.268)" fill="#fff"/>
+      <path id="Path_237" data-name="Path 237" d="M430.313,354.646V311.428a5.6,5.6,0,0,0-5.67-5.668l-43.217,0a5.6,5.6,0,0,0-5.669,5.669v43.217a5.6,5.6,0,0,0,5.669,5.67h43.217A5.6,5.6,0,0,0,430.313,354.646Z" transform="translate(-249.646 -179.647)" fill="#fff"/>
+      <path id="Path_238" data-name="Path 238" d="M488.74,418.739H448v7.086h47.825V378H488.74Z" transform="translate(-276.191 -206.188)" fill="#fff"/>
+      <path id="Path_239" data-name="Path 239" d="M183.484,378H176.4v47.825h47.824v-7.087H183.484Z" transform="translate(-176.397 -206.189)" fill="#fff"/>
+      <path id="Path_240" data-name="Path 240" d="M183.483,113.484H224.22V106.4H176.4v47.825h7.087Z" transform="translate(-176.396 -106.397)" fill="#fff"/>
+      <path id="Path_241" data-name="Path 241" d="M448,106.4v7.087h40.738v40.737h7.087V106.4Z" transform="translate(-276.19 -106.397)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

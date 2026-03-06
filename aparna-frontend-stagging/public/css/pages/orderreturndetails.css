@@ -1,0 +1,18 @@
+.pv-or-select {
+  @apply focus:outline-none border-b-1 w-full text-14;
+}
+.pv-order-status {
+  @apply font-[600] text-[15px]
+}
+.pv-or-items .ip_Textarea_input {
+  @apply text-14
+}
+.order-replacement {
+  @apply mb-3  font-semibold	;
+}
+.m-returnBtn {
+  @apply bg-primary text-white rounded-md p-2;
+}
+.validation-error-message {
+  @apply text-red-600;
+}

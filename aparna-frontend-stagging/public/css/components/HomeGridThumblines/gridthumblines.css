@@ -1,0 +1,45 @@
+.thumblinegrid_img{
+  @apply w-full h-full object-cover rounded-[0.3125rem];
+}
+.thumblinecolumngrid_wrapper{
+  @apply grid gap-6;
+}
+.thumbline_imggrid{
+  @apply grid gap-6;
+}
+.rowgrid_1{
+  @apply grid-cols-1;
+}
+.rowgrid_2{
+  @apply sm:grid-cols-2;
+}
+.rowgrid_3{
+  @apply sm:grid-cols-3;
+}
+.rowgrid_4{
+  @apply sm:grid-cols-2 md:grid-cols-4;
+}
+.rowgrid_5{
+  @apply sm:grid-cols-2 md:grid-cols-5;
+}
+.rowgrid_6{
+  @apply sm:grid-cols-3 md:grid-cols-6;
+}
+.rowgrid_7{
+  @apply sm:grid-cols-4 md:grid-cols-7;
+}
+.rowgrid_8{
+  @apply sm:grid-cols-4 md:grid-cols-8;
+}
+.rowgrid_9{
+  @apply sm:grid-cols-3 md:grid-cols-9;
+}
+.rowgrid_10{
+  @apply sm:grid-cols-5 md:grid-cols-10;
+}
+.rowgrid_11{
+  @apply md:grid-cols-11;
+}
+.rowgrid_12{
+  @apply md:grid-cols-12;
+}

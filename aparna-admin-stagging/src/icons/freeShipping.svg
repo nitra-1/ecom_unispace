@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48.448" height="48.448" viewBox="0 0 48.448 48.448">
+  <g id="Group_2157" data-name="Group 2157" transform="translate(-4045 -5885.291)">
+    <path id="Path_256" data-name="Path 256" d="M31.484,22.538l3.98-3.981a5.316,5.316,0,0,1,7.519,0l3.981,3.981h5.629a5.317,5.317,0,0,1,5.317,5.316v5.629l3.981,3.981a5.316,5.316,0,0,1,0,7.519l-3.981,3.98v5.63a5.317,5.317,0,0,1-5.317,5.316h-5.63l-3.981,3.981a5.316,5.316,0,0,1-7.519,0l-3.98-3.981h-5.63a5.317,5.317,0,0,1-5.316-5.316v-5.63l-3.981-3.98a5.316,5.316,0,0,1,0-7.519l3.981-3.981V27.854a5.315,5.315,0,0,1,5.316-5.316Z" transform="translate(4030 5868.291)" fill="#d5af56" fill-rule="evenodd"/>
+    <g id="Icon" transform="translate(4058.722 5901.591) rotate(-1)">
+      <g id="Icon-2" data-name="Icon" transform="translate(0 0)">
+        <rect id="Rect" width="13.495" height="11.696" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <path id="Path" d="M0,0H3.6L6.3,2.7V7.2H0Z" transform="translate(13.495 4.499)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <ellipse id="Path-2" data-name="Path" cx="2.249" cy="2.249" rx="2.249" ry="2.249" transform="translate(1.799 11.696)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+        <ellipse id="Path-3" data-name="Path" cx="2.249" cy="2.249" rx="2.249" ry="2.249" transform="translate(13.495 11.696)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+      </g>
+    </g>
+  </g>
+</svg>

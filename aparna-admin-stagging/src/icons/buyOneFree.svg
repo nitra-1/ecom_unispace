@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48.448" height="48.448" viewBox="0 0 48.448 48.448">
+  <g id="Group_2156" data-name="Group 2156" transform="translate(-4045 -5788.551)">
+    <path id="Path_255" data-name="Path 255" d="M31.484,22.538l3.98-3.981a5.316,5.316,0,0,1,7.519,0l3.981,3.981h5.629a5.317,5.317,0,0,1,5.317,5.316v5.629l3.981,3.981a5.316,5.316,0,0,1,0,7.519l-3.981,3.98v5.63a5.317,5.317,0,0,1-5.317,5.316h-5.63l-3.981,3.981a5.316,5.316,0,0,1-7.519,0l-3.98-3.981h-5.63a5.317,5.317,0,0,1-5.316-5.316v-5.63l-3.981-3.98a5.316,5.316,0,0,1,0-7.519l3.981-3.981V27.854a5.315,5.315,0,0,1,5.316-5.316Z" transform="translate(4030 5771.551)" fill="#b97ade" fill-rule="evenodd"/>
+    <g id="Group_2085" data-name="Group 2085" transform="translate(4062.426 5801.015)">
+      <g id="Icon" transform="translate(0 8.902) rotate(-1)">
+        <g id="Icon-2" data-name="Icon" transform="translate(0 0)">
+          <line id="Line" y2="6.855" transform="translate(3.427 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          <line id="Line-2" data-name="Line" x2="6.855" transform="translate(0 3.427)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        </g>
+      </g>
+      <text id="_1" data-name="1" transform="translate(10.525 17.769)" fill="#fff" font-size="15" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">1</tspan></text>
+    </g>
+  </g>
+</svg>

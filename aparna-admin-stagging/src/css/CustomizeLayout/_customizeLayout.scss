@@ -1,0 +1,468 @@
+/* grid system  */
+
+.grid_1 {
+  display: grid;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_3 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_4 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_1-2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  & :last-child {
+    grid-column: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_2-1 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  & :first-child {
+    grid-column: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_2-1 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  & :first-child {
+    grid-column: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_1by1-2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+
+  & :nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_1by1-2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+
+  & :nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_2-1by1 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+
+  & :first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_1by1-1-1 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+
+  & :nth-child(2),
+  :nth-child(3) {
+    grid-row: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+.grid_1-1-2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  & :last-child {
+    grid-column: span 2;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.grid_2-2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  & :last-child,
+  :first-child {
+    grid-column: span 2;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  :focus {
+    outline: 0;
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+//customize Title css
+
+.m-customize {
+  max-width: 60%;
+  margin: auto;
+  padding: 30px 10px;
+
+  &__title {
+    font-size: 55px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    width: 100%;
+  }
+  &__add-btn {
+    text-align: right;
+  }
+  .pv-addicon-main .pv-addicon-bg {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 40px !important;
+  }
+}
+
+.customize-grid {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  &__col {
+    text-align: center;
+    padding-block: 14px;
+    span {
+      display: block;
+      margin-block-end: 4px;
+      color: black;
+    }
+  }
+  :hover {
+    background-color: #f3f1f1;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 10px;
+  }
+  &__col.active {
+    background-color: #f3f1f1;
+  }
+}
+
+// column css
+.c-column {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #e7e6e6;
+
+  .c-column-col {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #ebebeb5c;
+    font-size: 13px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+    span {
+      color: black;
+    }
+  }
+  :hover {
+    background-color: #f3f1f1;
+    font-weight: 600;
+  }
+}
+
+// Layouts
+
+.layout-col {
+  border: 1px dotted #000;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__add-icon {
+    background-image: url('~icons/plusaccordian.svg');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    top: 20%;
+    display: block;
+    margin: auto;
+    visibility: hidden;
+  }
+  &:hover {
+    border: 1px solid #000;
+    background-color: #f7f7f7;
+  }
+}
+
+.layout-col:hover .layout-col__add-icon {
+  visibility: visible;
+}

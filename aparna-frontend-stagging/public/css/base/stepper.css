@@ -1,0 +1,95 @@
+ .m-stepper {
+  @apply text-center;
+}
+/*
+.m-stepper__wrapper {
+  @apply flex relative items-center  justify-center w-full my-4;
+}
+.m-stepper__wrapper::before {
+  @apply -z-[2] absolute w-full h-[0.0625rem] bg-primary content-[''];
+}
+.m-stepper__progress {
+  @apply -z-[1] absolute w-0 h-[0.125rem] bg-red-500 content-[''];
+  transition: width 1s;
+} */
+/*  */
+/* .m-stepper {
+  text-align: center;
+} */
+.m-stepper__progress {
+  z-index: -1;
+  position: absolute;
+  width: 0%;
+  height: 0.125rem;
+  background-color: green;
+  content: '';
+  transition: width 1s;
+}
+.m-stepper__screen-indicator {
+  border: 0.0625rem solid #c2c2c2;
+  border-radius: 50%;
+  background-color: #fff;
+  color: yellow;
+  font-size: 10px;
+  transition: border-color color;
+  transition-duration: 0.7s;
+  font-size: 14px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  transition-duration: 0.7s;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.m-stepper__screen-indicator.completed {
+  border-color: red;
+  background-color: black;
+  color: #fff;
+}
+.m-stepper__screen-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 1rem;
+}
+.m-stepper__wrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-block: 1rem;
+}
+.m-stepper__wrapper::before {
+  z-index: -2;
+  position: absolute;
+  width: 100%;
+  height: 0.0625rem;
+  background-color: #c2c2c2;
+  content: '';
+}
+.m-stepper__screen-name {
+  font-size: 0.75rem;
+  color: #ff137b;
+  font-weight: 600;
+  width: 2.5rem;
+}
+.m-stepper__screen-name:disabled {
+  color: rgb(153, 152, 152);
+}
+
+.m-stepper__control-btn {
+  padding: 0.3125rem 0.625rem;
+  border: 0.0625rem solid gray;
+  border-radius: 0.3125rem;
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+.m-stepper__control-btn:disabled {
+  cursor: not-allowed;
+}
+
+.m-stepper__control-btn:not(:disabled):hover {
+  background-color: lightgray;
+}

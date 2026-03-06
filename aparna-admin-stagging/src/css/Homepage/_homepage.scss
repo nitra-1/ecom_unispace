@@ -1,0 +1,661 @@
+.main-content.app-content {
+  .pv-dashbord-main.hr_dashboardmain {
+    .recharts-responsive-container.pv-piechart-main {
+      max-height: 100% !important;
+      height: 100% !important;
+      .recharts-wrapper {
+        max-height: 100% !important;
+        padding: 15px !important;
+        .recharts-legend-wrapper .LegendList li {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+.pv-dashbord-main {
+  grid-gap: 24px;
+  display: grid;
+
+  &.seller_brand_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &.stock_chart_grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  > div {
+    &:nth-child(1) {
+      order: 0;
+
+      @include custom-breakpoint(max-width, bp1200) {
+        grid-column: span 2;
+      }
+    }
+
+    &:nth-child(2) {
+      order: 2;
+
+      @include custom-breakpoint(max-width, bp1200) {
+        grid-column: span 2;
+        order: 1;
+      }
+    }
+
+    &:nth-child(3) {
+      grid-column: span 3;
+      grid-row: span 2;
+      order: 1;
+
+      @include custom-breakpoint(max-width, bp1200) {
+        grid-column: span 4;
+        grid-row: span 1;
+      }
+    }
+
+    &:nth-child(4) {
+      grid-column: span 4;
+      order: 3;
+
+      @include custom-breakpoint(max-width, bp1200) {
+        order: 1;
+      }
+    }
+
+    &:nth-child(5) {
+      grid-column: span 4;
+      order: 4;
+
+      @include custom-breakpoint(max-width, bp1200) {
+        grid-column: span 4;
+        order: 1;
+      }
+    }
+
+    &:nth-child(6) {
+      grid-column: span 4;
+      order: 5;
+    }
+
+    &:nth-child(7) {
+      grid-column: span 4;
+      order: 6;
+    }
+
+    &:nth-child(8) {
+      grid-column: span 4;
+      order: 7;
+    }
+
+    &:nth-child(9) {
+      grid-column: span 4;
+      order: 8;
+    }
+  }
+
+  .BulletLabelText {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+
+    @include custom-breakpoint(max-width, bp1200) {
+      font-size: 16px;
+    }
+  }
+
+  .h-33 {
+    height: 33px;
+  }
+
+  .pv-dashbord-chart-col {
+    position: relative;
+    background-color: var(--bs-white);
+
+    .nav-tabs {
+      height: 44px;
+      .nav-item {
+        width: 100px !important;
+        flex-basis: 0;
+        flex-grow: unset;
+
+        .nav-link {
+          height: 44px;
+          border: none;
+          border-bottom: 1px solid var(--bs-border-color);
+          position: relative;
+          text-align: center;
+        }
+
+        .nav-link.active {
+          &::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: var(--bs-link-color);
+            display: block;
+            margin: auto;
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      height: 92%;
+
+      .tab-pane {
+        height: 100%;
+      }
+    }
+
+    .pv-chartdash-dropbtn.dropdown {
+      position: absolute;
+      top: 5px;
+      right: 6px;
+
+      button#dropdown-basic {
+        padding: 0.2rem 1rem;
+        font-size: 13px;
+      }
+    }
+
+    // tspan {
+    //   font-size: 11px;
+    // }
+
+    .recharts-rectangle {
+      fill: transparent;
+    }
+
+    .recharts-tooltip-wrapper {
+      outline: none;
+    }
+
+    .pv-allorder-status {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+
+      .pv-orderstatus-inner {
+        h3 {
+          background-color: #f5f5f5;
+          padding: 1.25rem 0.625rem;
+          margin: auto;
+          border: 1px solid var(--bs-border-color);
+          border-radius: 0.375rem;
+          transition: all 0.1s ease-in;
+          width: 100%;
+
+          &:hover {
+            transform: scale(1.1);
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          }
+        }
+
+        p {
+          margin-top: 0.375rem;
+          font-weight: 600;
+        }
+      }
+
+      > div:first-child {
+        grid-column: span 1;
+        grid-row: span 2;
+        background-color: #f5f5f5;
+        border: 1px solid var(--bs-border-color);
+        border-radius: 0.375rem;
+        transition: all 0.1s ease-in;
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+      }
+
+      > div:nth-child(8) {
+        grid-column: span 1;
+        grid-row: span 2;
+        background-color: #f5f5f5;
+        border: 1px solid var(--bs-border-color);
+        border-radius: 0.375rem;
+        transition: all 0.1s ease-in;
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+      }
+    }
+  }
+
+  .pv-piechart-main {
+    display: flex;
+    align-items: center;
+    // height: 100% !important;
+  }
+
+  .recharts-responsive-container.pv-piechart-main,
+  .pv-piechart-main .recharts-wrapper {
+    @include custom-breakpoint(max-width, bp1500) {
+      max-height: 230px !important;
+      height: 230px !important;
+    }
+
+    @include custom-breakpoint(min-width, bp1500) {
+      max-height: 250px !important;
+      height: 250px !important;
+    }
+
+    @include custom-breakpoint(min-width, bp3000) {
+      max-height: 350px !important;
+      height: 350px !important;
+    }
+  }
+
+  .recharts-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px 0;
+    // overflow: hidden;
+    //   height: 220px !important;
+    height: 110% !important;
+
+    svg.recharts-surface {
+      // height: 100% !important;
+      overflow: hidden;
+
+      path {
+        outline: unset !important;
+      }
+
+      g {
+        outline: none;
+      }
+    }
+
+    .recharts-legend-wrapper {
+      position: relative !important;
+      width: 100%;
+      height: auto;
+      left: 0 !important;
+      bottom: 0 !important;
+
+      .LegendList {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+
+        li {
+          display: flex;
+          align-items: center;
+
+          .BulletLabel {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .pv-rounded-chart {
+    .recharts-responsive-container {
+      @include custom-breakpoint(min-width, bp3000) {
+        max-height: 700px !important;
+        height: 700px !important;
+      }
+
+      .recharts-wrapper {
+        padding: 0px !important;
+        @include custom-breakpoint(min-width, bp3000) {
+          max-height: 700px !important;
+          height: 700px !important;
+        }
+      }
+    }
+
+    .pv-PercentArea-desc {
+      h6 {
+        font-size: 1rem;
+      }
+
+      h5 {
+        font-size: 1rem;
+      }
+    }
+
+    .recharts-tooltip-wrapper {
+      div {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+
+        ul {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}
+
+.hr_dashbord-chart-col.pv-dashbord-chart-col {
+  position: relative;
+  background-color: var(--bs-white);
+
+  .nav-tabs {
+    height: 44px;
+    .nav-item {
+      width: 100px !important;
+      flex-basis: unset;
+      flex-grow: unset;
+
+      .nav-link {
+        height: 44px;
+        border: none;
+        border-bottom: 1px solid var(--bs-border-color);
+        position: relative;
+        text-align: left;
+      }
+
+      .nav-link.active {
+        &::after {
+          content: '';
+          width: 30px;
+          height: 3px;
+          background-color: var(--bs-link-color);
+          display: block;
+          margin: auto;
+          position: absolute;
+          bottom: -2px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .pv-chartdash-dropbtn {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+
+    .btn-light.dropdown-toggle.btn.btn-primary {
+      font-size: 13px;
+      padding: 0.2rem 1rem;
+    }
+  }
+}
+
+.pv-chart-horizontal {
+  .LegendList {
+    gap: 15px !important;
+
+    @include custom-breakpoint(max-width, bp1480) {
+      display: block !important;
+    }
+
+    @include custom-breakpoint(max-width, bp1500) {
+      display: flex !important;
+    }
+
+    li {
+      min-width: 130px;
+
+      @include custom-breakpoint(max-width, bp1500) {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+.recharts-tooltip-wrapper {
+  div {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    white-space: nowrap;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    line-height: normal;
+  }
+
+  p {
+    margin: 0px;
+    color: #000;
+    line-height: normal;
+    font-weight: 500;
+    padding: 0px;
+  }
+}
+
+g.pv-piechart-lable {
+  transform: translateY(100%);
+
+  text {
+    font-size: 26px;
+
+    &:nth-child(1) {
+      transform: translate(-18px, 8px);
+    }
+  }
+
+  text {
+    font-size: 26px;
+
+    &:nth-child(2) {
+      transform: translate(48px, -21.04px);
+    }
+  }
+}
+
+.hc_shadow {
+  box-shadow: 0px 0.6px 0px 0px #00000005, 0px 0px 14.46px 0px #0000000f;
+}
+
+.circlen_cstm_grap {
+  border-radius: 50%;
+  padding: 2px;
+  background-color: #fff;
+}
+
+.CirecleBullet {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hc-total-products {
+  background-color: #ffe8f4;
+  border: 2px dashed #ff74bd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hc-unique-products {
+  background-color: #f1f6c5;
+  border: 2px dashed #b3bc5c;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hc-active-products {
+  background-color: #fff3ce;
+  border: 2px dashed #fedc76;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hc-inexisting-products {
+  background-color: #f5eeff;
+  border: 2px dashed #c7a0fe;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hc-bulk-uploads {
+  background-color: #e9fffe;
+  border: 2px dashed #6ae1dc;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hc-in-aprooval {
+  background-color: #ffe4e4;
+  border: 2px dashed #ff6666;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.pv-dashbord-main.stock_chart_grid
+  .recharts-wrapper
+  .recharts-legend-wrapper
+  .LegendList {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px 0;
+  font-size: 1rem;
+}
+
+.pv-dashbord-main.stock_chart_grid
+  .recharts-responsive-container.pv-piechart-main,
+.pv-dashbord-main .pv-piechart-main .recharts-wrapper {
+  height: 100% !important;
+  max-height: 500px !important;
+}
+
+.hr_scs_one {
+  .pvv-card {
+    min-height: 132px !important;
+  }
+}
+.pv-dashbord-main.stock_chart_grid
+  .recharts-wrapper
+  .recharts-legend-wrapper
+  .LegendList
+  .BulletLabelText {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hr_scsfive {
+  overflow: hidden;
+  .slick-track {
+    display: flex;
+  }
+  h4 {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .slick-slide {
+    margin-right: 15px;
+  }
+
+  .slick-slide:last-child {
+    margin-right: 0;
+  }
+
+  .card-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+
+    .brand_image {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .brand_name {
+      margin-bottom: 0;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .count_item {
+      padding: 0 10px;
+
+      h4 {
+        margin-bottom: 6px;
+        font-size: 16px;
+        color: #2b2b2b;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 16px;
+        color: #2b2b2b;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@keyframes scrolleft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.cursor-pointer-tooltip {
+  cursor: pointer;
+}
+.font-weight-bold {
+  font-weight: 600;
+  font-size: medium;
+}
+
+.text-secondary {
+  @include custom-breakpoint(max-width, bp1400) {
+    font-size: 0.9375rem;
+  }
+}
+.dash_count_font {
+  font-size: 1.5rem;
+  @include custom-breakpoint(max-width, bp1400) {
+    font-size: 0.9375rem;
+  }
+}
+
+button#dropdown-basic {
+  padding: 1px 12px;
+}
+.recharts-responsive-container {
+  @include custom-breakpoint(max-width, bp1400) {
+    height: 54% !important;
+  }
+}
+.hr_chart_mb-0 {
+  .hr_tab_kyc {
+    .LegendList {
+      margin-bottom: 0;
+    }
+  }
+}

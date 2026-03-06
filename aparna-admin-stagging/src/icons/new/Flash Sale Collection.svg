@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Flash_Sale_Collection">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Flash_Sale_Collection" data-name="Flash Sale Collection" clip-path="url(#clip-Flash_Sale_Collection)">
+    <g id="MANAGE_FLASH_SALE_COLLECTION" data-name="MANAGE FLASH SALE COLLECTION" transform="translate(-1.352 -3.76)">
+      <path id="MANAGE_FLASH_SALE_COLLECTION-2" data-name="MANAGE FLASH SALE COLLECTION" d="M22.744,11.162h15.1a.65.65,0,0,1,.59.922L33.4,23.02h6.439a.65.65,0,0,1,.529,1.028L24.137,46.766a.65.65,0,0,1-1.173-.466l2.008-14.621h-7.95a.65.65,0,0,1-.623-.835l5.722-19.217A.65.65,0,0,1,22.744,11.162Zm14.08,1.3h-13.6L17.893,30.379h7.824a.65.65,0,0,1,.644.738L24.61,43.866,38.571,24.32H32.38a.65.65,0,0,1-.59-.922Z" transform="translate(-1.522 -0.312)"/>
+    </g>
+  </g>
+</svg>

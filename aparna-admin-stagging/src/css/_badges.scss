@@ -1,0 +1,190 @@
+$Total: #b2ebf2;
+$Placed: #cfd8dc;
+$Confirmed: #ffcc80;
+$PartialConfirmed: #ffcc80;
+$Packed: #ffe083;
+$PartialPacked: #ffe083;
+$Shipped: #e6ee9b;
+$PartialShipped: #e6ee9b;
+$Delivered: #c5e1a6;
+$PartialDelivered: #c5e1a6;
+$Cancelled: #ffebee;
+$Returned: #ffebee;
+$Replaced: #ddedc8;
+$Exchange: #ddedc8;
+
+/** Badges Border Radius **/
+
+// $badge-font-weight: $font-weight-bold;
+.badge.bg-success {
+  background-color: $badge-success-bg !important;
+  color: $badge-success-clr;
+}
+.badge.bg-secondary {
+  background-color: $badge-secondary-bg !important;
+  color: $badge-secondary-clr;
+}
+.badge.bg-primary {
+  background-color: $badge-primary-bg !important;
+  color: $badge-primary-clr;
+}
+.badge.bg-danger {
+  background-color: $badge-danger-bg !important;
+  color: $badge-danger-clr;
+  line-height: normal;
+}
+.badge.bg-warning {
+  background-color: $badge-warning-bg !important;
+  color: $badge-warning-clr;
+}
+.badge.bg-info {
+  background-color: $badge-info-bg !important;
+  color: $badge-info-clr;
+  line-height: normal;
+}
+.badge.bg-dark {
+  background-color: $badge-dark-bg !important;
+  color: $badge-dark-clr;
+}
+.badge.bg-light {
+  background-color: $badge-light-bg !important;
+  color: $badge-light-clr;
+}
+
+.badge.bg-light-purple {
+  background-color: #e6cce6;
+  color: #1a001a;
+}
+
+.badge.bg-light-gry {
+  background-color: #ececee;
+  color: #60616d;
+}
+
+.badge.bg-light-blue {
+  background-color: #666ee8;
+  color: #fff;
+}
+
+// product page badge
+
+.badge-pending {
+  background-color: #ffd700 !important;
+  color: #000;
+}
+.badge-exchanged {
+  background-color: $Exchange !important;
+  color: #1b5e20;
+}
+.badge.bg-Cancelled {
+  background-color: $Cancelled !important;
+  color: #b71c1c;
+}
+.badge.bg-Placed {
+  background-color: $Placed !important;
+  color: #000000;
+}
+.badge.bg-Confirmed {
+  background-color: $Confirmed !important;
+  color: #000000;
+}
+.badge.bg-Packed {
+  background-color: $Packed !important;
+  color: #000000;
+}
+.badge.bg-Shipped {
+  background-color: $PartialDelivered !important;
+  color: #000000;
+}
+.badge.bg-Delivered {
+  background-color: $Delivered !important;
+  color: #1b5e20;
+}
+.badge.bg-Returned {
+  background-color: $Returned !important;
+  color: #b71c1c;
+}
+.badge.bg-Return-Rejected {
+  background-color: #ffeef3 !important;
+  color: #f8285a;
+}
+.badge.bg-Return-Requested {
+  background-color: #99ffff !important;
+  color: #003333;
+}
+.badge.bg-Return-Approved {
+  background-color: #fff3cd !important;
+  color: #856404;
+}
+.badge.bg-Replaced {
+  background-color: $Replaced !important;
+  color: #1b5e20;
+}
+.badge.bg-Exchange {
+  background-color: $Exchange !important;
+  color: #1b5e20;
+}
+.badge.bg-total {
+  background-color: $Total !important;
+  color: #000;
+}
+/* Additional badges for specific statuses */
+.badge-PartialDelivered {
+  background-color: $PartialDelivered !important;
+  color: #1b5e20;
+}
+
+.badge-Partialconfirmed {
+  background-color: $Confirmed !important;
+  color: #000000;
+}
+.badge-cancelledconfirmed {
+  background-color: #ff7777 !important;
+  color: #fff;
+}
+.badge-placedconfirmed {
+  background-color: #66ff66 !important;
+  color: #fff;
+}
+.badge-packedconfirmed {
+  background-color: #6666ff !important;
+  color: #fff;
+}
+.badge-shipconfirmed {
+  background-color: $Shipped !important;
+  color: #000;
+}
+
+.badge-PartialShipped {
+  background-color: $PartialShipped !important;
+  color: #000;
+}
+// .badge-PartialShipped {
+//   background-color: $Shipped !important;
+//   color: #000000;
+// }
+.badge-deliveredConfirmed {
+  background-color: #66cccc !important;
+  color: #fff;
+}
+.badge-returnedconfirmed {
+  background-color: #cc66cc !important;
+  color: #fff;
+}
+.badge-return-rejectedconfirmed {
+  background-color: #ff3333 !important;
+  color: #fff;
+}
+.badge-return-requestedconfirmed {
+  background-color: #33ffff !important;
+  color: #fff;
+}
+.badge-parcial-packed {
+  background-color: $Packed !important;
+  color: #000000;
+}
+
+.badge-yellow {
+  background-color: #d6c429;
+  color: #fff;
+}

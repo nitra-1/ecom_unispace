@@ -1,0 +1,449 @@
+.m-icon {
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  &--arrow_back {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/arrow_back.svg');
+  }
+  &--arrow_doubleBack {
+    width: 1rem;
+    height: 1rem;
+    background-image: url('~icons/doubleArrow_back.svg');
+  }
+
+  &--autorenew {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/autorenew.svg');
+  }
+
+  &--dashboard {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/dashboard.svg');
+  }
+
+  &--products {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/Products.svg');
+  }
+
+  &--Categories {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/Categories.svg');
+  }
+
+  &--orders {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/orders.svg');
+  }
+
+  &--invoices {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/invoice.svg');
+  }
+
+  &--sellers {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/Seller.svg');
+  }
+
+  &--brands {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/Brand.svg');
+  }
+
+  &--User {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/Usericon.svg');
+  }
+
+  &--reconciliation {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/reconciliation.svg');
+  }
+
+  &--coupons {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/coupons.svg');
+  }
+  &--contacts {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/contacts.svg');
+  }
+
+  &--reports {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/reports.svg');
+  }
+
+  &--setting {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/Settings.svg');
+  }
+
+  &--Logs {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/Logs.svg');
+  }
+
+  &--feedback {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/feedback.svg');
+  }
+
+  &--logindetails {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/logindetails.svg');
+  }
+  &--ratting {
+    width: 1.125rem;
+    height: 1.125rem;
+    background-image: url('~icons/sidebar-icon/ratting.svg');
+  }
+
+  &--hamburger {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/humbergermenu.svg');
+  }
+
+  &--down-arrow {
+    width: 0.875rem;
+    height: 0.875rem;
+    background-image: url('~icons/bottomArrow.svg');
+  }
+
+  &--search {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('~icons/searchbox.svg');
+  }
+  &--filter {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/filter.svg');
+  }
+  &--bulkStock {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/bulk_stock_upload.svg');
+  }
+  &--bulkUpload {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/bulk_upload.svg');
+  }
+  &--totalProduct {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/products/total_products.svg');
+  }
+  &--unique {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/products/unique_products.svg');
+  }
+  &--active {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/products/Active_Products.svg');
+  }
+  &--inactive {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/products/Inactive_Products.svg');
+  }
+  &--existing {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/products/Existing_Products.svg');
+  }
+  &--approval {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('~icons/products/Approval_Products.svg');
+  }
+
+  &--categpry-size {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/category-size.svg');
+  }
+
+  &--categpry-color {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/category-color.svg');
+  }
+
+  &--categpry-specification {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/category-specification.svg');
+  }
+
+  &--edit {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('~icons/edit.svg');
+  }
+
+  &--delete {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('~icons/delete.svg');
+  }
+
+  &--view {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('~icons/view.svg');
+  }
+
+  &--defaultpreview {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url('~icons/defaultpreview.svg');
+  }
+
+  &--close {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url('~icons/close.svg');
+  }
+
+  &--pluswhite {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('~icons/pluswhite.svg');
+  }
+
+  &--plusblack {
+    width: 0.875rem;
+    height: 0.875rem;
+    background-image: url('~icons/plusblack.svg');
+  }
+  &--video {
+    width: 2rem;
+    height: 2rem;
+    background-image: url('~icons/video.svg');
+  }
+  &--remove {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('~icons/remove_icon.svg');
+  }
+
+  &--finance {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('~icons/setting-Icon/Finanace.svg');
+  }
+
+  &--appearance {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('~icons/setting-Icon/Appearance.svg');
+  }
+  &--inquiry {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('~icons/setting-Icon/Inquiry.svg');
+  }
+
+  &--shipping {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('~icons/setting-Icon/Shipping.svg');
+  }
+
+  &--management {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('~icons/setting-Icon/Management.svg');
+  }
+
+  &--extraChargis {
+    width: 2rem;
+    height: 2rem;
+    background-image: url('~icons/setting-Icon/extra_charges.svg');
+  }
+  &--exclamation-mark {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('~icons/exclamation-mark.svg');
+  }
+  &--sync-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/sync_icon.svg');
+    filter: invert(1);
+  }
+
+  &--tick-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/tick.svg');
+  }
+  &--wislist {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('~icons/wishlist.svg');
+  }
+  &--mail {
+    flex-shrink: 0;
+    background-image: url('~icons/mail-icon.svg');
+  }
+  &--location {
+    flex-shrink: 0;
+    background-image: url('~icons/location-icon.svg');
+  }
+  &--call {
+    flex-shrink: 0;
+    background-image: url('~icons/call-icon.svg');
+  }
+  &--delivered-truck {
+    width: 7rem;
+    height: 7rem;
+    background-image: url('~icons/Delivered-truck.svg');
+  }
+}
+
+/** Side Bar Active **/
+.slide.active {
+  .m-icon {
+    &--dashboard {
+      // background-image: url('~icons/dashboard-fill.svg');
+      filter: brightness(0) invert(1);
+    }
+
+    &--products {
+      // background-image: url('~icons/sidebar-icon/Products.svg');
+      filter: brightness(0) invert(1);
+    }
+
+    &--Categories {
+      // background-image: url('~icons/sidebar-icon/Products.svg');
+      filter: brightness(0) invert(1);
+    }
+
+    &--orders {
+      // background-image: url("~icons/orders-fill.svg");
+      filter: brightness(0) invert(1);
+    }
+
+    &--invoices {
+      // background-image: url("~icons/invoice-fill.svg");
+      filter: brightness(0) invert(1);
+    }
+
+    &--sellers {
+      filter: brightness(0) invert(1);
+    }
+
+    &--User {
+      filter: brightness(0) invert(1);
+    }
+
+    &--brands {
+      filter: brightness(0) invert(1);
+    }
+
+    &--coupons {
+      // background-image: url("~icons/coupons-fill.svg");
+      filter: brightness(0) invert(1);
+    }
+
+    &--reports {
+      // background-image: url("~icons/reports-fill.svg");
+      filter: brightness(0) invert(1);
+    }
+
+    &--setting {
+      filter: brightness(0) invert(1);
+    }
+
+    &--Logs {
+      filter: brightness(0) invert(1);
+    }
+
+    &--feedback {
+      background-image: url('~icons/feedback-fill.svg');
+    }
+
+    &--logindetails {
+      background-image: url('~icons/logindetails-fill.svg');
+    }
+
+    &--down-arrow {
+      background-image: url('~icons/bottomArrow-dark.svg');
+    }
+  }
+}
+
+/** Pagination Icon **/
+.m-cst--pagination :is(.previous, .next) a {
+  display: inline-block;
+  width: 2.1875rem;
+  background-repeat: no-repeat;
+  background-size: 80% 100%;
+  background-position: center;
+}
+
+.m-cst--pagination {
+  .previous {
+    a {
+      background-image: url('..//icons/double-arrowleft.svg');
+    }
+  }
+
+  .next {
+    a {
+      background-image: url('..//icons/double-arrow_right.svg');
+    }
+  }
+}
+
+/** Pagination Icon  End **/
+
+/** Category attributes icon fill **/
+.nav-tabs-vertical {
+  .nav-link {
+    &.active {
+      .m-icon {
+        &--categpry-size {
+          background-image: url('~icons/category-size-fill.svg');
+        }
+
+        &--categpry-color {
+          background-image: url('~icons/category-color-fill.svg');
+        }
+
+        &--categpry-specification {
+          background-image: url('~icons/category-specification-fill.svg');
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.hero-slider-wrapper .section_spacing_b {
+  @apply pt-0;
+}
+.hero-slider-img {
+  @apply w-full object-cover;
+}
+div .hero-slider-wrapper:not(:first-child) .section_spacing_b {
+  @apply pt-4 sm:pt-6;
+}

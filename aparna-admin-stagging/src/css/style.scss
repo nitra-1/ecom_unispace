@@ -1,0 +1,152 @@
+$primary-color: #0073cf;
+$light-color: #eaeaef;
+$warning-color: #fbe433;
+$gray-400: #c0c0cf;
+$light-blue: #ebedff;
+$card-light: #f1f8fd;
+$black: #212134;
+$dark: #181826;
+$theme-blue: #0073cf;
+$light-black: #4e586d;
+$light-gray: #c1c1c1;
+$neutral60: #666687;
+$neutral50: #8e8ea9;
+$neutral40: #a5a5ba;
+$neutral30: #c0c0cf;
+$neutral20: #dcdce4;
+$neutral10: #f6f6f9;
+
+$theme-colors: (
+  'primary': $primary-color,
+  'secondary': #6c757d,
+  'success': #198754,
+  'info': #0dcaf0,
+  'warning': $warning-color,
+  'danger': #dc3545,
+  'light': $light-color,
+  'dark': $dark,
+  'th-blue': $theme-blue,
+  'delayed': $light-black
+);
+
+$Partial: #ffff99;
+$Cancelled: #ff9999;
+$Placed: #cccccc;
+$Confirmed: #99ff99;
+$Packed: #9999ff;
+$Shipped: #9999cc;
+$Delivered: #99cccc;
+$Returned: #cc99cc;
+$Return-Rejected: #ff6666;
+$Return-Requested: #99ffff;
+
+/** Fonts **/
+$font-family-base: 'DM Sans', sans-serif;
+$font-family-sans-serif: 'DM Sans', sans-serif;
+$font-family-monospace: 'DM Sans', sans-serif;
+/** Fonts End **/
+
+$primary-hover-color: lighten($primary-color, 5%);
+$light-hover-color: darken($light-color, 5%);
+$warning-hover-color: darken($warning-color, 5%);
+// $dropdown-link-active-color: $primary-color;
+$dropdown-link-active-bg: $primary-color;
+$border: #eaedf1;
+
+/** Form Focus **/
+$input-focus-border-color: $primary-color;
+$input-focus-boxshodow-color: rgba($primary-color, 10%) !default;
+$input-focus-box-shadow: 0 0 0 0.25rem $input-focus-boxshodow-color;
+$input-border-color: $gray-400;
+$input-color: $black;
+
+/** Modal Custom Variable **/
+$modal-header-bg: $input-focus-boxshodow-color;
+
+/* Table */
+$table-th-font-weight: 600;
+$table-cell-padding-y: 0.75rem;
+$table-cell-padding-x: 0.75rem;
+$table-hover-bg: #f4f4f4;
+
+/** Badges Border Radius **/
+$badge-border-radius: 0.25rem;
+
+$badge-font-weight: 600;
+$badge-font-size: 0.875rem;
+$btn-padding-y: 6px;
+$popover-box-shadow: -2px 2px 14px 0px #0000001a;
+$popover-border-color: $black;
+$popover-header-color: #ffffff;
+$popover-header-bg: $black;
+$popover-arrow-color: $black;
+$popover-arrow-outer-color: fade-in($black, 1);
+
+@import 'm_icon';
+
+/** Bootstrap scss Start **/
+@import '~bootstrap/scss/bootstrap';
+/** Bootstrap scss End  **/
+
+@import 'styleFunction/styleFunction';
+@import 'variable';
+@import 'buttons';
+@import 'checkbox';
+@import 'badges';
+@import 'cards';
+@import 'tabs';
+@import 'modal';
+@import 'btn_groups';
+@import 'header';
+@import 'sidebar';
+@import 'tables';
+@import 'setting';
+@import 'custom';
+@import 'login';
+@import 'changepass';
+@import 'add_seller';
+@import 'myaccordion';
+@import 'toggle_radio';
+
+// pages
+@import 'pages/seller_details';
+@import 'Products/manage_product';
+@import 'ManageCoupon/manage_coupon';
+@import 'pages/order/order_details';
+@import 'pages/order/order_list';
+
+// components
+@import 'CustomizeLayout/customizeLayout';
+@import 'progress_bar';
+
+// product48
+@import 'product/add_product';
+@import 'product/existing_proadd';
+@import 'toastnotification';
+
+//manage home page
+@import 'ManageHomePageCss/managebannerslider';
+@import 'ManageHomePageCss/managehomethumbline';
+@import 'ManageHomePageCss/productWidget';
+@import 'ManageHomePageCss/manage_home_page';
+@import 'ManageMenucss/manage_banner';
+@import 'ManageHomePageCss/testimonial';
+
+// gallary css
+@import 'GridImageLayout/gridimagelayout';
+@import 'GridImageLayout/customgridlayout';
+@import 'nestableTemp.scss';
+
+//home page
+@import 'Homepage/homepage';
+
+// all svg icon css
+@import 'AllSvgIcon/allsvg_icon';
+
+// edit-profile css
+@import 'edite-profile/edit_profile';
+
+// shimmer css
+@import 'shimmerCss/shimmer';
+
+@import './top_charts_card';

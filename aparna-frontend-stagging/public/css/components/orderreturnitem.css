@@ -1,0 +1,3 @@
+.order-return-item {
+  @apply font-medium text-lg border-b-2 p-4;
+}

@@ -1,0 +1,65 @@
+/** Badges Colors Start**/
+$badge-success-bg: #d4edda;
+$badge-success-clr: #155724;
+$badge-secondary-bg: #efefef;
+$badge-secondary-clr: #41464b;
+$badge-primary-bg: #cfe2ff;
+$badge-primary-clr: #084298;
+$badge-danger-bg: #f8d7da;
+$badge-danger-clr: #842029;
+$badge-warning-bg: #fff3cd;
+$badge-warning-clr: #664d03;
+$badge-info-bg: #cff4fc;
+$badge-info-clr: #055160;
+$badge-dark-bg: #d3d3d4;
+$badge-dark-clr: #141619;
+$badge-light-bg: #efefef;
+$badge-light-clr: #636464;
+/** Badges Colors  End**/
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-extra-gra: #707070;
+  --bs-font-silver: #8f8f8f;
+  --bs-primary: #66d3e1;
+  --bs-primary-tint-600: #33497b;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #181826;
+  --bs-body-color: #333333;
+  --bs-body-bg: #fff;
+  --bs-link-color: #001b5a;
+  --bs-link-hover-color: #002988;
+  --bs-light-gray-color: #8c98b2;
+  --bs-btn-blue: #4067bc;
+  --bg-default: #e9ecef;
+  --bs-border-color: #eee;
+  --cus-border: #ced4da;
+  --cus-radio: #001b5a;
+  --body-bg: #f8fafc;
+  --bs-headbg: #e5e8ee;
+  --bs-1: #fbfbfb;
+  --bd-borderlight: #d9d9d9;
+  --bs-2: #07c854;
+  --bs-body-font-size: 0.9rem;
+  --bs-gutter-x: 0.75rem;
+}
+
+// box shadow css
+$pv-boxshadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;

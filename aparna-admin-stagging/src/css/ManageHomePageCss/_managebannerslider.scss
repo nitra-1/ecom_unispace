@@ -1,0 +1,43 @@
+.pv-managehome-bannerslider-main {
+  position: relative;
+
+  .slick-slide img {
+    display: unset !important;
+  }
+
+  .pv-bannerslider-btn-main {
+    position: absolute;
+    right: 0rem;
+    bottom: -1.4rem;
+    transform: translate(-50%, -50%);
+
+    .slide_btn {
+      background-color: transparent;
+      padding: 0.25rem 0.75rem;
+      background-color: #fff;
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .pv-product-widget {
+    .slick-dots li {
+      margin: 0;
+    }
+    .slick-dots li button {
+      &:before {
+        font-size: 12px;
+      }
+    }
+    .slick-dots li.slick-active button {
+      &::before {
+        color: var(--bs-link-color);
+      }
+    }
+    .slick-dots {
+      bottom: 20px;
+    }
+  }
+}

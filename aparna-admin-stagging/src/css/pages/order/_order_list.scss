@@ -1,0 +1,20 @@
+.pv-orderfilter-main {
+    .pv-order-badge {
+        border: 1px dashed var(--cus-border);
+        padding: 0.125rem 0.375rem;
+        border-radius: 0.375rem;
+        min-width: 160px;
+        text-align: center;
+        transition: all 0.1s ease-in;
+
+        &.active {
+            background-color: var(--bs-primary);
+            color: var(--bs-white);
+        }
+
+        &:hover {
+            background-color: var(--bs-primary-tint-600);
+            color: var(--bs-white);
+        }
+    }
+}

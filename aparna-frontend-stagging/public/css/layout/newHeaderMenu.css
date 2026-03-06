@@ -1,0 +1,115 @@
+/* Menu Start */
+.navmenu_wrapper {
+  @apply block;
+}
+.navmenu_wrapper .navbar__items {
+  @apply transition-left md:transition-none ease-in-out duration-500 md:duration-0 fixed md:static -left-full md:left-auto inset-y-0 md:inset-y-auto bg-white md:bg-none w-[80%] md:w-auto z-10 md:z-auto overflow-y-auto;
+}
+.hidden_desk_overlay {
+  @apply fixed md:relative inset-0 md:inset-auto bg-black/50 md:bg-none z-10 hidden;
+}
+.navmenu_wrapper.active .hidden_desk_overlay {
+  @apply block;
+}
+.navbar__items {
+  @apply md:flex;
+}
+.nav_wrapper .navbar__list:not(:last-child) {
+  @apply md:border-gray-300;
+}
+.navbar__sublist_sub {
+  @apply text-black;
+}
+/* Overlay start */
+.nav_wrapper:has(.navbar__list.active) {
+  @apply before:content-[''] before:fixed before:bg-black/25 before:bottom-0 before:left-0 before:right-0;
+}
+.nav_wrapper:has(.navbar__list.active) {
+  @apply md:before:top-[5.4rem];
+}
+/* Overlay End */
+.navbar__items * {
+  @apply capitalize;
+}
+.navbar__list .navbar__link {
+  @apply cursor-pointer text-14 md:text-18 font-semibold md:font-normal py-3 px-5 md:py-[2rem] md:px-2 xl:px-4 relative flex items-center justify-between md:justify-normal;
+}
+.navbar__list .navbar__submenu_div {
+  @apply md:absolute md:opacity-0 md:invisible bg-white md:shadow-[inset_0_0_0.5rem_rgba(0,0,0,.1)] md:h-[27.5rem] md:w-[80vw]  md:top-[99%] md:left-2/4 md:-translate-x-2/4 md:py-3 md:px-6;
+}
+.navbar__list.active .navbar__link {
+  @apply md:text-primary md:before:content-[''] md:before:absolute md:before:h-[0.125rem] md:before:left-0 md:before:right-0 md:before:bottom-0 md:before:bg-primary;
+}
+
+.navbar__list.list-null:hover .navbar__link {
+  @apply md:text-primary md:before:content-[''] md:before:absolute md:before:h-[0.125rem] md:before:left-0 md:before:right-0 md:before:bottom-0 md:before:bg-primary;
+}
+
+.navbar__list.active .navbar__submenu_div {
+  @apply md:opacity-100 md:visible md:z-10 md:overflow-y-auto;
+  animation: navbarfeedanimation 0.3s ease forwards;
+}
+
+@keyframes navbarfeedanimation {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.navbar__list:hover .navbar__submenu_div::-webkit-scrollbar-track {
+  @apply md:bg-slate-50;
+}
+.navbar__list:hover .navbar__submenu_div::-webkit-scrollbar {
+  @apply md:w-2 md:bg-slate-50;
+}
+.navbar__list:hover .navbar__submenu_div::-webkit-scrollbar-thumb {
+  @apply md:bg-[#c1c1c1];
+}
+.navbar__submenu_div,
+.navbar__submenu_sub_wrapper {
+  @apply pl-5 md:pl-0 hidden md:flex;
+}
+.navbar__submenu_div.active,
+.navbar__submenu_sub_wrapper.active {
+  @apply block;
+}
+.navbar__list:has(.navbar__submenu_div.active)
+  .navbar__link
+  .menu-dropdown-icon,
+.navbar__sublist:has(.navbar__submenu_sub_wrapper.active)
+  .navbar__sublink
+  .menu-dropdown-icon {
+  @apply rotate-90;
+}
+.navbar__subitems .navbar__sublist {
+  @apply md:mb-4;
+}
+.navbar__subitems .navbar__sublink {
+  @apply text-primary md:mb-2 text-14 md:text-base;
+}
+.navbar__subitems_sub .navbar__sublink_sub {
+  @apply text-14 hover:text-black py-3 px-5 md:py-0 md:px-0 inline-flex;
+}
+.navbar__subitems .navbar__sublink {
+  @apply flex md:inline-block items-center justify-between md:justify-normal hover:font-semibold py-3 px-5 md:py-0 md:px-0;
+}
+.navbar__subitems_sub {
+  @apply w-full md:w-auto;
+}
+.pv-navbarsub-link {
+  @apply text-primary;
+}
+/* Search Explore */
+.search-wrappper {
+  @apply sm:shrink-0 flex-grow;
+}
+.res-search-header {
+  @apply block;
+}
+/* Menu responsive */
+.menu-dropdown-icon {
+  @apply block md:hidden;
+}

@@ -1,0 +1,87 @@
+.my-account-wrapper {
+  @apply flex  items-center justify-center;
+}
+.my-account-link {
+  @apply flex flex-col items-center justify-center;
+}
+.my-account-item {
+  @apply relative;
+}
+
+.profile-icon {
+  mask-image: url('/icon/profile.svg');
+  @apply bg-black;
+}
+
+.shop-all-icon {
+  mask-image: url('/icon/shop.svg');
+  @apply bg-black w-5 h-5;
+}
+.credit-service-icon {
+  mask-image: url('/icon/header/credit_service.svg');
+  @apply w-5 h-5;
+}
+.services-icon {
+  mask-image: url('/icon/service.svg');
+  @apply bg-black w-5 h-5;
+}
+.wishlist-icon {
+  mask-image: url('/icon/wishlist.svg');
+  @apply bg-black w-5 h-5;
+}
+
+.logout_icon {
+  mask-image: url('/icon/header/logout.svg');
+}
+.bag-icon {
+  mask-image: url('/icon/bag.svg');
+  @apply bg-black w-5 h-5;
+}
+.my-account-name {
+  @apply text-sm sm:text-[0.9375rem] text-TextTitle font-medium leading-loose;
+}
+.my-account-item:last-child .my-account-link {
+  @apply relative;
+}
+.my-account-bag-item {
+  @apply absolute top-0 -translate-y-1/2 -right-2 bg-yellow w-[16px] h-[16px] text-black text-xs font-medium p-2 rounded-full flex items-center justify-center overflow-hidden;
+}
+.my-account-profile-details-wrapper {
+  @apply fixed top-[10rem] max-sm:bottom-[4.25rem] max-sm:overflow-y-auto sm:absolute sm:top-full rounded-t-xl sm:rounded opacity-0 invisible bg-white p-5 sm:shadow-light w-full sm:w-[18.75rem] right-0 sm:transition-all sm:duration-300 sm:ease-out;
+}
+.my-account-item {
+  @apply px-3;
+}
+.my-account-item:first-child {
+  @apply relative;
+}
+.my-account-item.active .my-account-profile-details-wrapper {
+  @apply opacity-100 visible z-[11];
+}
+.my-account-profile-login-wrapper {
+  @apply py-2;
+}
+.my-account-profile-titel {
+  @apply text-primary text-14 font-semibold mb-2 capitalize;
+}
+.my-account-profile-info {
+  @apply text-slategrey text-14 font-medium mb-3;
+}
+.my-account-profile-after-login .my-account-profile-info {
+  @apply mb-0;
+}
+.my-account-profile-login-signup {
+  @apply inline-block py-1 px-3 text-primary uppercase text-base font-normal rounded-md border-[1px] border-lightGray hover:border-primary;
+}
+.my-account-profile-details-item:last-child {
+  @apply border-none;
+}
+.my-account-profile-link {
+  @apply text-TextTitle text-14 font-medium capitalize hover:text-primary hover:font-semibold gap-2 flex items-center;
+}
+.my-account-profile-link .m-icon {
+  @apply bg-TextTitle;
+}
+.my-account-profile-link:hover .m-icon {
+  @apply bg-primary;
+}

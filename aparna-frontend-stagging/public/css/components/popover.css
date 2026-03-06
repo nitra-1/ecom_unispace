@@ -1,0 +1,42 @@
+.pv-popover-main {
+  @apply relative inline-block max-w-[568px];
+}
+.pv-popover-inner {
+  @apply max-h-[340px] overflow-auto;
+}
+.pv-popover-btn {
+  @apply text-blue-500 font-semibold focus:outline-none text-[0.75rem];
+}
+.pv-popover-body-desc {
+  animation: fadeIn 0.3s ease-out;
+  @apply w-[500px] max-h-[350px] z-10 overflow-y-auto border absolute bg-white shadow-Popover rounded-md py-2 px-4  sm:right-auto md:right-[-30px] right-[-25px] top-7 transform transition-opacity duration-300 opacity-100;
+}
+.pv-popover-body-mob {
+  animation: fadeIn 0.3s ease-out;
+  @apply w-[90%] max-h-[70vh] overflow-y-auto border fixed inset-0 z-30 m-auto h-fit bg-white shadow-Popover rounded-md py-2 px-4  transform transition-opacity duration-300 opacity-100;
+}
+.btn-square::after {
+  @apply content-[''] absolute z-10 bottom-[-12px] right-[0.5rem] rotate-45 border-[7px] border-white 
+    /* @apply  absolute w-0 h-0 border-solid border-4 border-transparent border-white bottom-full left-1/2 -translate-x-2 transform rotate-180 */;
+}
+.pv-popover-content {
+  @apply text-sm text-gray-700;
+}
+
+.pv-popover-mobile {
+  @apply block bg-blue-500 text-white px-3 py-1 rounded-md mt-2 focus:outline-none;
+}
+.pv-popover-closebtn {
+  @apply p-0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    /* transform: translateY(-10px); */
+  }
+  100% {
+    opacity: 1;
+    /* transform: translateY(0px); */
+  }
+}

@@ -1,0 +1,12 @@
+.section-titel-wrapper{
+    @apply flex justify-between items-center mb-6;
+}
+.section-titel-name{
+    @apply text-xl sm:text-24 md:text-[2.25rem] font-semibold text-sectionTitel capitalize;
+}
+.section-titel-viewall{
+    @apply text-18 sm:text-xl text-sectionTitel whitespace-nowrap font-medium flex items-center gap-2 hover:text-primary;
+}
+.viewall-icon{
+    @apply bg-[url('/icon/viewall-arrow.svg')] h-2;
+}

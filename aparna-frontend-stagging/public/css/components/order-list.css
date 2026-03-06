@@ -1,0 +1,12 @@
+.order-main-section {
+  @apply flex-col flex md:flex-row md:flex gap-6 md:gap-4;
+}
+.side-center-section {
+  @apply md:w-[20%] w-full;
+}
+.order-confirm {
+  @apply md:w-[80%] w-full;
+}
+.swal2-title {
+  @apply text-xl;
+}

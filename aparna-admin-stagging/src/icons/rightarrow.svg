@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-Create_Account_1">
+      <rect width="30" height="30"/>
+    </clipPath>
+  </defs>
+  <g id="Create_Account_1" data-name="Create Account – 1" clip-path="url(#clip-Create_Account_1)">
+    <g id="Group_1979" data-name="Group 1979" transform="translate(-502.391 -445.214)">
+      <g id="Icon" transform="translate(506.391 452.214)">
+        <g id="Icon-2" data-name="Icon" transform="translate(0 0)">
+          <path id="Path" d="M10.4,21.79a1.25,1.25,0,0,1-.884-.366L2.449,14.36a1.25,1.25,0,0,1,1.768-1.768l6.18,6.18L25.053,4.116A1.25,1.25,0,0,1,26.82,5.884l-15.54,15.54A1.25,1.25,0,0,1,10.4,21.79Z" transform="translate(-3.333 -5)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

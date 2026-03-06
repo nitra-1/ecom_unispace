@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Product_Colllecton">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Product_Colllecton" data-name="Product Colllecton" clip-path="url(#clip-Product_Colllecton)">
+    <g id="MANAGE_PRODUCT_COLLECTION" data-name="MANAGE PRODUCT COLLECTION" transform="translate(-5.054 -5.054)">
+      <path id="Rectangle_6" data-name="Rectangle 6" d="M1.3,1.3V14.7H14.7V1.3H1.3M1,0H15a1,1,0,0,1,1,1V15a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0Z" transform="translate(12.054 12.054)"/>
+      <path id="Rectangle_9" data-name="Rectangle 9" d="M1.3,1.3V14.7H14.7V1.3H1.3M1,0H15a1,1,0,0,1,1,1V15a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0Z" transform="translate(12.054 32.054)"/>
+      <path id="Rectangle_7" data-name="Rectangle 7" d="M1.3,1.3V14.7H14.7V1.3H1.3M1,0H15a1,1,0,0,1,1,1V15a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0Z" transform="translate(32.054 12.054)"/>
+      <path id="Rectangle_8" data-name="Rectangle 8" d="M1.3,1.3V14.7H14.7V1.3H1.3M1,0H15a1,1,0,0,1,1,1V15a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0Z" transform="translate(32.054 32.054)"/>
+    </g>
+  </g>
+</svg>

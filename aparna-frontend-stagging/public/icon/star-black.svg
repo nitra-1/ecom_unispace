@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="clip-Shipped_1_1">
+      <rect width="100" height="100"/>
+    </clipPath>
+  </defs>
+  <g id="Shipped_1_1" data-name="Shipped – 1_1" clip-path="url(#clip-Shipped_1_1)">
+    <g id="Icon" transform="translate(12.542 10.542)">
+      <g id="Icon-2" data-name="Icon" transform="translate(0 1.835)">
+        <path id="b79575f5-4c83-43ed-9ec4-129f143e867f" fill="#333" d="M39.458,2,51.033,25.449l25.884,3.783L58.187,47.474l4.42,25.771L39.458,61.072,16.309,73.245l4.42-25.771L2,29.232l25.884-3.783Z" transform="translate(-2 -2)"/>
+      </g>
+    </g>
+  </g>
+</svg>

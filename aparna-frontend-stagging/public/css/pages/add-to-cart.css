@@ -1,0 +1,18 @@
+.add-cart-compont {
+  @apply flex gap-7 md:flex-row flex-col;
+}
+.cart-product-compont {
+  @apply w-full md:w-full bg-white rounded;
+}
+.cart-side-compont {
+  @apply md:w-[21.875rem] md:flex-shrink-0 flex flex-col gap-3 w-full;
+}
+.coupan-main {
+  @apply w-full bg-white;
+}
+.badge-danger {
+  @apply inline-flex rounded-md px-2 py-1 text-xs font-medium text-black border-2 border-red-600;
+}
+.pv-counter-inp {
+  @apply w-[4rem] text-center font-medium text-base px-2 py-1 m-0 focus-visible:outline-none;
+}

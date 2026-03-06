@@ -1,0 +1,48 @@
+.process-circal {
+  @apply bg-lightGray w-4 h-4 rounded-full;
+}
+.check-out-process .process-checkout-title {
+  @apply leading-none sm:font-medium font-bold text-TextTitle inline-block;
+}
+.check-out-process .process-checkout-date {
+  @apply inline-block text-[14] leading-none font-medium text-lightGraytext;
+}
+.check-out-process {
+  @apply relative py-4;
+}
+/* .check-out-process.cancelled {
+  @apply relative grid sm:grid-cols-5 grid-cols-1 sm:ps-7 sm:pe-7 ps-0 pe-0;
+} */
+.checkout-comman-class {
+  @apply relative h-[100px] flex gap-4;
+}
+.checkout-comman-class:last-child {
+  @apply h-fit;
+}
+.checkout-comman-class:not(:last-child)::after {
+  @apply absolute content-[''] top-[5%]  left-[0.4rem] right-0  w-1 h-[6.875rem] bg-lightGray rotate-180;
+}
+.checkout-comman-class.active .process-circal {
+  @apply bg-[#fff];
+  background: white;
+  z-index: 9;
+  border: 3px solid #0073cf;
+}
+.checkout-comman-class.active.red .process-circal {
+  @apply bg-red-500 border-red-500;
+}
+.checkout-comman-class.active.green .process-circal {
+  @apply bg-green-800 border-green-800;
+}
+.checkout-comman-class.active::after {
+  @apply bg-[#0073cf];
+}
+.checkout-comman-class.active.red::after {
+  @apply bg-red-500;
+}
+.checkout-comman-class.active.green::after {
+  @apply bg-green-800;
+}
+.pv-order-discription {
+  @apply flex gap-2 flex-col h-fit;
+}

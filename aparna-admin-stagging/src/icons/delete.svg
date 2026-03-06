@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200" style="&#10;    /* fill: #dc3545; */&#10;">
+  <defs>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
+    <g id="noun-delete-756859" transform="translate(-179 -88.201)">
+      <path id="Path_1" data-name="Path 1" d="M277.6,190.4l-5.035,126.035a11.776,11.776,0,0,1-11.437,11.424h-87.86a11.782,11.782,0,0,1-11.437-11.424L156.8,190.4" transform="translate(61.437 -46.517)" fill="none" stroke="#dc3545" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+      <path id="Path_2" data-name="Path 2" d="M280,212.8v97.366" transform="translate(-1.362 -57.462)" fill="none" stroke="#dc3545" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+      <path id="Path_3" data-name="Path 3" d="M218.4,212.8l2.746,97.366" transform="translate(30.037 -57.462)" fill="none" stroke="#dc3545" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+      <path id="Path_4" data-name="Path 4" d="M338.745,212.8,336,310.166" transform="translate(-29.906 -57.462)" fill="none" stroke="#dc3545" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+      <path id="Path_5" data-name="Path 5" d="M140,142.8H277.276" transform="translate(70 -23.258)" fill="none" stroke="#dc3545" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+      <path id="Path_6" data-name="Path 6" d="M224,115.246l2.857-10.433c1.455-5.308,6.925-9.612,12.22-9.612h24.755c5.3,0,10.765,4.3,12.22,9.612l2.857,10.433" transform="translate(27.183 0)" fill="none" stroke="#dc3545" stroke-width="10"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Manage_Career">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Manage_Career" data-name="Manage Career" clip-path="url(#clip-Manage_Career)">
+    <g id="MANAGE_CAREER-2" data-name="MANAGE CAREER" transform="translate(-8.714 -9.964)">
+      <g id="Manage_career-3" data-name="Manage career" transform="translate(21.043 23.971)">
+        <path id="Path_98" data-name="Path 98" d="M19.957,50.192h-1.3V46.9h9.672V39.088h8.277v-8.37h9.114V21.976h4.928v1.3H47.021v8.742H37.907v8.37H29.629V48.2H19.957Z" transform="translate(-19.307 -22.626)"/>
+      </g>
+      <g id="Icon" transform="translate(15.714 17.964)">
+        <rect id="Area" width="8.632" height="8.632" transform="translate(14.225 0.044)" fill="#fcfcfc" opacity="0"/>
+        <g id="Icon-2" data-name="Icon" transform="translate(0 0)">
+          <path id="_42579848-2db7-4872-ba29-c25aa35ede5f" data-name="42579848-2db7-4872-ba29-c25aa35ede5f" d="M0,23.463a.648.648,0,0,1-.46-.191.65.65,0,0,1,0-.919L22.4-.46a.65.65,0,0,1,.919,0,.65.65,0,0,1,0,.919L.459,23.273A.648.648,0,0,1,0,23.463Z" transform="translate(0 0.044)"/>
+          <path id="e982979b-3c8d-4839-809f-bd4bd8efcbdf" d="M22.676,23.326a.65.65,0,0,1-.65-.65V14.65H14a.65.65,0,1,1,0-1.3h8.676a.65.65,0,0,1,.65.65v8.676A.65.65,0,0,1,22.676,23.326Z" transform="translate(0.225 -14)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

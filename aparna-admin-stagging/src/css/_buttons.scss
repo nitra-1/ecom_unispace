@@ -1,0 +1,185 @@
+.btn.disabled {
+  cursor: no-drop;
+  pointer-events: all;
+}
+.btn-primary {
+  background-color: $primary-color;
+
+  &:is(:hover, :focus, :active) {
+    background-color: $primary-hover-color;
+    border-color: $primary-hover-color;
+  }
+}
+
+.btn-light {
+  background-color: $light-color;
+
+  &:is(:hover, :focus, :active) {
+    background-color: $light-hover-color;
+    border-color: $light-hover-color;
+  }
+}
+
+.btn-warning {
+  background-color: $warning-color;
+
+  &:is(:hover, :focus, :active) {
+    background-color: $warning-hover-color;
+    border-color: $warning-hover-color;
+  }
+}
+
+.btn-ct-size {
+  $sizeBtnclr: #9cc5ff;
+  $sizeBtnhvrclr: #3d87f2;
+  background-color: $sizeBtnclr;
+  border-color: $sizeBtnclr;
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $sizeBtnhvrclr;
+    border-color: $sizeBtnhvrclr;
+    color: var(--bs-white);
+  }
+}
+
+.btn-ct-specification {
+  $specificationBtnclr: #ffc80073;
+  $specificationBtnhvrclr: #ffc800c2;
+  background-color: $specificationBtnclr;
+  border-color: $specificationBtnclr;
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $specificationBtnhvrclr;
+    border-color: $specificationBtnhvrclr;
+  }
+
+  &:hover i {
+    filter: invert(1);
+  }
+}
+
+.btn-ct-attributes {
+  $attributesBtnclr: #d8d7d7;
+  $attributesBtnhvrclr: #a7a5a5;
+  background-color: $attributesBtnclr;
+  border-color: $attributesBtnclr;
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $attributesBtnhvrclr;
+    border-color: $attributesBtnhvrclr;
+  }
+}
+
+
+.btn-ct-lightblue {
+  $lightblueBtnclr: #4067BC;
+  $lightblueBtnhvrclr: #2d4884;
+  background-color: $lightblueBtnclr;
+  border-color: $lightblueBtnclr;
+  color: var(--bs-white);
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $lightblueBtnhvrclr;
+    border-color: $lightblueBtnhvrclr;
+    color: var(--bs-white);
+  }
+}
+
+.btn-outline-lightblue {
+  $lightblueBtnclr: #4067BC;
+  $lightblueBtnhvrclr: #2d4884;
+  background-color: var(--bs-white);
+  border-color: $lightblueBtnclr;
+  transition: all 0.1s ease-in;
+
+  &:is(:hover, :active, :first-child:active) {
+    background-color: $lightblueBtnclr;
+    border: 0.0625rem solid $lightblueBtnhvrclr;
+  }
+
+  svg path {
+    transition: all 0.1s ease-in;
+  }
+
+  &:hover path {
+    stroke: var(--bs-white);
+  }
+}
+
+.btn-light-silver {
+  $lightblueBtnclr: var(--bs-light-gray-color);
+  $lightblueBtnhvrclr: #626a7d;
+  background-color: $lightblueBtnclr;
+  border-color: $lightblueBtnclr;
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $lightblueBtnhvrclr;
+    border: 0.0625rem solid $lightblueBtnhvrclr;
+  }
+}
+
+.btn-success-light {
+  $lightblueBtnclr: #E2F3E2;
+  $btnText: #0F7C0F;
+  $lightblueBtnhvrclr: #9eaa9e;
+  background-color: $lightblueBtnclr;
+  border-color: $lightblueBtnclr;
+  color: $btnText;
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $lightblueBtnhvrclr;
+    border: 0.0625rem solid $lightblueBtnhvrclr;
+  }
+}
+
+.btn-yellow-light {
+  $lightblueBtnclr: #FFCF00;
+  $btnText: #000;
+  $lightblueBtnhvrclr: #EEC100;
+  background-color: $lightblueBtnclr;
+  border-color: $lightblueBtnclr;
+  color: $btnText;
+  transition: all 0.1s ease-in;
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $lightblueBtnhvrclr;
+    border: 0.0625rem solid $lightblueBtnhvrclr;
+    color: $badge-dark-clr;
+  }
+}
+
+.btn-red-light {
+  $lightblueBtnclr: #f8d7da ;
+  $btnText: #842029;
+  $lightblueBtnhvrclr: #dfc2c4;
+  background-color: $lightblueBtnclr;
+  border-color: $lightblueBtnclr;
+  color: $btnText;
+  transition: all 0.1s ease-in;
+
+  &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+    background-color: $lightblueBtnhvrclr;
+    border: 0.0625rem solid $lightblueBtnhvrclr;
+    color: #000;
+  }}
+
+  .btn-blue-light {
+    $lightblueBtnclr: #35a9f3;
+    $btnText: #fff;
+    $lightblueBtnhvrclr: #1e9ff2;
+    background-color: $lightblueBtnclr;
+    border-color: $lightblueBtnclr;
+    color: $btnText;
+    transition: all 0.1s ease-in;
+  
+    &:is(:hover, :focus, :active, :focus-visible, :first-child:active) {
+      background-color: $lightblueBtnhvrclr;
+      border: 0.0625rem solid $lightblueBtnhvrclr;
+      color: $badge-dark-clr;
+    }
+  }
+
+  .btn-text-09{
+    font-size: 0.9rem;
+  }
+  

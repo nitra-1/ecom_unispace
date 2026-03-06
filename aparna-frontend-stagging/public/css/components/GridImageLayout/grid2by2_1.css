@@ -1,0 +1,61 @@
+@media (max-width: 768px) {
+  .grid_2by2-1 {
+    @apply grid gap-2.5 grid-cols-1 focus:outline-none;
+  }
+
+  .grid_2by2-1 div:nth-child(1),
+  .grid_2by2-1 div:nth-child(2),
+  .grid_2by2-1 div:nth-child(3),
+  .grid_2by2-1 div:nth-child(4),
+  .grid_2by2-1 div:nth-child(5) {
+    @apply row-start-auto col-start-auto;
+  }
+
+  .grid_2by2-1 div:nth-child(5) {
+    @apply row-start-auto col-start-auto;
+  }
+
+  .grid_2by2-1 img,
+  .grid_2by2-1 a
+  /* .grid_2by2-1 div  */ {
+    @apply w-full;
+  }
+}
+
+@media (min-width: 769px) {
+  .grid_2by2-1 {
+    @apply grid gap-2.5 grid-cols-4 focus:outline-none;
+  }
+
+  .grid_2by2-1 div:nth-child(1) {
+    @apply row-start-1 col-start-1 col-span-1 row-span-1;
+  }
+
+  .grid_2by2-1 div:nth-child(2) {
+    @apply row-start-1 col-start-2 col-span-1 row-span-1;
+  }
+
+  .grid_2by2-1 div:nth-child(3) {
+    @apply row-start-2 col-start-1 col-span-1 row-span-1;
+  }
+
+  .grid_2by2-1 div:nth-child(4) {
+    @apply row-start-2 col-start-2 col-span-1 row-span-1;
+  }
+
+  .grid_2by2-1 div:nth-child(5) {
+    @apply row-start-1 col-start-3 col-span-2 row-span-2;
+  }
+
+  .grid_2by2-1 img {
+    @apply max-w-full object-cover;
+  }
+
+  .grid_2by2-1 a {
+    @apply w-full;
+  }
+
+  /* .grid_2by2-1 div {
+    @apply w-full;
+  } */
+}

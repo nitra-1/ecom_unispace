@@ -1,0 +1,59 @@
+.search_form {
+  @apply relative flex items-center;
+}
+.search_textbox {
+  @apply shadow-none outline-none w-full max-w-full block h-[2.4375rem] box-border bg-[#F6F6F9] text-TextTitle rounded transition-all duration-[0.2s] ease-[cubic-bezier(0.19,0.26,0.17,0.99)] m-0 pl-10 sm:pl-[3rem] pr-4 sm:pr-16 py-[0.4rem] border-solid border-[#DCDCE4] border placeholder:text-[#4D4D4D] max-sm:placeholder:text-sm max-sm:text-ellipsis max-sm:text-nowrap;
+}
+.search_textbox::-webkit-search-cancel-button {
+  @apply brightness-[0.4] ml-2;
+}
+.search_textbox:focus {
+  @apply text-TextTitle rounded-[0.25rem] border bg-white shadow-[0_0_5px_#e4e5e7] border-solid border-primary;
+}
+.search_submit {
+  @apply absolute mx-4 inline-flex items-center justify-center left-0;
+}
+.search_submit .m-search-icon {
+  @apply w-4 sm:w-5 h-4 sm:h-5;
+}
+.m-search-icon {
+  mask-image: url('/icon/search.svg');
+  @apply bg-gray-600;
+}
+.search_container {
+  @apply relative;
+}
+.suggestions_container {
+  @apply fixed sm:absolute left-0 top-[69px] rounded-bl rounded-br w-full m-auto sm:shadow-lg z-[21] sm:max-h-[calc(100vh_-_4rem)] sm:overflow-y-auto sm:inset-[100%_0_auto] bg-white;
+}
+.suggestions_container .p_indide {
+  @apply p-4 max-sm:w-[95%] max-sm:max-h-[calc(100dvh_-_8.5625rem)] max-sm:overflow-y-auto max-sm:m-auto max-sm:shadow-[0_0_10px_rgba(0,0,0,0.1)] max-sm:border max-sm:border-t-0 max-sm:border-gray-300;
+}
+.suggestions_container .suggestions_list {
+  @apply pb-3 last:pb-0;
+}
+
+.suggestions_list .selected {
+  @apply bg-red-500;
+}
+.responsive_searchbar {
+  @apply fixed inset-0 bg-[#f7f8fa] z-[22];
+}
+.responsive_searchbar_fl {
+  @apply flex items-center gap-2 relative px-0 py-2 border-b-[#cdcdcd] border-b border-solid bg-white;
+}
+.responsive_searchbar .responsive_searchbar_fl .search_container {
+  @apply w-full;
+}
+.responsive_searchbar .responsive_searchbar_fl .search_textbox {
+  @apply pl-12 border-none bg-white focus:shadow-none;
+}
+.m_icon_left_back {
+  @apply bg-[url('/icon/left-arrow.svg')];
+}
+.responsive_searchbar .responsive_searchbar_fl .left_arrow {
+  @apply flex items-center justify-center absolute z-[13] -translate-y-2/4 left-4 top-2/4;
+}
+.search_form {
+  @apply relative after:absolute after:hidden sm:after:flex after:items-center after:justify-center after:h-6 after:text-xs after:text-[#6c757d] after:content-["Ctrl_+_S"] after:border after:px-1 after:rounded-sm after:border-solid after:border-[#dee2e6] after:right-[0.4rem] after:top-[0.45rem];
+}

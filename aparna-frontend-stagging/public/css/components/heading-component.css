@@ -1,0 +1,48 @@
+.justify-content-between {
+  @apply justify-between;
+}
+.flex-column {
+  @apply flex-col;
+}
+.flex-r-reverse {
+  @apply flex-row-reverse;
+}
+.heading-main {
+  @apply flex items-center max-sm:flex-wrap gap-4 mb-5;
+}
+.gp-0 {
+  @apply gap-0;
+}
+.me-au {
+  @apply me-auto;
+}
+.m-au {
+  @apply m-auto;
+}
+.ms-au {
+  @apply sm:ms-auto;
+}
+.jc-center {
+  @apply justify-center;
+}
+.jc-right {
+  @apply justify-end;
+}
+.jc-left {
+  @apply justify-start;
+}
+.fl {
+  @apply flex;
+}
+.btn-ch {
+  @apply mt-6;
+}
+.heading_button {
+  @apply hover:underline hover:font-medium;
+}
+.titleHeadingH1 {
+  @apply text-xl sm:text-24 2xl:text-[26px] font-semibold text-TextTitle capitalize;
+}
+.subtitleHeadingP {
+  @apply mt-2 text-lg sm:text-lg 2xl:text-xl text-TextTitle font-normal;
+}

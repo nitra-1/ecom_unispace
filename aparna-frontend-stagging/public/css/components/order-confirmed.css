@@ -1,0 +1,30 @@
+.order-confirm-place {
+  @apply w-full sm:w-[90%] m-auto rounded;
+}
+
+.order-confirm-title {
+  @apply text-28 font-bold text-Teal text-center;
+}
+.order-confrim-description {
+  @apply text-base sm:text-18 font-normal text-slategrey text-center;
+}
+.order-confirm-icon {
+  @apply bg-[url('/icon/new_releases.svg')] bg-cover bg-no-repeat w-14 h-14 block;
+}
+.place-order-confirm {
+  @apply mb-7 flex flex-col gap-5 items-center p-4 bg-white rounded-sm;
+}
+.place-order-danger .order-confirm-icon {
+  filter: invert(52%) sepia(77%) saturate(3349%) hue-rotate(331deg)
+    brightness(84%) contrast(133%);
+}
+.place-order-danger .order-confirm-title {
+  @apply text-[#f32b2e];
+}
+.place-order-pending .order-confirm-icon {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(58%) saturate(1185%)
+    hue-rotate(325deg) brightness(101%) contrast(92%);
+}
+.place-order-pending .order-confirm-title {
+  @apply text-[#F4D03F];
+}

@@ -1,0 +1,52 @@
+/** Media Query Breakpoint **/
+
+$breakpoints: (
+  bp1120: 1120px,
+  bp1280: 1280px,
+  bp1480: 1480px,
+  bp1400: 1400px,
+  bp1500: 1500px,
+  bp1600: 1600px,
+  bp1700: 1700px,
+  bp1800: 1800px,
+  bp1900: 1900px,
+  bp2000: 2000px,
+  bp3000: 3000px,
+  bp4000: 4000px
+);
+
+@mixin custom-breakpoint($type, $point) {
+  $value: map-get($breakpoints, $point);
+  @if $type == 'min-width' {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else if $type == 'max-width' {
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Invalid breakpoint type: #{$type}. Use 'min-width' or 'max-width'.";
+  }
+}
+
+/** Height **/
+@for $i from 1 through 200 {
+  .ch-#{$i} {
+    height: calc(#{$i / 16 * 1rem}); // Use calc() for division
+  }
+}
+
+/** Width **/
+@for $i from 1 through 200 {
+  .cw-#{$i} {
+    width: calc(#{$i / 16 * 1rem}); // Use calc() for division
+  }
+}
+
+/** Font-size **/
+@for $i from 10 through 30 {
+  .cfz-#{$i} {
+    font-size: calc(#{$i / 16 * 1rem}); // Use calc() for division
+  }
+}

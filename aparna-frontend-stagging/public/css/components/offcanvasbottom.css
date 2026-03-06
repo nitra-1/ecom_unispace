@@ -1,0 +1,37 @@
+.offcanvas {
+    @apply fixed left-0 right-0 bottom-0 translate-y-[100%] h-[240px] overflow-y-auto sm:h-[300px] bg-white shadow-sm transition-all duration-[0.3s] ease-[ease];
+  }
+  
+  .offcanvas.open {
+    @apply translate-y-[0%] bottom-0;
+  }
+  
+  .offcanvas.transitioning {
+    @apply transition-none;
+  }
+  
+  .offcanvas-header {
+    @apply flex justify-between items-center py-2 px-3 border-b-2 border-[#ccc] border-solid;
+  }
+  
+  .offcanvas-body {
+    @apply px-3 py-2;
+  }
+  
+  .offcanvas-close {
+    @apply border-none bg-transparent text-base cursor-pointer
+  }
+  
+  .offcanvas-overlay {
+    @apply fixed inset-0 bg-[rgba(0,0,0,0.5)] z-[999] opacity-0 invisible transition-all;
+    
+  }
+  
+  .offcanvas-overlay.open {
+    @apply opacity-[1] visible transition-all
+  }
+  
+  .offcanvas-overlay.transitioning {
+    @apply transition-none;
+  }
+  

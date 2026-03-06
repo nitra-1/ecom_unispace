@@ -1,0 +1,18 @@
+.pv-static-pagemain {
+    @apply bg-white p-[0.9375rem] rounded
+}
+.pv-static-pagemain p:not(:last-child){
+    @apply mb-3;
+}
+.pv-static-pagemain ol{
+    @apply list-[decimal] pl-[1.6rem];
+}
+.pv-static-pagemain ul{
+    @apply list-disc pl-4;
+}
+.pv-static-pagemain :is(ul li, ol li){
+    @apply mb-3;
+}
+.pv-static-pagemain strong{
+    @apply text-primary decoration-1 underline text-18 mb-2
+}

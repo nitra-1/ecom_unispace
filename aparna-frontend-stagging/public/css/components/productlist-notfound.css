@@ -1,0 +1,9 @@
+.prdt_not__found_main {
+  @apply px-0 py-40 flex items-center text-center justify-center;
+}
+.prdt_not__found_main h1 {
+  @apply text-[2rem] md:text-5xl mb-2;
+}
+.prdt_not__found_main a {
+  @apply underline font-medium mt-3 block;
+}

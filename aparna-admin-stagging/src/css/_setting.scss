@@ -1,0 +1,244 @@
+@mixin r($point) {
+  @if $point==1280 {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  }
+  @if $point==1480 {
+    @media (max-width: 1480px) {
+      @content;
+    }
+  }
+  @if $point==1500 {
+    @media (max-width: 1500px) {
+      @content;
+    }
+  }
+}
+
+.settings_cards_grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  @include r(1480) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+
+  .card {
+    box-shadow: unset;
+    border: 1px solid var(--bs-border-color);
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    height: 100%;
+
+    &:hover {
+      transform: scale(1.02);
+      background-color: #fafafa;
+    }
+    &:hover .card-body p {
+      color: var(--bs-link-color);
+    }
+    .card-body {
+      p {
+        color: #000;
+        text-align: center;
+        font-size: 1rem !important;
+      }
+      .pv-setting-card-des {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .m-icon {
+        }
+      }
+      a {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .m-icon--hsncode {
+    background-image: url('~icons/setting-Icon/hsn.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--manageTax {
+    background-image: url('~icons/setting-Icon/tax.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--categoryWarrenty {
+    background-image: url('~icons/setting-Icon/category_warrenty.svg');
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .m-icon--manageLayout {
+    background-image: url('~icons/setting-Icon/manage_layout.svg');
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .m-icon--commisionManagement {
+    background-image: url('~icons/setting-Icon/commission_management.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--manageMenu {
+    background-image: url('~icons/setting-Icon/manage_menu.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--manageCustomForm {
+    background-image: url('~icons/setting-Icon/manage_custom_form.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--flashSaleCollection {
+    background-image: url('~icons/setting-Icon/flash_sale_collection.svg');
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .m-icon--manageCollection {
+    background-image: url('~icons/setting-Icon/product_colllecton.svg');
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .m-icon--manageHomePage {
+    background-image: url('~icons/setting-Icon/manage_home_pages.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--manageLandingPage {
+    background-image: url('~icons/setting-Icon/manage_landing_pages.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--contactIcon {
+    background-image: url('~icons/setting-Icon/contact_icon.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--subscriptionIcon {
+    background-image: url('~icons/setting-Icon/subscription_icon.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--bulkInquiry {
+    background-image: url('~icons/setting-Icon/bulk_inquiry_icon.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--rmcInquiry {
+    background-image: url('~icons/setting-Icon/rmc_inquiry_icon.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--doorWindowInquiry {
+    background-image: url('~icons/setting-Icon/door_window_inquiry.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--kitchenWardrobeInquiry {
+    background-image: url('~icons/setting-Icon/kitchen_wardrobe_inquiry.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--bookAppointment {
+    background-image: url('~icons/setting-Icon/book-appointment.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--designServices {
+    background-image: url('~icons/setting-Icon/design_services.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--rmcInquiry {
+    background-image: url('~icons/setting-Icon/rmc_inquiry_icon.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--manageStaticPage {
+    background-image: url('~icons/setting-Icon/manage_static_pages.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--manageCSC {
+    background-image: url('~icons/setting-Icon/category_attribute_comarison.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--manageDelivery {
+    background-image: url('~icons/setting-Icon/manage_delivery.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--weightslab {
+    background-image: url('~icons/setting-Icon/weight_slab.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--manageAdmin {
+    background-image: url('~icons/setting-Icon/manage_admin.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--issueandrejection {
+    background-image: url('~icons/setting-Icon/issue_and_rejection.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--managechargespaid {
+    background-image: url('~icons/setting-Icon/manage_charges+paid_by.svg');
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .m-icon--manageRoles {
+    background-image: url('~icons/setting-Icon/manage_roles.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--manageOrder {
+    background-image: url('~icons/setting-Icon/order_settings.svg');
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .m-icon--assignpagerole {
+    background-image: url('~icons/setting-Icon/assign_roles.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  .m-icon--manageExtraCharge {
+    background-image: url('../icons/setting-Icon/extra_charges.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--manageconfig {
+    background-image: url('~icons/setting-Icon/config.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .m-icon--managereturn {
+    background-image: url('~icons/setting-Icon/manage_return.svg');
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+}

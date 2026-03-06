@@ -1,0 +1,93 @@
+.pv-previewicon-main {
+  .pv-previewicon-bg {
+    fill: transparent;
+    stroke: $neutral60;
+    background-color: #e3ebf7;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+    border: 1px solid #cbddfd;
+    cursor: pointer;
+
+    &:hover {
+      fill: transparent;
+      background-color: #cbddfd;
+    }
+  }
+
+  .pv-previewicon {
+    fill: transparent;
+    stroke: $neutral60;
+  }
+}
+.pv-withoutBg-main {
+  fill: $neutral60;
+}
+
+.pv-deleticon-main {
+  .pv-deleticon-bg {
+    fill: $neutral60;
+    background-color: #e3ebf7;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+    border: 1px solid #cbddfd;
+
+    &:hover {
+      background-color: #cbddfd;
+    }
+  }
+
+  .pv-deleticon {
+    fill: $neutral60;
+  }
+}
+
+.pv-editeicon-main {
+  display: inline-flex;
+  .pv-editicon-bg {
+    fill: $neutral60;
+    background-color: #e3ebf7;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+    border: 1px solid #cbddfd;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #cbddfd;
+    }
+  }
+
+  .pv-editicon {
+    fill: $neutral60;
+  }
+}
+
+.pv-addicon-main {
+  .pv-addicon-bg {
+    fill: $neutral60;
+    background-color: #e3ebf7;
+    width: 2rem;
+    height: 2rem;
+    padding: 1px;
+    border: 1px solid #cbddfd;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #cbddfd;
+    }
+  }
+  .pv-addicon {
+    fill: #6c6c6c;
+  }
+}
+
+.dropdown-menu .dropdown-item {
+  &:active svg {
+    filter: brightness(0) invert(1);
+  }
+  &:active .m-icon {
+    filter: brightness(0) invert(1);
+  }
+}

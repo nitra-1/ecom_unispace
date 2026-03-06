@@ -1,0 +1,382 @@
+.head_h3 {
+  font-weight: 600;
+  color: $theme-blue;
+  font-size: 1.2rem;
+}
+.co-das {
+  color: $light-black;
+}
+.add_seller_form {
+  margin-bottom: 3.125rem;
+  label {
+    font-weight: 600;
+  }
+}
+.ml-auto {
+  margin-left: auto;
+}
+.bold {
+  font-weight: bold;
+}
+.small-pa {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.background_color_none {
+  .modal-content {
+    background-color: transparent;
+    border: none;
+  }
+  .border_radius {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .bg_header {
+    background-color: #f1f0f0;
+  }
+}
+
+.create_seller {
+  .row {
+    .transform-form {
+      position: fixed;
+      width: fit-content;
+      transform: translate(-115%, -6.3125rem);
+    }
+    .timeline-items {
+      margin: 2rem;
+      padding: 0.01rem 0 0rem 2.2rem;
+      border-left: 1px dashed $light-gray;
+    }
+    .timeline-item {
+      margin-top: -0.3rem;
+      margin-bottom: 3.5rem;
+      position: relative;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .m-icon--true {
+        background-image: url('~icons/rightarrow.svg');
+        position: absolute;
+        left: -2.5625rem;
+        width: 0.9rem;
+        height: 0.9rem;
+        top: 0.125rem;
+      }
+      .timeline_left {
+        margin-left: 1.25rem;
+        .m-icon--true_small {
+          background-image: url('~icons/rightarrow.svg');
+          position: absolute;
+          width: 0.625rem;
+          height: 0.625rem;
+          top: 0.1875rem;
+          left: -1.375rem;
+        }
+
+        p {
+          &.active::before {
+            background-color: $theme-blue;
+          }
+          position: relative;
+          &::after {
+            content: '';
+            border: 1px dashed $light-gray;
+            width: 2.0625rem;
+            height: 0.0625rem;
+            position: absolute;
+            left: -3.5rem;
+            border-width: 0.0625rem;
+            top: 0.4375rem;
+            z-index: -1;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            background-color: var(--bs-white);
+            border: 1px solid #c1c1c1;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            transform: translate(-0.063rem, -0.063rem);
+          }
+        }
+      }
+
+      &.active h3::before {
+        background-color: #49af41;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin: 0;
+        position: relative;
+        color: #b3b3b3;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -4.375rem;
+          background-color: #ccc;
+          width: 1.3rem;
+          height: 1.3rem;
+          border-radius: 50%;
+          transform: translate(1.562rem, -0.125rem);
+        }
+      }
+
+      p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .modal-footer {
+    border: none;
+    padding-top: 0;
+  }
+}
+
+.hr_table_seller {
+  thead {
+    tr {
+    }
+  }
+  tbody {
+    td {
+      .m-icon--user {
+        background-image: url('~icons/user.svg');
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      .m-icon--msg {
+        background-image: url('~icons/msg.svg');
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      .m-icon--cell {
+        background-image: url('~icons/cell.svg');
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      .m-icon--dots {
+        background-image: url('~icons/dots.svg');
+        width: 1.5625rem;
+        height: 1.5625rem;
+      }
+      .custom_dropdown {
+        .dropdown-menu {
+          z-index: 1;
+        }
+        button {
+          outline: none;
+          border: none;
+          display: flex;
+          background-color: transparent;
+          margin: auto;
+          justify-content: center;
+          align-items: center;
+          &::after {
+            display: none;
+          }
+          &:active {
+            background-color: transparent;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+#progressbar {
+  overflow: hidden;
+  color: lightgrey;
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 60rem;
+  .completed {
+    color: #49af41;
+  }
+  .active {
+    color: #1068b2;
+  }
+  li {
+    list-style-type: none;
+    font-size: 0.9375rem;
+    width: 25%;
+    padding: 0 1.5rem;
+    float: left;
+    z-index: 2;
+    position: relative;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.25rem;
+    .m-icon--create_account,
+    .m-icon--kyc_info,
+    .m-icon--gst_info,
+    .m-icon--warehouse {
+      position: absolute;
+      top: 35%;
+      width: 1.5rem;
+      transform: translateY(-50%);
+      // height: 1rem;
+    }
+    .m-icon--create_account {
+      background-image: url('~icons/create-account.svg');
+    }
+    .m-icon--create_account.active {
+      background-image: url('~icons/ca_fill.svg');
+    }
+    .m-icon--kyc_info.active {
+      background-image: url('~icons/kyc_fill.svg');
+      filter: none;
+    }
+    .m-icon--kyc_info {
+      background-image: url('~icons/kyc.svg');
+      filter: invert(1);
+    }
+    .m-icon--gst_info {
+      background-image: url('~icons/gst.svg');
+      filter: invert(1);
+    }
+    .m-icon--gst_info.active {
+      background-image: url('~icons/gst_fill.svg');
+      filter: none;
+    }
+    .m-icon--warehouse {
+      background-image: url('~icons/warehouse.svg');
+      filter: invert(1);
+    }
+    .m-icon--warehouse.active {
+      background-image: url('~icons/warehouse_fill.svg');
+      filter: none;
+    }
+    &:before {
+      width: 4rem;
+      height: 4rem;
+      line-height: 2.8125rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      color: $light-gray;
+      background: #fdfdfd;
+      border: 1px solid $light-gray;
+      border-radius: 50%;
+      margin: 0 auto;
+      padding: 0.125rem;
+    }
+    &.active:before {
+      background-color: #1068b2;
+      border-color: #1068b2;
+    }
+    &.active strong {
+      color: #1068b2;
+    }
+    &:after {
+      content: '';
+      width: 100%;
+      height: 0.125rem;
+      border: 1px dashed $light-gray;
+      position: absolute;
+      left: 7.375rem;
+      top: 35%;
+      z-index: -1;
+    }
+    &:last-child:after {
+      display: none;
+    }
+    strong {
+      font-size: 1rem;
+      color: $light-gray;
+      text-align: center;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    &.completed strong {
+      color: #49af41;
+    }
+    &.completed:before {
+      background: #49af41;
+      border: 1px solid #49af41;
+    }
+    &.completed:after {
+      border-color: #49af41;
+    }
+  }
+  #account:before {
+    content: '';
+  }
+  #personal:before {
+    content: '';
+  }
+  #payment:before {
+    content: '';
+  }
+  #confirm:before {
+    content: '';
+  }
+}
+
+.timeline-item.active:last-child {
+  h3 {
+    margin-bottom: 0;
+  }
+  margin-bottom: 0;
+}
+.timeline-item.active {
+  h3 {
+    color: #020000 !important;
+  }
+}
+.kyc_process_card {
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 6px -1px #cccccca6;
+}
+.kyc_process_card h6 {
+  color: #666;
+  font-size: 15px;
+}
+.seller_create_modal {
+  margin: auto;
+  width: 33%;
+  box-shadow: 0px 0px 9px 0px #cccccc63;
+
+  padding: 28px;
+  border-radius: 6px;
+}
+button.btn.btn-prv {
+  background: #ccc;
+  color: black;
+  border: 1px solid #ccc;
+}
+.verified-bank-name {
+  color: #49af41;
+  display: block;
+  margin-top: -12px;
+}
+.hr_table_seller .sp_seller_edit svg {
+  margin-top: -7px;
+}
+
+.seller_on_off .react-toggle-track {
+  background-color: #a8a4a4;
+}
+.seller_on_off
+  .react-toggle:hover:not(.react-toggle--disabled)
+  .react-toggle-track {
+  background-color: #a8a4a4;
+}
+.seller_on_off .react-toggle-thumb {
+  border-color: #a8a4a4;
+}

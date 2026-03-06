@@ -1,0 +1,125 @@
+.testimonial_wrapper {
+  height: 100%;
+  background-color: var(--bs-white);
+  border-radius: 15px;
+}
+.testimonial {
+  width: 100%;
+  color: #3d5a80;
+
+  &_inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  &-slide {
+    padding: 40px 20px;
+  }
+  &_box {
+    &-top {
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    &-icon {
+      padding: 10px 0;
+      i {
+        font-size: 25px;
+        color: #14213d;
+      }
+    }
+    &-text {
+      padding: 10px 0;
+      p {
+        color: #293241;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0;
+      }
+    }
+    &-img {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        border-radius: 50px;
+        border: 2px solid #e5e5e5;
+      }
+    }
+    &-name {
+      padding-top: 10px;
+      h4 {
+        font-size: 20px;
+        line-height: 25px;
+        color: #293241;
+        margin-bottom: 0;
+      }
+    }
+    &-job {
+      p {
+        color: #293241;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        line-height: 20px;
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* pagination buttons */
+
+.blaze-pagination {
+  display: flex;
+  gap: 15px;
+}
+
+.blaze-pagination button {
+  font-size: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background: var(--bs-light-gray-color);
+  cursor: pointer;
+  transition: transform 200ms ease, background-color 300ms ease;
+}
+
+.blaze-pagination button.active {
+  background: $badge-primary-clr;
+  transform: scale(1.3);
+}
+
+.blaze-next,
+.blaze-prev {
+  border: none;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  background: none;
+  cursor: pointer;
+  background-position: center;
+  background-size: 100%;
+  filter: brightness(0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath fill='white' d='M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z'/%3E%3C/svg%3E");
+}
+
+.blaze-next {
+  transform: rotate(180deg);
+}
+
+/* for loop: false */
+.blaze-slider.start .blaze-prev,
+.blaze-slider.end .blaze-next {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

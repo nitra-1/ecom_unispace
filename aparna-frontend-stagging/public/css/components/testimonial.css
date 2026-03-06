@@ -1,0 +1,72 @@
+.pv-testimonial-main .pv-testimonial-inner {
+  @apply border border-[#eee] p-4 sm:px-3 sm:py-12 h-full rounded-md;
+}
+
+.pv-testimonial-inner .testimonial_box-img {
+  @apply max-w-[120px] p-1.5 rounded-md m-auto border;
+}
+.testimonial_box-job,
+.testimonial_box-name,
+.testimonial_box-img {
+  @apply !mb-3;
+}
+.testimonial_box-text:has(p) {
+  @apply text-lightGraytext text-14 font-normal;
+}
+.testimonial_box-text:has(h2) {
+  @apply text-[26px] font-normal;
+}
+.testimonial_box-text:has(h3) {
+  @apply text-24 font-normal;
+}
+.testimonial_box-text:has(h4) {
+  @apply text-[20px] font-normal;
+}
+.testimonial_box-text:has(h5) {
+  @apply text-18 font-normal;
+}
+.testimonial_box-text:has(h6) {
+  @apply text-[16px] font-normal;
+}
+
+.testimonial_box-name:has(p) {
+  @apply text-lightGraytext text-14 font-normal;
+}
+.testimonial_box-name:has(h2) {
+  @apply text-[26px] font-normal;
+}
+.testimonial_box-name:has(h3) {
+  @apply text-24 font-normal;
+}
+.testimonial_box-name:has(h4) {
+  @apply text-[20px] font-normal;
+}
+.testimonial_box-name:has(h5) {
+  @apply text-18 font-normal;
+}
+.testimonial_box-name:has(h6) {
+  @apply text-[16px] font-normal;
+}
+
+.testimonial_box-job:has(p) {
+  @apply text-lightGraytext text-14 font-normal;
+}
+.testimonial_box-job:has(h2) {
+  @apply text-[26px] font-normal;
+}
+.testimonial_box-job:has(h3) {
+  @apply text-24 font-normal;
+}
+.testimonial_box-job:has(h4) {
+  @apply text-[20px] font-normal;
+}
+.testimonial_box-job:has(h5) {
+  @apply text-18 font-normal;
+}
+.testimonial_box-job:has(h6) {
+  @apply text-[16px] font-normal;
+}
+
+.pv-testimonial-main .swiper-slide {
+  @apply h-auto;
+}

@@ -1,0 +1,241 @@
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  width: auto;
+  height: auto;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &.left-arrow {
+    left: 3px;
+  }
+
+  &.right-arrow {
+    right: 3px;
+  }
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  border: none;
+  color: black;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .avatar-fallback {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4b5563;
+  }
+}
+
+.reviews-header {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+
+  .custom-tabs {
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+
+    .tab-btn {
+      position: relative;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      transition: all 0.3s ease;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .tab-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tab-count-bubble {
+        background: #f1f5f9;
+        color: #64748b;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+      }
+
+      .tab-indicator {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: transparent;
+        border-radius: 3px 3px 0 0;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        color: #334155;
+        background: #f8fafc;
+
+        .tab-count-bubble {
+          background: #e2e8f0;
+        }
+      }
+
+      &.active {
+        color: #3b82f6;
+        font-weight: 600;
+
+        .tab-count-bubble {
+          background: #3b82f6;
+          color: white;
+        }
+
+        .tab-indicator {
+          background: #3b82f6;
+          box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+        }
+      }
+    }
+
+    // Specific colors for each tab when active
+    .tab-btn:nth-child(1).active {
+      color: #3b82f6;
+
+      .tab-count-bubble {
+        background: #3b82f6;
+      }
+
+      .tab-indicator {
+        background: #3b82f6;
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+      }
+    }
+
+    .tab-btn:nth-child(2).active {
+      color: #10b981;
+
+      .tab-count-bubble {
+        background: #10b981;
+      }
+
+      .tab-indicator {
+        background: #10b981;
+        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+      }
+    }
+
+    .tab-btn:nth-child(3).active {
+      color: #ef4444;
+
+      .tab-count-bubble {
+        background: #ef4444;
+      }
+
+      .tab-indicator {
+        background: #ef4444;
+        box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+      }
+    }
+  }
+}
+.text-secondary-b {
+  color: transparent;
+}
+.text-warning-b {
+  color: #ffd700;
+}

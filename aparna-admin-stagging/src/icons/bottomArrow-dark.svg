@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8">
+  <g id="Left_Arrow" data-name="Left Arrow" transform="translate(0 8) rotate(-90)">
+    <rect id="chevron-left" width="8" height="14" fill="none"/>
+    <path id="Vector" d="M5.4,10.8,0,5.4,5.4,0" transform="translate(1.1 1.5)" fill="none" stroke="#021770" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>

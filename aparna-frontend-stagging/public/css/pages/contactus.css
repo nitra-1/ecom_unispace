@@ -1,0 +1,31 @@
+.pv-contactus-main {
+  @apply lg:w-[70rem] m-auto bg-white rounded flex gap-10 lg:gap-20 items-start flex-col lg:flex-row;
+}
+.pv-contactus-innercol {
+  @apply bg-grayishBlueWhite rounded-l-lg h-fit py-6 pe-12;
+}
+.pv-contactus-inner-inputs h2 {
+  @apply mb-4;
+}
+.pv-contactus-inner-inputs {
+  @apply text-[1.5rem] text-white pt-0 lg:pt-3;
+}
+.pv-contact_info_sec {
+  @apply flex h-full gap-4 flex-col items-center pt-4;
+}
+.pv-contact_info_sec p {
+  @apply text-center text-[#4D4D4D];
+}
+.pv-contact_info_seco_sec {
+  @apply flex h-full w-full gap-4 flex-col pt-4;
+}
+.pv-continfo-col {
+  @apply flex  gap-3 items-start;
+}
+
+.pv-contact-desc {
+  @apply text-[14px] mt-2 text-[#4D4D4D] font-normal mb-2;
+}
+.pv-contactus-line {
+  @apply w-[3rem] h-[37.5rem] bg-primary  absolute right-0;
+}

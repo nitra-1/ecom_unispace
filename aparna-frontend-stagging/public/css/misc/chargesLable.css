@@ -1,0 +1,10 @@
+.delivary-wrapper{
+    @apply max-w-[72.75rem] flex items-center gap-[0.625rem] bg-bluishgreen justify-center py-3 rounded-t-md mb-4;
+}
+.delivary-icon{
+    mask-image: url('/icon/delivery-car.svg');
+    @apply bg-black bg-center bg-no-repeat bg-cover;
+}
+.delivary-wrapper p{
+    @apply text-darkgreen font-normal sm:text-[1rem] text-[0.75rem];
+}

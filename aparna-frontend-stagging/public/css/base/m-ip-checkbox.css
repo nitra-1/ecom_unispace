@@ -1,0 +1,29 @@
+.ip-checkbox__wrapper {
+  @apply flex relative;
+}
+
+.ip-checknox__input {
+  @apply appearance-none hidden;
+}
+
+.ip-chekbox__lable {
+  @apply relative cursor-pointer flex gap-[0.375rem] text-secondary font-medium !mt-0;
+}
+
+.ip-chekbox__lable:before {
+  @apply content-[''] border border-secondary bg-transparent w-4 h-4 inline-block relative align-middle cursor-pointer mt-[2px] rounded shrink-0;
+}
+
+.ip-checkbox__wrapper .ip-checknox__input:checked + .ip-chekbox__lable:before {
+  @apply border-primary bg-primary;
+}
+.ip-checknox__input:checked ~ .ip-chekbox__lable {
+  @apply text-primary opacity-100;
+}
+
+.ip-checkbox__wrapper .ip-checknox__input:checked + .ip-chekbox__lable::after {
+  @apply block content-[''] absolute top-[0.125rem] left-0 w-4 h-4 bg-white;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-image: url('../../icon/checklist.svg');
+}

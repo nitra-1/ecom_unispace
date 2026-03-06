@@ -1,0 +1,18 @@
+.pv-cst--pagination {
+  @apply flex justify-end gap-4;
+}
+.pv-cst--pagination li {
+  @apply w-[30px] h-[30px] flex items-center justify-center border-[1px] rounded;
+}
+.pv-cst--pagination li.selected {
+  @apply bg-primary text-white;
+}
+.pv-cst--pagination li a {
+  @apply w-full text-center;
+}
+.pv-cst--pagination .previous.disabled {
+  @apply hidden;
+}
+.pv-cst--pagination .next.disabled {
+  @apply hidden;
+}

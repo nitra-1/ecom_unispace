@@ -1,0 +1,29 @@
+/* .pincode_fl-main {
+  @apply relative max-w-[18.75rem] w-full;
+} */
+.pincode_fl-main {
+  @apply relative w-full;
+}
+
+.pincode_fl-main .input-wrapper-main {
+  @apply mb-1;
+}
+.btn-check {
+  @apply text-14 sm:text-base leading-4 text-[#4067BC];
+}
+.m-icon-delevery-cart {
+  @apply bg-[url('/icon/delivery.svg')] flex justify-center items-center cursor-pointer;
+}
+.m-pin-code_icon {
+  mask-image: url('/icon/pin-code.svg');
+  @apply bg-no-repeat bg-primary;
+}
+.dl_fl-fle {
+  @apply flex items-center gap-2 mb-4;
+}
+.err_msg-msg {
+  @apply text-red-700;
+}
+.success_msg-succ {
+  @apply text-green-700;
+}

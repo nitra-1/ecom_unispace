@@ -1,0 +1,159 @@
+.footer_contact_details {
+  @apply bg-white;
+}
+.footer_contact_wrapper {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-6 md:grid-cols-3 md:gap-10 py-6 md:items-center;
+}
+.footer_contact_special_dec_wrapper,
+.footer_contact_mobile_wrapper,
+.footer_contact_help-wrapper {
+  @apply flex items-center gap-3 mb-2 md:mb-4;
+}
+.footer_mail_ip_wrapper {
+  @apply relative;
+}
+.footer_mail-icon {
+  mask-image: url('/icon/envelope.svg');
+  @apply bg-black w-4 h-4 shrink-0;
+}
+.footer_contact_dec {
+  @apply text-sectionTitel font-medium text-14 sm:text-base;
+}
+.footer_mail_label {
+  @apply absolute right-0 top-1/2 -translate-y-1/2;
+}
+.footer_mail_ip_icon {
+  mask-image: url('/icon/arrow.svg');
+  @apply w-[1.125rem] h-2 shrink-0 -rotate-90;
+}
+.footer_mobile-icon {
+  @apply bg-[url('/icon/mobile.svg')] w-[0.9375rem] h-[1.3125rem] shrink-0;
+}
+.footer_mobile_app_wrapper {
+  @apply flex items-center gap-5 md:justify-center;
+}
+.footer_mobile_img {
+  @apply max-w-[6.25rem] w-full;
+}
+.footer_mobile_app_link {
+  @apply inline-block;
+}
+.footer_help-icon {
+  mask-image: url('/icon/phone.svg');
+  @apply bg-black w-4 h-4 shrink-0;
+}
+
+.footer_middle_details {
+  @apply bg-[#181826] py-9;
+}
+.footer_site_logo {
+  @apply inline-block max-w-[6.5rem] w-full mb-8;
+}
+.footer_menu_wrapper {
+  @apply grid grid-cols-2 sm:grid-cols-4   md:grid-cols-4 gap-5 md:gap-3;
+}
+.footer_menu_item:not(:first-child) {
+  @apply md:justify-self-center;
+}
+.footer_menu_heading {
+  @apply text-18 text-white font-normal mb-2;
+}
+.footer_shipping_details {
+  @apply bg-white py-8;
+}
+.footer_shipping_wrapper {
+  @apply grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-5;
+}
+.footer_shipping_details_wrapper {
+  @apply flex items-start gap-5;
+}
+.footer_shipping_col:last-child {
+  @apply justify-self-center  md:col-start-1 md:col-end-5 xl:justify-self-auto xl:col-auto xl:row-auto;
+}
+.footer_shipping_span {
+  @apply bg-primary rounded-full w-[2.895rem] aspect-square flex items-center justify-center shrink-0;
+}
+.free_shipping-icon {
+  @apply bg-[url('/icon/shipping.svg')] w-[1.9375rem] h-[1.375rem] shrink-0;
+}
+.return-icon {
+  @apply bg-[url('/icon/return.svg')] w-8 h-7 shrink-0;
+}
+.authentic-icon {
+  @apply bg-[url('/icon/authentic.svg')] w-[27px] h-7 shrink-0;
+}
+.brand-icon {
+  @apply bg-[url('/icon/brands.svg')] w-7  shrink-0;
+}
+
+.footer_shipping_name {
+  @apply text-base sm:text-18 text-black font-semibold uppercase border-b border-sectionTitel pb-1 mb-1;
+}
+.footer_shipping_order-details {
+  @apply text-sectionTitel text-base font-medium mb-2;
+}
+.footer_shipping_social {
+  @apply text-center;
+}
+.footer_social_link {
+  @apply inline-block;
+}
+.footer_social_icon {
+  @apply w-full inline-block;
+}
+.footer_shipping_social .footer_social_link:nth-child(odd) {
+  @apply px-4;
+}
+.footer_policy_details {
+  @apply bg-primary py-4;
+}
+.footer_policy_wrapper {
+  @apply flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:gap-6 mb-3;
+}
+.footer_policy_link {
+  @apply text-white text-base font-medium hover:text-slategrey;
+}
+.footer_copy-right {
+  @apply text-white text-14 font-normal text-center;
+}
+.footer_mail_label {
+  @apply absolute right-0 top-1/2 -translate-y-1/2;
+}
+.footer_mail_ip_icon {
+  mask-image: url('/icon/arrow.svg');
+  @apply w-[1.75rem] h-7 shrink-0 bg-white -rotate-90;
+}
+.footer_mail_ip {
+  @apply focus-visible:outline-none w-full bg-transparent placeholder:text-white text-white py-2 px-2 pr-5 bottom-0 rounded-none border-b border-white focus-visible:border-primary;
+}
+.footer_menu_link {
+  @apply text-14 sm:text-base text-[#e2e2e2] font-normal md:whitespace-nowrap inline-flex active:underline md:hover:underline;
+}
+.footer_mobile_app_wrapper {
+  @apply flex items-center gap-5 md:justify-center;
+}
+.footer_menu_list:not(:last-child) .footer_menu_link {
+  @apply mb-2;
+}
+.email_icon {
+  mask-image: url('/icon/footer/email.svg');
+}
+.store_icon {
+  mask-image: url('/icon/footer/our_shop.svg');
+}
+
+.phone_icon {
+  mask-image: url('/icon/footer/phone.svg');
+}
+.facebook_social {
+  mask-image: url('/icon/footer/facebook_social.svg');
+}
+.insta_social {
+  mask-image: url('/icon/footer/insta_social.svg');
+}
+.twitter_social {
+  mask-image: url('/icon/footer/twitter_social.svg');
+}
+.in_social {
+  mask-image: url('/icon/footer/in_social.svg');
+}

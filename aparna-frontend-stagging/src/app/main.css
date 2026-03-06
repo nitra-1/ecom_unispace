@@ -1,0 +1,83 @@
+/* Layout */
+@import '../../public/css/layout/default.css';
+
+/* Base */
+@import '../../public/css/base/m-icon.css';
+@import '../../public/css/base/m-search.css';
+@import '../../public/css/misc/MyAccounts.css';
+@import '../../public/css/base/m-btn.css';
+@import '../../public/css/base/stepper.css';
+@import '../../public/css/base/m-ip-checkbox.css';
+@import '../../public/css/base/m-ip-textarea.css';
+@import '../../public/css/base/modal-component.css';
+@import '../../public/css/base/input-component.css';
+@import '../../public/css/base/toaster.css';
+@import '../../public/css/base/not-found.css';
+@import '../../public/css/base/pagination.css';
+@import '../../public/css/base/m-loader.css';
+@import '../../public/css/base/mix-captcha.css';
+@import '../../public/css/base/reactpagination.css';
+
+/* Layout */
+@import '../../public/css/layout/header.css';
+@import '../../public/css/layout/footer.css';
+
+/* Misc  */
+@import '../../public/css/misc/SectionTitle.css';
+@import '../../public/css/misc/breadcrumb.css';
+@import '../../public/css/misc/chargesLable.css';
+@import '../../public/css/misc/OfferCoupan.css';
+@import '../../public/css/misc/CheckoutOrder.css';
+@import '../../public/css/misc/filterbadgeswatching.css';
+
+/* componets */
+@import '../../public/css/components/card-productlist.css';
+@import '../../public/css/components/hero-slider.css';
+@import '../../public/css/components/categories.css';
+@import '../../public/css/components/allgrid.css';
+@import '../../public/css/components/newbrands.css';
+@import '../../public/css/components/summer-collection.css';
+@import '../../public/css/components/price-details.css';
+@import '../../public/css/components/other-sellers.css';
+@import '../../public/css/components/myaccount-menu.css';
+@import '../../public/css/components/order-confirmation.css';
+@import '../../public/css/components/order-list.css';
+@import '../../public/css/components/order-details.css';
+@import '../../public/css/components/shopping-check-out.css';
+@import '../../public/css/components/sort-filter.css';
+@import '../../public/css/components/offcanvasbottom.css';
+@import '../../public/css/components/order-confirmed.css';
+@import '../../public/css/components/order-delivering.css';
+@import '../../public/css/components/my-address.css';
+@import '../../public/css/components/myprofile.css';
+@import '../../public/css/components/login-signup.css';
+@import '../../public/css/components/add-to-cart-checkout.css';
+@import '../../public/css/components/pincode.css';
+@import '../../public/css/components/password-strength-check.css';
+@import '../../public/css/components/loader.css';
+@import '../../public/css/components/accordion.css';
+@import '../../public/css/components/accordion-checkout.css';
+@import '../../public/css/components/heading-component.css';
+@import '../../public/css/components/productlist-notfound.css';
+@import '../../public/css/components/bankinfo.css';
+@import '../../public/css/components/orderreturnitem.css';
+@import '../../public/css/components/testimonial.css';
+@import '../../public/css/components/searchbar.css';
+@import '../../public/css/components/popover.css';
+/* pages */
+@import '../../public/css/pages/explore.css';
+@import '../../public/css/pages/add-to-cart.css';
+@import '../../public/css/pages/checkout-order.css';
+@import '../../public/css/pages/order-thank-you.css';
+@import '../../public/css/pages/orderreturndetails.css';
+@import '../../public/css/pages/returnorder.css';
+@import '../../public/css/pages/compare.css';
+@import '../../public/css/pages/contactus.css';
+@import '../../public/css/pages/orderCancelReturn.css';
+@import '../../public/css/pages/staticpage.css';
+@import '../../public/css/pages/reset-password.css';
+
+/* component -> gridImage layout */
+
+@import '../../public/css/components/swiperstyle.css';
+@import '../../public/css/components/pricerangeslider.css';

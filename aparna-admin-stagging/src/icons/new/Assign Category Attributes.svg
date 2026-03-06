@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Assign_Category_Attributes">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Assign_Category_Attributes" data-name="Assign Category Attributes" clip-path="url(#clip-Assign_Category_Attributes)">
+    <g id="CATEGORY_ATTRIBUTES_1.1" data-name="CATEGORY ATTRIBUTES 1.1" transform="translate(-0.453)">
+      <g id="Icon" transform="translate(11.453 15)">
+        <g id="Icon-2" data-name="Icon" transform="translate(0 1)">
+          <path id="_53abc35f-d52c-4978-9ded-2f9c1dc28804" data-name="53abc35f-d52c-4978-9ded-2f9c1dc28804" d="M2,2.35H29.095a.65.65,0,0,1,.524,1.035L18.907,17.942V31.025a.65.65,0,0,1-.974.564l-5.419-3.114a.65.65,0,0,1-.326-.564V17.942L1.476,3.385A.65.65,0,0,1,2,2.35Zm25.81,1.3H3.285L13.362,17.344a.65.65,0,0,1,.126.385v9.806L17.607,29.9V17.729a.65.65,0,0,1,.126-.385Z" transform="translate(-2 -3)"/>
+        </g>
+      </g>
+      <g id="Group_101" data-name="Group 101" transform="translate(5 -1.484)">
+        <g id="Icon-3" data-name="Icon" transform="translate(9 7.626)">
+          <rect id="Area" width="7" height="7" transform="translate(0 -0.142)" fill="#fcfcfc" opacity="0"/>
+          <g id="Icon-4" data-name="Icon" transform="translate(0 0)">
+            <path id="_8542792a-a827-4a78-bf8c-40ca2d6fd842" data-name="8542792a-a827-4a78-bf8c-40ca2d6fd842" d="M0,7.65A.65.65,0,0,1-.65,7V0A.65.65,0,0,1,0-.65.65.65,0,0,1,.65,0V7A.65.65,0,0,1,0,7.65Z" transform="translate(4 -1.142)"/>
+            <path id="ba585cf6-1c7c-4c0a-ae36-d17836ea5c32" d="M10.079,20.6a.648.648,0,0,1-.449-.18l-2.936-2.8a.65.65,0,1,1,.9-.94l2.487,2.376,2.487-2.376a.65.65,0,1,1,.9.94l-2.936,2.8A.648.648,0,0,1,10.079,20.6Z" transform="translate(-6.079 -13.089)"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_102" data-name="Group 102" transform="translate(13 -1.484)">
+        <g id="Icon-5" data-name="Icon" transform="translate(9 7.626)">
+          <rect id="Area-2" data-name="Area" width="7" height="7" transform="translate(0 -0.142)" fill="#fcfcfc" opacity="0"/>
+          <g id="Icon-6" data-name="Icon" transform="translate(0 0)">
+            <path id="_8542792a-a827-4a78-bf8c-40ca2d6fd842-2" data-name="8542792a-a827-4a78-bf8c-40ca2d6fd842" d="M0,7.65A.65.65,0,0,1-.65,7V0A.65.65,0,0,1,0-.65.65.65,0,0,1,.65,0V7A.65.65,0,0,1,0,7.65Z" transform="translate(4 -1.142)"/>
+            <path id="ba585cf6-1c7c-4c0a-ae36-d17836ea5c32-2" data-name="ba585cf6-1c7c-4c0a-ae36-d17836ea5c32" d="M10.079,20.6a.648.648,0,0,1-.449-.18l-2.936-2.8a.65.65,0,1,1,.9-.94l2.487,2.376,2.487-2.376a.65.65,0,1,1,.9.94l-2.936,2.8A.648.648,0,0,1,10.079,20.6Z" transform="translate(-6.079 -13.089)"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_103" data-name="Group 103" transform="translate(21 -1.484)">
+        <g id="Icon-7" data-name="Icon" transform="translate(9 7.626)">
+          <rect id="Area-3" data-name="Area" width="7" height="7" transform="translate(0 -0.142)" fill="#fcfcfc" opacity="0"/>
+          <g id="Icon-8" data-name="Icon" transform="translate(0 0)">
+            <path id="_8542792a-a827-4a78-bf8c-40ca2d6fd842-3" data-name="8542792a-a827-4a78-bf8c-40ca2d6fd842" d="M0,7.65A.65.65,0,0,1-.65,7V0A.65.65,0,0,1,0-.65.65.65,0,0,1,.65,0V7A.65.65,0,0,1,0,7.65Z" transform="translate(4 -1.142)"/>
+            <path id="ba585cf6-1c7c-4c0a-ae36-d17836ea5c32-3" data-name="ba585cf6-1c7c-4c0a-ae36-d17836ea5c32" d="M10.079,20.6a.648.648,0,0,1-.449-.18l-2.936-2.8a.65.65,0,1,1,.9-.94l2.487,2.376,2.487-2.376a.65.65,0,1,1,.9.94l-2.936,2.8A.648.648,0,0,1,10.079,20.6Z" transform="translate(-6.079 -13.089)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

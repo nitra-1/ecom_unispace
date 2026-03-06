@@ -1,0 +1,34 @@
+/* summber collection section */
+.summer_colletions_wrapper {
+  @apply relative pt-7;
+}
+.summer_colletions_wrapper::before {
+  @apply content-[''] sm:h-80 bg-primary absolute inset-0;
+}
+.summercolletion_link_imgs {
+  @apply relative;
+}
+.summber_collection_img {
+  @apply w-full min-h-full rounded;
+}
+.summercolletion_link_imgs .section-titel-name {
+  @apply text-white;
+}
+/* .navigation_left_right_center .swiper :is(.swiper-button-prev,.swiper-button-next){
+  @apply inline-block cursor-pointer;
+}
+.navigation_left_right_center .swiper .swiper-button-disabled:is(.swiper-button-prev,.swiper-button-next){
+  @apply opacity-100 after:filter after:brightness-0 after:invert-[0.5];
+}
+.navigation_left_right_center .swiper .swiper-button-prev::after, .navigation_left_right_center .swiper .swiper-button-next::after{
+  @apply content-[''] w-7 h-3 bg-no-repeat bg-contain inline-block bg-[url('/images/Arrow.png')] bg-center;
+}
+.navigation_left_right_center .swiper .swiper-button-prev::after{
+  @apply -rotate-180;
+}
+.navigation_left_right_center .swiper .swiper-button-next::after{
+  @apply bg-[url('/images/Arrow.png')];
+}
+.navigation_left_right_center .swiper :is(.swiper-button-prev,.swiper-button-next){
+  @apply bg-white w-auto h-auto py-1 px-2;
+} */

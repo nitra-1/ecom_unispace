@@ -1,0 +1,44 @@
+.swiper-button-prev,
+.swiper-button-next {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  @apply absolute top-1/2 transform -translate-y-1/2 z-[2]
+    flex items-center justify-center
+    !w-6 md:!w-[2.1875rem] !h-6 md:!h-[2.1875rem]
+     rounded-full
+    bg-white transition-all duration-300 ease-in-out
+    hover:bg-secondary cursor-pointer;
+}
+
+.swiper-button-prev {
+  @apply !-left-[0.6875rem] md:!-left-4;
+}
+
+.swiper-button-next {
+  @apply !-right-[0.6875rem] md:!-right-4;
+}
+
+/* Hide disabled buttons */
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  @apply hidden;
+}
+
+/* SVG color handling */
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  @apply w-2 h-2 text-secondary transition-colors duration-300 ease-in-out;
+}
+
+.swiper-button-prev:hover svg,
+.swiper-button-next:hover svg {
+  @apply text-white;
+}
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  @apply !opacity-100 !bg-[#EAEAEF] sm:!w-3 sm:!h-3 transition-[width] ease-in-out duration-200;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  @apply !bg-primary !w-6 sm:!w-8 !rounded-lg;
+}

@@ -1,0 +1,21 @@
+.mp-explore {
+  @apply shadow-searchboxshadow;
+}
+.mp-explore .m-search__ip {
+  @apply rounded-none border-none pl-2 focus:border-none outline-none;
+}
+.mp-explore .m-search__icon {
+  @apply absolute right-4 left-auto w-5 h-5;
+}
+.mp-explore__search {
+  @apply flex relative  items-center gap-1 p-1;
+}
+.back-icon-wrapper {
+  @apply flex items-center;
+}
+.mp-back-icon {
+  @apply bg-[url('/icon/back-icon.svg')] ml-[0.4rem] w-7 h-7 cursor-pointer;
+}
+.mp-explore .search_container {
+  @apply w-full;
+}

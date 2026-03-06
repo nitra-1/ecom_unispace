@@ -1,0 +1,418 @@
+/* .order-place span {
+  @apply text-black;
+} */
+.order-place p,
+.order-place span {
+  @apply text-slategrey  text-14;
+}
+/* .order-total span {
+  @apply text-black;
+} */
+.order-total p,
+.order-total span {
+  @apply text-14 text-slategrey;
+}
+/* .order-shipto span {
+  @apply text-black;
+} */
+.order-shipto p,
+.order-shipto span {
+  @apply text-14 text-slategrey;
+}
+.order-number-invoice p {
+  @apply sm:text-14 text-[0.75rem] font-medium text-right text-slategrey;
+}
+.order-number-invoice ul li {
+  @apply text-14 text-SteelBlue font-medium border-r-2 border-slategrey px-2;
+}
+.order-number-invoice ul li:last-child {
+  @apply border-r-0 pl-2;
+}
+.orderconfirm-main {
+  @apply shadow rounded-md mb-4 bg-white sm:p-1 hover:shadow-productcard;
+}
+
+/* .orderconfirm-details-bg {
+  @apply bg-[#ffffff];
+} */
+
+.font-09-rem {
+  @apply text-[0.9rem];
+}
+
+.order-title-row {
+  @apply flex sm:flex-row flex-col sm:gap-[5.3125rem] gap-5 w-full bg-LightSilver p-3 items-center rounded-t-lg;
+}
+
+.order-list-title-row {
+  @apply flex sm:flex-row flex-col sm:gap-[1rem] gap-1 w-full bg-LightSilver p-3 sm:items-center rounded-t-lg;
+}
+
+.order-list-title-box {
+  @apply flex sm:flex-row flex-col sm:gap-[1rem] gap-1 w-full bg-LightSilver p-3 items-center rounded-t-lg;
+}
+.order-number-invoice ul {
+  @apply flex justify-end sm:flex-row flex-col;
+}
+.order-number-invoice {
+  @apply flex flex-col gap-1;
+}
+.pv-order-cancelall {
+  @apply hover:underline hover:text-primary;
+}
+.order-number-invoice ul li a {
+  @apply hover:underline hover:text-primary;
+}
+.order-total-placed-main {
+  @apply flex gap-3 justify-between sm:w-[30%] w-full;
+}
+.ship-order-main {
+  @apply flex justify-between sm:w-[70%] w-full;
+}
+.order-product-image-info {
+  @apply flex sm:flex-row flex-col sm:gap-6 gap-3 items-center p-3 ms-6 relative;
+}
+
+.order-product-list-image-info {
+  @apply flex sm:flex-row flex-col sm:gap-6 gap-3 items-start md:items-center p-2 relative;
+}
+.order-product-image {
+  @apply rounded p-1 border-[#eee];
+}
+.order-list-product-image {
+  @apply rounded p-1 border-[1px] !border-[#eee];
+}
+
+.order-list-product-image img {
+  @apply max-w-[120px] max-h-[120px] object-cover h-[120px];
+}
+
+.order-product-image img {
+  @apply max-w-[100px] max-h-[100px] object-contain;
+}
+.orderproduct-title {
+  @apply flex flex-col gap-1 w-full;
+}
+.oderproduct-desc span {
+  @apply flex items-center font-normal text-slategrey gap-2;
+}
+.oderproduct-desc {
+  @apply flex items-center flex-wrap gap-2 mb-3;
+}
+
+.productorder-btn {
+  @apply flex items-center gap-2;
+}
+.orderproduct-title .title {
+  @apply text-[1.05rem] mb-2 font-semibold line-clamp-2 md:line-clamp-1;
+}
+
+.orderproduct-title p {
+  @apply font-medium text-TextTitle text-[14];
+}
+
+.order-canl-retn-btn {
+  @apply flex sm:flex-col flex-row-reverse gap-3;
+}
+.order-btn-cancel {
+  @apply py-1 px-3 text-ReddishBrown font-medium hover:bg-CharmPink;
+}
+.order-canceld {
+  @apply flex justify-center items-center gap-2;
+}
+
+.order-canceld-red-mark {
+  @apply h-[0.9rem] w-[0.9rem] bg-red-500 rounded-full inline-block;
+}
+.order-canceld-green-mark {
+  @apply h-[0.9rem] w-[0.9rem] bg-green-700 rounded-full inline-block;
+}
+.order-canceld-text {
+  @apply font-medium;
+}
+.order-btn-return {
+  @apply bg-transparent border-2 border-BluishGrey justify-center font-medium hover:border-black hover:text-black;
+}
+.order-btn-deliver {
+  @apply bg-bluishgreen text-darkgreen font-medium rounded-lg hover:bg-[#8fbc8fb3];
+}
+.archiv-order {
+  @apply border-t-2 border-lightGray;
+}
+.archiv-order p {
+  @apply font-normal text-TextTitle pl-2 p-2;
+}
+.titlebar-order-section > p > span {
+  @apply text-14 text-TextTitle pb-2 pt-2 pl-2 flex flex-row-reverse gap-1 cursor-pointer;
+}
+.search_bar_order {
+  @apply relative w-full;
+}
+.search_in_order_product {
+  @apply relative text-slategrey w-full capitalize border border-[#DBDBDB] py-[0.4375rem] pr-2 pl-10 rounded-md font-light placeholder-slategrey focus-visible:outline-none text-base;
+}
+
+.order-m-search__icon {
+  mask-image: url('/icon/search.svg');
+  @apply absolute top-5 -translate-y-1/2 left-4 !w-4 !h-4 !bg-black bg-no-repeat cursor-pointer items-center;
+}
+.order-title-search-main {
+  @apply flex sm:items-center justify-between sm:flex-row flex-col mb-3;
+}
+.titlebar-order-section {
+  @apply flex gap-4 items-center justify-between max-sm:mb-2;
+}
+.search-filter-divmain {
+  @apply flex gap-5 w-full sm:w-[44%] pb-3 sm:pb-0;
+}
+.filter-icon {
+  @apply bg-[url('/icon/order-list-filter.svg')] w-3;
+}
+.order-filter {
+  @apply border-2 h-full border-[#E0E0E0] text-[0.75rem] font-normal text-[#949494] flex gap-2 px-2 py-1 rounded-md;
+}
+.cancel-title {
+  @apply bg-[#F5F7FD];
+}
+.cancel-title p {
+  @apply bg-[#F5F7FD];
+}
+.cancel-order-head {
+  @apply bg-[#F5F7FD] sm:gap-0 gap-7;
+}
+.order-cancel {
+  @apply font-semibold text-base text-ReddishBrown;
+}
+.item-order-title {
+  @apply text-base font-semibold text-TextTitle pb-6;
+}
+.cancel-order-decrip {
+  @apply font-medium text-base text-slategrey pb-3;
+}
+.cancel-order-seller {
+  @apply font-medium text-base text-slategrey pb-5;
+}
+.cancellation-reson label {
+  @apply font-medium text-base text-slategrey sm:mb-0 mb-3 inline-block;
+}
+.icon_failed {
+  mask-image: url('../../icon/Failed.svg');
+}
+.icon_replaced {
+  mask-image: url('../../icon/Replace_Requested.svg');
+}
+/* .cancel-order-reason {
+  @apply bg-[url('/icon/arrow.svg')] bg-no-repeat bg-contain bg-right text-14 font-medium text-[#454545] p-2 pr-12 border-[1px] border-BluishGrey rounded-sm appearance-none relative sm:ml-5 ml-0 sm:w-auto w-full;
+} */
+.cancel-order-reason {
+  @apply bg-[url('/icon/arrow.svg')] bg-no-repeat bg-contain bg-right text-14 font-medium text-[#454545] p-2 pr-12  border-b-BluishGrey border-b  appearance-none relative sm:ml-5 ml-0 sm:w-auto w-full;
+}
+.cancel-order-reason:focus {
+  @apply outline-none;
+}
+.cancel-order-reason option {
+  @apply text-14 font-medium text-[#454545];
+}
+.btn-order-cancel {
+  @apply flex flex-col items-end gap-5 sm:mt-28 mt-4;
+}
+.cancel-selct-item-btn {
+  @apply bg-CharmPink text-ReddishBrown font-medium rounded-md text-14 pl-2 p-2 sm:w-auto w-full;
+}
+.return-summary-btn {
+  @apply bg-transparent border-2 border-BluishGrey justify-center rounded-md text-14 font-medium pl-2 p-2 sm:w-auto w-full;
+}
+.order-confirmed-badge {
+  @apply bg-bluishgreen p-3 rounded-full w-8 h-8 flex items-center justify-center;
+}
+.order-cancel-badge {
+  @apply bg-CharmPink p-3 rounded-full w-8 h-8 flex items-center justify-center;
+}
+.order-list-footer {
+  @apply flex inline-block text-[#989898] ms-3 w-full   pb-4;
+}
+
+.order-list-delivered-footer {
+  @apply flex inline-block  text-[#989898] p-2 w-full  border-t-1 border-[#eee];
+}
+
+.order-list-delivered-footer li {
+  @apply list-none;
+}
+
+.order-link-data {
+  @apply !text-SteelBlue cursor-pointer;
+}
+
+.order-link-data-invoice {
+  @apply flex justify-end;
+}
+
+.invoice-btn-order-details {
+  @apply flex justify-center items-center	gap-1;
+}
+
+.order-column-main {
+  @apply relative;
+}
+
+.order-arrow-icon {
+  @apply absolute top-[50%] right-6 z-[2] translate-y-[-50%];
+}
+
+.order-rating .style-module_emptyIcons__Bg-FZ {
+  @apply flex items-center;
+}
+
+.order-review-link {
+  @apply text-SteelBlue flex items-center ms-2 cursor-pointer;
+}
+.rating-main-comp {
+  @apply ms-8;
+}
+
+.max-w-xs {
+  @apply max-w-[600px];
+}
+
+.add-photos-block {
+  @apply inline-block;
+}
+.add-photos-block > div {
+  @apply p-6 border-2 border-dotted border-gray-400 rounded-lg flex;
+}
+
+.rounded-medium {
+  @apply rounded-[0.375rem];
+}
+
+.rating-model-footer {
+  @apply border-t-1 pt-3 pb-3 flex flex-row-reverse gap-4 mt-3;
+}
+.image-show-block {
+  @apply flex relative;
+}
+
+.cancel-btn-view {
+  @apply absolute top-[41px] left-[48px] bg-[#c9c9c9f2] rounded-ss-[9px] ps-1 pe-1 pt-1 pb-0 cursor-pointer;
+}
+.preview_upload_m {
+  @apply flex gap-4 my-5;
+}
+.imgshow_wrapper {
+  @apply inline-flex gap-3;
+}
+.img_preview_review {
+  @apply relative filter drop-shadow-md rounded-lg;
+}
+
+.img_preview_review > img {
+  @apply w-[71px] h-[71px] object-cover;
+}
+
+.close-icon {
+  @apply cursor-pointer;
+}
+
+.order-title-orderid {
+  @apply flex-row text-left me-3 justify-between;
+}
+
+.order-menu-title-orderid {
+  @apply flex flex-col text-medium text-end;
+}
+
+.order-details-header {
+  @apply flex flex-col items-center font-sans mt-[15px];
+}
+
+.order-details-title {
+  @apply font-sans;
+}
+
+.order-price-list div > table > tbody > tr > td {
+  @apply text-[0.8rem] p-[0.3rem] leading-normal;
+}
+
+.order-details-attributes {
+  @apply text-neutral-500 font-medium text-base;
+}
+
+.order-details-address {
+  @apply flex flex-col gap-1 w-full;
+}
+
+.order-details-address > p {
+  @apply font-medium text-xl text-TextTitle text-[1.2rem];
+}
+
+.order-details-price {
+  @apply flex flex-row justify-between w-full;
+}
+
+.order-details-price > div > p {
+  @apply font-semibold text-xl text-TextTitle text-[1.2rem];
+}
+
+.order-price-list-focus-data {
+  @apply bg-[#eee] border-t-1 border-t-[#ccc] border-b-1 border-b-[#ccc];
+}
+.order-delivery-badge {
+  @apply flex justify-center h-11 bg-lightGray items-center rounded-lg;
+}
+
+.order-details-rating {
+  @apply flex flex-col gap-1 w-full;
+}
+
+.order-details-rating > p {
+  @apply font-medium text-xl text-TextTitle text-[1.2rem];
+}
+
+.order-details-confirmed-badge {
+  @apply flex w-full max-w-[700px] mb-2 flex-col rounded-md bg-bluishgreen p-1 border-lime-600 border-2 text-lime-800 mt-3;
+}
+
+.order-details-cancel-badge {
+  @apply flex w-full max-w-[700px] mb-2 flex-col rounded-md bg-[#FAE1E3] p-1 border-ReddishBrown border-2 text-ReddishBrown mt-3;
+}
+.order-details-cancel-btn {
+  @apply flex rounded-md hover:bg-[#FAE1E3] bg-[#eee] border-[#ccc] hover:border-ReddishBrown border-2 hover:text-ReddishBrown mt-3;
+}
+.order-details-warning-badge {
+  @apply flex w-full max-w-[700px] mb-2  flex-col rounded-md p-1 bg-[#FFF3CD] border-[#664D03] border-2 text-[#664D03] mt-3;
+}
+
+.order-details-badge-title {
+  @apply flex items-center;
+}
+
+.order-details-badge-desc {
+  @apply flex items-center text-[12px];
+}
+
+.order-details-delivered-footer {
+  @apply text-[#989898] ms-8 w-full flex mt-3 text-start w-full;
+}
+.order-suborder-list {
+  @apply flex gap-6 mt-3 border-t-2 p-[10px] bg-[#eee] rounded-[0.375rem] relative cursor-pointer;
+}
+
+.order-suborder-list > div > span {
+  @apply text-sm;
+}
+
+.order-suborder-list > div > div {
+  @apply flex;
+}
+.express-day-box {
+  @apply flex gap-3 mt-3 items-center;
+}
+
+.data-flex-item-center {
+  @apply !flex items-center;
+}
+
+.rounded-large {
+  @apply rounded-[0.375rem];
+}

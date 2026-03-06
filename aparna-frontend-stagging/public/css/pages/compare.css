@@ -1,0 +1,159 @@
+.pv-compare-main {
+  @apply overflow-x-auto sm:overflow-x-clip py-14 xl:container lg:container w-full mx-auto;
+}
+.pv-compare-table {
+  @apply border-collapse;
+}
+.pv-compare-table thead {
+  @apply sticky bg-white md:top-[85px] lg:top-[81px] top-[0px] z-[1];
+}
+.pv-compare-table th {
+  @apply relative text-left;
+}
+
+.kl-compare-product-name {
+  @apply font-semibold text-18
+}
+.kl-total-item-count {
+  @apply font-medium
+}
+.pv-compare-table th,
+.pv-compare-table td {
+  @apply w-[20%] align-top p-2 py-4 border-[1px] text-sm;
+}
+.pv-compare-table-inner {
+  @apply w-full
+}
+.pv-compare-table-inner tr td:first-child {
+  @apply sticky top-0 left-0 p-2 bg-extralightGray
+}
+.pv-compare-table-inner td {
+  @apply w-[20%] align-top p-2 py-5 border-[1px] text-sm;
+}
+.pv-compare-card {
+  @apply flex gap-3 flex-col;
+}
+.pv-compare-img {
+  @apply w-[100px] h-[100px] xl:w-[200px] xl:h-[200px] object-contain m-auto;
+}
+.pv-compr-disc {
+  @apply text-14 font-medium mb-1;
+}
+.pv-compr-price {
+  @apply flex gap-1 justify-start;
+}
+.pv-compr-price span:nth-child(1) {
+  @apply font-semibold;
+}
+.pv-compr-price span:nth-child(2) {
+  @apply font-semibold text-lightGraytext;
+}
+.pv-compr-price span:nth-child(3) {
+  @apply font-semibold text-green-600;
+}
+.pv-comlabel {
+  @apply text-18 font-medium;
+}
+
+.pv-comlabel-blank, .pv-compare-table tbody td:first-child {
+  @apply bg-[#f9f9f9];
+}
+.pv-compare-table tbody td:first-child:has(.pv-compare-table-inner){
+  @apply bg-white p-0;
+}
+
+.pv-compareheading {
+  @apply text-18 font-medium relative;
+}
+.pv-compareheading span {
+  @apply px-2 inline-block w-full bg-[#eeeeee];
+}
+
+.pv-comlabel {
+  @apply sticky top-0 left-0 p-2;
+}
+.pv-semibild-head {
+  @apply font-medium;
+}
+.pv-light-font {
+  @apply text-[#878787] text-sm;
+}
+.pv-highlihts-disc {
+  @apply text-14 leading-normal;
+}
+.pv-delivery-status {
+  @apply list-disc list-inside;
+}
+.pv-delivery-text {
+  @apply text-green-600;
+}
+
+.pv-variants-main {
+  @apply flex gap-2 flex-col;
+}
+.pv-variants-inner .pv-variant-text {
+  @apply font-medium;
+}
+
+.pv-compare-Popovermain {
+  @apply flex flex-col items-center fixed right-4 bottom-8 z-50 p-2;
+}
+.pv-compare-Popoverinner {
+  @apply absolute bottom-0 right-0  flex-col items-center hidden bg-white shadow-lg p-4 pb-14 rounded;
+}
+.pv-compare-Popovercol {
+  @apply relative rounded-md z-[10] p-4 text-xs leading-none text-white  flex;
+}
+.pv-compare-Popovermain:hover .pv-compare-Popoverinner {
+  @apply flex flex-col sm:flex-row gap-3;
+}
+.pv-compare-itemcard {
+  @apply flex gap-2 flex-col border p-2 max-w-[130px] relative rounded;
+}
+.pv-compare-itembtn {
+  @apply w-fit p-1 absolute top-0 right-0 bg-white rounded-none rounded-bl-lg hover:bg-gray-300;
+}
+.pv-compare-itembtn .closetoggle-icon, .pv-compare-btn-main .closetoggle-icon{
+  @apply w-[0.875rem] h-[0.875rem];
+}
+/* .pv-compare-itembtn:hover .closetoggle-icon {
+  @apply invert;
+} */
+.pv-compare-btn {
+  @apply px-2 py-2 me-2  bg-primary text-white rounded cursor-pointer z-[1];
+}
+.pv-compare-btn-main {
+  @apply absolute right-[145px] bottom-[6px];
+}
+
+.pv-compare-btn span {
+  @apply bg-grayishBlueWhite rounded px-2 text-black;
+}
+.pv-compr-itemname {
+  @apply text-12 truncate;
+}
+
+.pv-selectbrand-main {
+  @apply text-left;
+}
+.pv-selectbrand-main label {
+  @apply font-medium;
+}
+.pv-selectbrand {
+  @apply h-[2rem] w-full px-[0.625rem] border border-lightGray rounded-md text-Gray font-normal text-14;
+}
+.pv-selectbrand:focus {
+  @apply outline-none;
+}
+.pv-compare-card-main {
+  @apply flex gap-2 flex-col;
+}
+.pv-compare-card-main .pv-blackandwhite-img {
+  @apply bg-lightGray w-[6.25rem] xl:w-[12.5rem] m-auto h-[6.25rem] xl:h-[144px] rounded;
+}
+.pv-compare-popupimg {
+  @apply max-h-28 object-contain
+}
+.pv-compare-removebtn {
+  @apply text-base hover:border-primary-hover hover:text-primary
+}

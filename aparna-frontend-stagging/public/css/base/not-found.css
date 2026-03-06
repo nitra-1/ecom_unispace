@@ -1,0 +1,21 @@
+.not_found_main-site {
+  @apply my-7 sm:my-14 flex items-center justify-center sm:flex-row flex-col-reverse;
+}
+.not_found_7 {
+  @apply sm:w-[58%] w-full text-center sm:text-start;
+}
+.nf_ff_h1 {
+  @apply text-24 sm:text-[2rem] font-medium text-TextTitle mb-4;
+}
+.h5_fzf_title {
+  @apply text-18 sm:text-18 text-[#4d4d4d] mb-4;
+}
+.cotnt_fzf_ret_mn {
+  @apply text-18 text-[#555555] mb-3 sm:mb-5;
+}
+.btn-buy-now {
+  @apply text-white bg-primary hover:bg-primary-hover border-primary hover:border-primary-hover;
+}
+.not_found_5 img {
+  @apply w-full max-w-[100%]  sm:max-w-full mx-auto;
+}

@@ -1,0 +1,24 @@
+.pv-btnposition-center {
+  @apply text-center;
+}
+.pv-btnposition-left {
+  @apply text-left;
+}
+.pv-btnposition-right {
+  @apply text-right;
+}
+
+.btn-add-cart {
+  @apply md:px-2 md:gap-[0.2rem]  border-primary hover:bg-[#0073CF]/10 flex-shrink-0;
+}
+.btn-bulk-inquiry {
+  @apply md:px-2 md:gap-[0.2rem]  border-[#4D4D4D] hover:bg-[#4D4D4D]/10 flex-shrink-0;
+}
+
+.btn-view-collection {
+  @apply bg-yellow text-black border-yellow py-2 px-4 font-semibold  hover:bg-yellowHover;
+}
+
+.btn-primary {
+  @apply !bg-primary text-white text-base font-[500] px-8 py-2 rounded-md hover:!bg-primary-hover;
+}

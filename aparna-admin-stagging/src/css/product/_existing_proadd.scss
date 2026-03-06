@@ -1,0 +1,49 @@
+.existing_form {
+  .pricing_table {
+    margin-top: 3rem;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    .bg-default {
+      background-color: var(--bg-default);
+    }
+    .table_accordian {
+      .m-icon--plusaccordian {
+        background-image: url('~icons/plusaccordian.svg');
+        width: 1rem;
+        height: 1rem;
+      }
+      .m-icon--minusaccordian {
+        background-image: url('~icons/minusaccordian.svg');
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}
+
+.existing_pro_form {
+  .hr-main-row {
+    .hr-image-section {
+      .hr-image img {
+        max-width: 6rem;
+        width: 100%;
+        border: 5px solid var(--bs-border-color);
+        height: 100%;
+      }
+    }
+    .hr-content-section {
+      .table {
+        tr {
+          th {
+            color: var(--bs-font-silver);
+            font-weight: 500;
+          }
+          td {
+            font-weight: 400;
+            color: var(--bs-black);
+          }
+        }
+      }
+    }
+  }
+}

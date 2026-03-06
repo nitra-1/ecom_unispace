@@ -1,0 +1,48 @@
+.modal-overlay {
+  @apply !fixed top-0 left-0 w-[100%] h-[100%] bg-[rgba(0,0,0,0.5)] flex z-[11] sm:z-10 justify-center items-center transition-opacity duration-[0.3s] ease-[ease-in-out];
+}
+.modal-body {
+  max-height: 70dvh;
+  overflow-y: auto;
+}
+
+.modal {
+  @apply relative bg-white rounded-l-lg rounded-r-lg shadow-sm p-0 transition-transform duration-[0.3s] ease-[ease-in-out];
+}
+.modal.modal-xl {
+  @apply w-[90%] sm:w-[80%] max-w-[1140px];
+}
+.modal.modal-lg {
+  @apply w-[90%] sm:w-[80%] max-w-[800px];
+}
+.modal.modal-sm {
+  @apply w-[90%] sm:w-[60%] max-w-[500px];
+}
+.modal-close {
+  @apply text-18 bg-none border-none cursor-pointer;
+}
+.closing {
+  @apply opacity-0 scale-95;
+}
+.modal-header {
+  @apply flex justify-between items-center py-2 px-4 sm:p-4 rounded-t-lg gap-3;
+}
+.modal-body {
+  @apply sm:p-4 py-2 px-4;
+}
+.m-close-modal {
+  mask-image: url('/icon/close.svg');
+  @apply bg-black w-4 h-4 cursor-pointer hover:filter hover:brightness-50;
+}
+
+.modal-body::-webkit-scrollbar {
+  @apply w-[0.3125rem];
+}
+
+.modal-body::-webkit-scrollbar-track {
+  @apply bg-white rounded;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  @apply bg-[#bebbbb] rounded-2xl border-[3px] border-solid border-[#bebbbb];
+}

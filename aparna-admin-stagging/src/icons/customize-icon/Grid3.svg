@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="80" viewBox="0 0 120 80">
+  <defs>
+    <clipPath id="clip-Grid_3">
+      <rect width="120" height="80"/>
+    </clipPath>
+  </defs>
+  <g id="Grid_3" data-name="Grid 3" clip-path="url(#clip-Grid_3)">
+    <g id="Group_2147" data-name="Group 2147">
+      <g id="Group_2075" data-name="Group 2075" transform="translate(-1092 583)">
+        <text id="_1" data-name="1" transform="translate(1150 -515)" font-size="12" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">3</tspan></text>
+        <path id="Rectangle_938" data-name="Rectangle 938" d="M6,1A5.006,5.006,0,0,0,1,6V74a5.006,5.006,0,0,0,5,5H114a5.006,5.006,0,0,0,5-5V6a5.006,5.006,0,0,0-5-5H6M6,0H114a6,6,0,0,1,6,6V74a6,6,0,0,1-6,6H6a6,6,0,0,1-6-6V6A6,6,0,0,1,6,0Z" transform="translate(1092 -583)" fill="#707070"/>
+      </g>
+      <g id="Group_2082" data-name="Group 2082" transform="translate(-1252.515 -121)">
+        <g id="Group_2063" data-name="Group 2063" transform="translate(979 -130)">
+          <path id="Rectangle_786" data-name="Rectangle 786" d="M2,1.5a.5.5,0,0,0-.5.5V14a.5.5,0,0,0,.5.5H64a.5.5,0,0,0,.5-.5V2a.5.5,0,0,0-.5-.5H2M2,0H64a2,2,0,0,1,2,2V14a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(300.515 274)"/>
+        </g>
+        <g id="Group_2064" data-name="Group 2064" transform="translate(1000.492 -130)">
+          <path id="Rectangle_786-2" data-name="Rectangle 786" d="M2,1.5a.5.5,0,0,0-.5.5V14a.5.5,0,0,0,.5.5H20a.5.5,0,0,0,.5-.5V2a.5.5,0,0,0-.5-.5H2M2,0H20a2,2,0,0,1,2,2V14a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(301.023 274)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

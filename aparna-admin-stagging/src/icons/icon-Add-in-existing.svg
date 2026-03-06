@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.075" height="25.228" viewBox="0 0 25.075 25.228">
+  <g id="Add_new" data-name="Add new" transform="matrix(1, 0, 0, 1, 0, 1.42)">
+    <rect id="Add_new-2" data-name="Add new" width="25.075" height="23.808" fill="none"/>
+    <g id="Group_131" data-name="Group 131">
+      <g id="Rectangle_62" data-name="Rectangle 62" transform="translate(1.669 1.669)" fill="none" stroke="#6c6c6c" stroke-linejoin="round" stroke-width="2">
+        <rect width="20" height="20" rx="2" stroke="none"/>
+        <rect x="1" y="1" width="18" height="18" rx="1" fill="none"/>
+      </g>
+      <text id="_" data-name="+" transform="translate(5.169 -1.42)" fill="#6c6c6c" font-size="18" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="19">+</tspan></text>
+    </g>
+  </g>
+</svg>

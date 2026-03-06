@@ -1,0 +1,26 @@
+.check-out-main {
+  @apply flex w-full gap-5 sm:flex-row flex-col pt-6;
+}
+.check-orderlist {
+  @apply flex flex-col sm:w-[70%] w-full;
+}
+.offer-price-details {
+  @apply flex flex-col gap-5 sm:w-[30%] h-fit w-full;
+}
+/* .offer-price-details .coupan-main{
+  @apply sticky md:top-[6.25rem];
+} */
+
+.check-out-main .check-orderlist .accordion .accordion_item .check-delivery {
+  @apply p-0 border-none mb-0;
+}
+.check-out-main .check-orderlist .accordion .accordion_item .d-address-name {
+  @apply mb-2;
+}
+.check-out-main .check-orderlist .accordion .accordion_item .check-login-main {
+  @apply p-0 mb-0 border-none;
+}
+
+.captcha_number {
+  @apply ml-2 flex items-end gap-2 mb-3;
+}

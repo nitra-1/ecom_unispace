@@ -1,0 +1,19 @@
+.grid1by1-1 {
+  @apply grid gap-2.5 grid-cols-1 sm:grid-cols-4 grid-rows-2 focus:outline-none;
+}
+.grid1by1-1 :nth-child(1),
+.grid1by1-1 :nth-child(3) {
+  @apply col-span-1 sm:col-span-2;
+}
+.grid1by1-1 :nth-child(2) {
+  @apply col-span-1 sm:col-span-2 row-span-2;
+}
+.grid1by1-1 img {
+  @apply w-full object-cover h-full;
+}
+.grid1by1-1 a {
+  @apply w-full;
+}
+/* .grid1by1-1 div {
+  @apply w-full h-full;
+} */

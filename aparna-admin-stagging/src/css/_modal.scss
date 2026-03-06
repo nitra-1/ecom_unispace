@@ -1,0 +1,110 @@
+/** Modal **/
+.modal-content {
+  .modal-header {
+    background-color: $modal-header-bg;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: var(--bs-modal-padding);
+  max-height: 70vh !important;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width:10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    // box-shadow: inset 0 0 5px grey;
+    background: #f1f1f1; 
+
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    // background-color: $primary-color;
+    background: #888; 
+
+    border-radius: 4px;
+    &:hover {
+      background-color: #000e2d;
+    }
+  }
+}
+
+/** Off Canvas **/
+
+// 0ff canvas design
+.pv-offcanvas {
+  width: 95% !important;
+  .offcanvas-header {
+    position: relative;
+    background-color: $modal-header-bg;
+    padding: 0.625rem 1.25rem;
+    .btn-close {
+      position: fixed;
+      top: 0.9rem;
+      left: 3%;
+      background-color: #fff;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+      z-index: 2;
+      opacity: 1;
+      transform: translateX(-50%);
+      background-size: 0.8rem;
+      &:hover {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+  --bs-backdrop-zindex: 1050;
+  --bs-backdrop-bg: rgb(0 0 0 / 50%);
+  --bs-backdrop-opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--bs-backdrop-zindex) !important;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bs-backdrop-bg);
+  backdrop-filter: blur(0.125rem);
+}
+
+// 0ff canvas design
+.pv-offcanvas-mini {
+  width: 60% !important;
+  .offcanvas-header {
+    position: relative;
+    .offcanvas-title {
+      font-weight: 600;
+    }
+    .btn-close {
+      position: fixed;
+      top: 0.9rem;
+      left: 3%;
+      background-color: #fff;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+      z-index: 2;
+      opacity: 1;
+      transform: translateX(-50%);
+      background-size: 0.8rem;
+      &:hover {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+    }
+  }
+  .offcanvas-body {
+    background-color: var(--body-bg);
+  }
+}

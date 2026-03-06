@@ -1,0 +1,44 @@
+.nav-tabs-horizontal {
+  background-color: $white;
+  padding: 0.3125rem;
+  border-radius: 0.375rem;
+  border: 1px solid #c0c0cf;
+  gap: 4px;
+  .nav-link {
+    position: relative;
+    padding-bottom: 0.3125rem;
+    transition: none;
+    border: unset;
+    color: $neutral50;
+    border-radius: 0.375rem;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: $primary-color;
+      border-color: transparent;
+      background-color: rgba($primary-color, 0.1);
+    }
+    &.active {
+      color: $primary-color;
+      background-color: rgba($primary-color, 0.1);
+      border-color: $primary-color;
+    }
+  }
+}
+
+/** Vertical Tab css **/
+.nav-tabs-vertical {
+  .nav-link {
+    border: unset;
+    border-radius: 6px;
+    color: var(--bs-gray-600);
+    padding: 0.625rem 0.3125rem;
+    width: 100%;
+    &:hover {
+      background-color: rgba($primary-color, 10%);
+    }
+    &.active {
+      background-color: rgba($primary-color, 10%);
+      color: $primary-color;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.offer-icon {
+  mask-image: url('/icon/Discount-coupon.svg');
+  @apply bg-[#34A853] h-5 w-5;
+}
+.coupan-main {
+  @apply bg-white md:w-full max-w-none rounded-md;
+}
+.offer {
+  @apply bg-[#66D3E11A]/10 rounded flex justify-between items-center p-4;
+}
+.right_arrow {
+  mask-image: url('/icon/cart/right_arrow.svg');
+}
+.apply-code {
+  @apply flex gap-2 items-center;
+}
+.HeaderText {
+  @apply font-semibold text-base sm:text-18 capitalize text-secondary;
+}
+.Dnone {
+  @apply hidden;
+}
+.pos_rel {
+  @apply relative;
+}
+.btn_apply_offer button {
+  @apply absolute border-0 top-0 right-0 bg-primary text-white hover:bg-primary-hover;
+}
+.custom_padding {
+  @apply pr-[5.5rem];
+}
+.best_offer_text {
+  @apply py-2 px-3  bg-classicSilver font-semibold  uppercase mb-3 rounded;
+}
+.parent_offer {
+  @apply mb-3;
+}
+.offer_apply {
+  @apply py-4 px-3 border border-solid border-[#ced4da]  rounded-md flex flex-col md:flex-row md:justify-between md:items-center;
+}
+.offer_name {
+  @apply text-[#2D2D2D] font-[600] text-base sm:text-18;
+}
+.offer_detail {
+  @apply text-[#DC3545] text-[14px] leading-none;
+}
+.offer_code {
+  @apply bg-[#eee] text-[#333] text-xs sm:text-sm font-[600] outline-none border border-dashed border-[#333]  py-2  px-4 items-center  rounded-md capitalize tracking-wide gap-1 mt-3 md:mt-0;
+}
+.m-btn_applycode {
+  @apply rounded-t-none w-[100%] justify-center py-1 border-[#ced4da] bg-[#eee] text-[#333] font-[600] hover:bg-[#e4e4e4];
+}
+.m-btn_applycode.clicked {
+  @apply bg-bluishgreen text-darkgreen;
+}
+.offer_code.active {
+  @apply bg-bluishgreen text-darkgreen border-darkgreen;
+}
+.m-icon_offer_applied {
+  @apply bg-[url('/icon/double_tick.svg')] w-5 h-5 bg-center bg-no-repeat bg-cover;
+}
+.parent_offer.disable_offer .offer_detail {
+  @apply text-[#DC3545];
+}
+.parent_offer.disable_offer .m-btn_applycode {
+  @apply bg-[#ECECEC] text-[#707070];
+}
+/* coupon list  */
+
+.sp_coupon_box {
+  @apply border-[#ced4da] border py-5 px-5 mb-2;
+}
+.sp-coupon_wrapper {
+  @apply flex items-center gap-3 flex-wrap justify-between mb-3;
+}
+.sp-coupon_wrapper:last-child {
+  @apply mb-0;
+}
+.sp_coupon_offer {
+  @apply text-base text-[#26a541];
+}
+.sp_coupon_date {
+  @apply text-sm text-[#878787] font-medium;
+}
+.sp_coupon_details,
+.sp-coupon_wrapper .pv-popover-btn {
+  @apply text-sm;
+}

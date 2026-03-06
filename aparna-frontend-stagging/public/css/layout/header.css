@@ -1,0 +1,62 @@
+/* Header */
+header {
+  @apply z-10 bg-white transition-all shadow-medium sticky top-0;
+}
+
+.m_logo {
+  @apply mr-auto md:mr-0 order-1 md:order-none;
+}
+.nav_wrapper {
+  @apply flex gap-3 sm:gap-6 items-center justify-between xl:gap-4 max-h-[86px] py-3;
+}
+.navbar__link a {
+  @apply whitespace-nowrap text-14 md:text-base;
+}
+
+.search_myaccount_wrapper {
+  @apply flex md:gap-6 order-2 md:order-none items-center flex-grow;
+}
+
+.header_profile_icon {
+  @apply bg-[url('/icon/profile2.svg')] w-[1.3rem] h-[1.3rem] shrink-0;
+}
+
+.header_address_icon {
+  mask-image: url('/icon/address.svg');
+  @apply bg-black shrink-0;
+}
+
+.header_coupons_icon {
+  mask-image: url('/icon/coupon_icon.svg');
+  @apply bg-black shrink-0;
+}
+.header_project_icon {
+  mask-image: url('/icon/header/project_icon.svg');
+  @apply bg-black shrink-0;
+}
+.header_review_icon {
+  mask-image: url('/icon/header/review_icon.svg');
+  @apply bg-black shrink-0;
+}
+.header_bulk_inquiry_icon {
+  mask-image: url('/icon/header/new-bulk-inquiry.svg');
+  @apply bg-black shrink-0;
+}
+.header_rmc_inquiry_icon {
+  mask-image: url('/icon/header/new-rmc-inquiry.svg');
+  @apply bg-black shrink-0;
+}
+
+.header_contact_icon {
+  mask-image: url('/icon/Contact.svg');
+  @apply bg-black shrink-0;
+}
+
+.header_whishlist_icon {
+  @apply bg-[url('/icon/wishlist.svg')] shrink-0;
+}
+
+.header_order_icon {
+  mask-image: url('/icon/orders.svg');
+  @apply bg-black;
+}

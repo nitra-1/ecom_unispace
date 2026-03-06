@@ -1,0 +1,7 @@
+.check-orderreturn {
+  @apply w-[40%] h-full bg-grayishBlueWhite rounded-md;
+}
+
+.check-order-return {
+  @apply flex w-full gap-5 sm:flex-row flex-col py-6;
+}

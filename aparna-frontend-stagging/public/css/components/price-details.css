@@ -1,0 +1,57 @@
+.price_details {
+  @apply inline-block md:w-full w-full max-w-none;
+}
+.price_details_card_wrapper {
+  @apply bg-white py-4 rounded-md;
+}
+.price_details_heading {
+  @apply text-lg font-semibold text-TextTitle pb-4 border-b border-b-lightGray;
+}
+.price_details_card {
+  @apply py-4 border-b  border-b-lightGray;
+}
+.price_details_wrapper {
+  @apply flex justify-between items-center pb-2;
+}
+.price_details_wrapper:last-child {
+  @apply pb-0;
+}
+.price_details_name {
+  @apply text-[#4D4D4D] font-normal md:text-base text-[14px];
+}
+.price_details_price {
+  @apply text-base text-TextTitle font-semibold;
+}
+.pv-pricing-discount {
+  @apply text-green-700;
+}
+/* .price_details_price .price_delivery_charges {
+  @apply text-Gray;
+} */
+.price_delivery_charges.active {
+  @apply line-through;
+}
+.price_details_price.red {
+  @apply text-red-500;
+}
+.price_details_price .price_free {
+  @apply text-base text-JungleGreen;
+}
+.price_details_card_total {
+  @apply pt-4;
+}
+.price_details_card_total .price_details_name {
+  @apply text-base text-TextTitle font-medium;
+}
+.price_details_card_total .price_details_name {
+  @apply text-base text-TextTitle font-medium;
+}
+.price_details_GST {
+  @apply text-base text-darkgreen font-medium;
+}
+.price_save_note {
+  @apply text-darkgreen bg-bluishgreen text-base font-medium text-center py-2 my-3 rounded-md;
+}
+.price_place-order {
+  @apply text-white text-[1.2rem] leading-[1.3rem] font-medium py-3 mb-4 text-center rounded-md bg-primary w-full hover:bg-primary;
+}

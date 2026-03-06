@@ -1,0 +1,6 @@
+.pv-or-rfr {
+  @apply flex flex-col gap-4;
+}
+.ip_Textarea_input {
+  @apply w-full focus:outline-none border-[1px] p-2 rounded-md;
+}

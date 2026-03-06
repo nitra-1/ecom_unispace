@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.004" height="8.01" viewBox="0 0 18.004 8.01">
+  <g id="Arrow" transform="translate(25 -10.996) rotate(90)">
+    <g id="Group_2221" data-name="Group 2221">
+      <g id="Group_2222" data-name="Group 2222">
+        <path id="Vector" d="M4,18a1,1,0,0,1-1-1V3.408l-1.29,1.3a1,1,0,0,1-1.42-1.42l3-3A1.005,1.005,0,0,1,5,1V17a1,1,0,0,1-1,1Z" transform="translate(10.996 7.002)" fill="#393d46"/>
+        <path id="Vector-2" data-name="Vector" d="M4,5a1,1,0,0,1-.71-.29l-3-3A1,1,0,1,1,1.714.294l3,3A1,1,0,0,1,4,5Z" transform="translate(13.996 6.996)" fill="#393d46"/>
+      </g>
+    </g>
+  </g>
+</svg>

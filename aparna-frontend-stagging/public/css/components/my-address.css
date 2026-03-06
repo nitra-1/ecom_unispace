@@ -1,0 +1,63 @@
+.address_main_fl {
+  @apply flex items-center flex-wrap gap-2 justify-between mb-3;
+}
+.address_new_add {
+  @apply bg-[#FEFEFE] border border-primary hover:border-primary text-base font-medium text-black gap-2 justify-center w-auto px-12 py-3;
+}
+.address_main_fl_first .order-menu-title {
+  @apply pl-0;
+}
+.address_main-name {
+  @apply text-18 mb-2;
+}
+.add_fl-main {
+  @apply gap-3 grid md:grid-cols-2 items-stretch grid-cols-1;
+}
+.def_fl {
+  @apply flex justify-between items-center mb-2;
+}
+.mb_none {
+  @apply mb-0;
+}
+/* .m-add-default{
+    @apply bg-white py-1 cursor-pointer text-14;
+}
+.m-add-default.checked{
+    @apply bg-[#526de0] text-white border-[#526de0];
+} */
+.input_col.my_add_select {
+  @apply w-1/2 mb-3 mt-0;
+}
+.input_col.my_add_select .input-wrapper-radio {
+  @apply mt-0;
+}
+.office-icon {
+  @apply bg-[url('/icon/building-community.svg')] bg-contain max-sm:w-4 max-sm:h-4;
+}
+.home-icon {
+  @apply bg-[url('/icon/home.svg')] bg-contain max-sm:w-4 max-sm:h-4;
+}
+.main-mb_3 {
+  @apply mb-3 border-lightGray border border-solid flex flex-col justify-between shadow-sm w-full;
+}
+.card_default-address {
+  @apply bg-white px-3 py-4;
+}
+.default_name {
+  @apply text-base font-[600] text-[#696e79];
+}
+.default_add-add {
+  @apply text-[0.9375rem] text-[#696e79] mb-2 leading-6;
+}
+.addressAccordian-buttons {
+  @apply w-full p-1 flex bg-white items-center text-[#526cd0] border-r-0 border-l-0 border-b-0 border-lightGray border-solid border;
+}
+.addressAccordian-buttons .addressAccordian-button {
+  @apply flex items-center justify-center cursor-pointer w-6/12 uppercase text-center font-medium p-1 hover:text-primary;
+}
+.addressAccordian-buttons .removeaddress_btn {
+  @apply text-[#505050] hover:text-red-600;
+}
+.addressAccordian-buttonDivider {
+  @apply w-px h-[30px]  border-l-[#eaeaec] border border-solid;
+}

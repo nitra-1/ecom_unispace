@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply text-TextTitle text-base bg-white;
+  }
+  *:is(h1, h2, h3, h4, h5, h6) {
+    @apply text-TextTitle;
+  }
+  ::selection {
+    @apply bg-primary text-white;
+  }
+  main {
+    @apply grow shrink-0;
+  }
+
+  .m-icon {
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    @apply inline-flex w-6 h-6 bg-white;
+  }
+  footer {
+    @apply shrink-0 border-t;
+  }
+  .h2_pos {
+    @apply sm:text-40 text-32 font-semibold;
+  }
+  *:focus-visible {
+    @apply outline-primary;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  body,
+  html {
+    @apply scroll-smooth;
+    scrollbar-gutter: stable;
+  }
+  .m-btn {
+    @apply text-TextTitle justify-center max-sm:text-sm font-bold outline-none border py-2 px-4 inline-flex items-center rounded capitalize gap-1;
+  }
+  .btn-primary {
+    @apply text-base justify-center !bg-primary font-semibold text-white py-2 px-2 rounded-lg min-w-[9.675rem]  active:bg-primary sm:hover:bg-primary-hover w-full;
+  }
+  .btn-secondary {
+    @apply text-base justify-center border-[1px] bg-transparent font-semibold sm:min-w-[9.675rem] px-2 py-2 border-primary w-full rounded-md active:bg-primary sm:hover:bg-primary text-primary active:text-white sm:hover:text-white;
+  }
+  .btn-dark {
+    @apply text-base justify-center border-[1px] bg-transparent font-semibold sm:min-w-[9.675rem] px-2 py-2 border-[#4D4D4D] w-full rounded-md hover:bg-[#4D4D4D] text-[#4D4D4D] active:text-white sm:hover:text-white;
+  }
+}
+@layer components {
+  input {
+    @apply accent-primary;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000 !important;
+    -webkit-box-shadow: 0 0 0 30px #dbdbdb inset !important;
+  }
+  .small-container {
+    @apply max-w-[78.75rem] w-full px-[0.9375rem] sm:px-5 mx-auto;
+  }
+  .btn-whishlist {
+    @apply border-0;
+  }
+  .section_spacing_b {
+    @apply py-5;
+  }
+}
+.fontRoboto {
+  @apply font-roboto;
+}
+.wish_main_flex .body_wrapper {
+  @apply min-h-screen flex flex-col items-stretch;
+}
+.site-container {
+  @apply max-w-full lg:max-w-[88%] xl:max-w-[86rem] mx-auto max-xl:px-4;
+}
+.small-container {
+  @apply max-w-[78.75rem] w-full px-[0.9375rem] sm:px-5 mx-auto;
+}
+
+input {
+  @apply accent-primary;
+}
+/* Reset autofill styles using attribute selectors */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* image zoom css start */
+.sampleImage {
+  @apply h-full w-full cursor-crosshair absolute inset-0 object-contain;
+}
+.zoomedImageContainer {
+  background-size: 150%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  @apply absolute top-0 left-[105%] 2xl:left-[104%] right-0 w-full h-[500px] z-[6] bg-no-repeat rounded;
+}
+/* image zoom css end */
+.pv-hidden {
+  overflow: hidden;
+}
+.pv-product-grid {
+  @apply grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3;
+}
+.swiper-slide {
+  @apply !h-auto;
+}

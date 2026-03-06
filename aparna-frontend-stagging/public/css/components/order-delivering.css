@@ -1,0 +1,61 @@
+.delivering-text {
+  @apply text-14 text-slategrey;
+}
+.delivering-name {
+  @apply text-base text-black font-semibold py-1;
+}
+.delivering-address-order-placed {
+  @apply text-14 text-slategrey;
+}
+/* .deliver-image-order {
+  @apply bg-[url('/icon/reshot-icon-delivery-truck-C6Z2GBDERQ.svg')] bg-no-repeat bg-cover w-10 h-10 sm:w-20 sm:h-20 block;
+} */
+.delivering-placed-main {
+  @apply flex justify-between mb-2 p-4 rounded-sm bg-white;
+}
+.delivery-arrivl,
+.delivery-item-price {
+  @apply pt-[1rem];
+}
+.mp-text-price {
+  @apply font-medium;
+}
+.delivery-arrivl span {
+  @apply font-semibold text-base text-black;
+}
+
+.delivery-date-product {
+  @apply flex flex-wrap pl-0 justify-between gap-0 sm:gap-x-5 mb-2;
+}
+.pv-orderitem-total {
+  @apply w-full text-end border-t-1 mt-1;
+}
+.delivering-order-main {
+  @apply mb-2 flex flex-col gap-5;
+}
+.delivery-conti-shopping {
+  @apply bg-transparent border-[1px] border-BluishGrey font-medium px-8 py-2 rounded-md hover:bg-primary hover:text-white;
+}
+.btn-continue-shopping {
+  @apply text-center pb-5;
+}
+.order_details_delivered {
+  @apply flex justify-center gap-[15px] flex-wrap;
+}
+.delivery-arrival-image {
+  @apply aspect-square w-20 h-auto object-contain;
+}
+.pv-product-details {
+  @apply flex;
+}
+
+.mp-order-deliver-main {
+  @apply w-full border-b-2 border-gray-500 p-2 rounded-t-lg;
+}
+.mp-order-deliver-inner {
+  @apply flex justify-between items-center flex-wrap;
+}
+
+.mp-deliver-disc {
+  @apply font-semibold;
+}

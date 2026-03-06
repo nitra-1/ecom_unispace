@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Artboard_4">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_4" data-name="Artboard – 4" clip-path="url(#clip-Artboard_4)">
+    <rect id="mingcute:user-2-fill" width="251.679" height="251.679" transform="translate(-62 -33.84)" fill="none"/>
+    <g id="Group" transform="translate(-62 -33.84)">
+      <path id="Vector" d="M0,0H251.679V251.679H0Z" fill="none"/>
+    </g>
+    <rect id="_24_basic_mail" data-name="24 / basic / mail" width="250" height="250" transform="translate(-62 -33)" fill="none"/>
+    <g id="Group_1101" data-name="Group 1101" transform="translate(62 33)">
+      <path id="Path" d="M18.738,37.477A18.738,18.738,0,1,1,37.477,18.738,18.738,18.738,0,0,1,18.738,37.477Z" transform="translate(44 139.168)" fill="#939393" fill-rule="evenodd"/>
+      <path id="Path-2" data-name="Path" d="M18.738,37.477A18.738,18.738,0,1,1,37.477,18.738,18.738,18.738,0,0,1,18.738,37.477Z" transform="translate(44 73.584)" fill="#939393" fill-rule="evenodd"/>
+      <path id="Path-3" data-name="Path" d="M18.738,37.477A18.738,18.738,0,1,1,37.477,18.738,18.738,18.738,0,0,1,18.738,37.477Z" transform="translate(44 8)" fill="#939393" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+.order-confirm-place{
+    @apply flex flex-col gap-4 mt-5;
+}
+.place-order-confirm {
+    @apply bg-white
+}

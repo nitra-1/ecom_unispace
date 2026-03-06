@@ -1,0 +1,53 @@
+.captchaContainer {
+  @apply flex flex-row-reverse justify-end gap-3 items-center;
+}
+.captchaContainer .captch_input_validation {
+  @apply w-full;
+}
+.captchaContainer > div {
+  @apply mb-3;
+}
+.captchaContainer_fl {
+  @apply relative border border-solid border-[#ced4da] px-3 pr-9 py-1 rounded-md bg-[#f0f8ff];
+}
+.captchaContainer_fl canvas {
+  @apply w-full max-w-24;
+}
+.m_icon_refresh {
+  mask-image: url('/icon/refresh.svg');
+  @apply bg-black;
+}
+.captchaContainer .captcha_form .input-wrapper-main {
+  @apply mb-0;
+}
+.captchaContainer .captcha_form {
+  @apply flex items-center gap-3 flex-wrap;
+}
+.captchaContainer .captcha_form .input-wrapper-main label {
+  @apply hidden;
+}
+
+.captcha {
+  @apply text-18 line-through font-medium select-none cursor-not-allowed;
+}
+.captchaContainer_input {
+  @apply text-base p-[6px];
+}
+.newCaptchaButton {
+  @apply flex items-center justify-center;
+}
+.newCaptchaButton {
+  @apply flex items-center absolute right-2 top-1/2 -translate-y-1/2 justify-center;
+}
+.newCaptchaButton i {
+  @apply w-5 h-5;
+}
+.capt_btn {
+  @apply bg-[#1f3561] hover:bg-[#05215b] text-white;
+}
+.captch_input_validation .input-wrapper-main {
+  @apply mb-0;
+}
+.captchaContainer .checkout_btn {
+  @apply mt-0 w-full;
+}

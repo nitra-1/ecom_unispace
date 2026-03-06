@@ -1,0 +1,24 @@
+.grid_2-1-1 {
+  @apply grid md:grid-cols-8 md:grid-rows-2 gap-[0.625rem] items-stretch;
+}
+.grid_2-1-1 div {
+  @apply min-h-full w-full;
+}
+.grid_2-1-1 > div:nth-child(1) {
+  @apply md:row-[span_1] md:!col-span-2;
+}
+.grid_2-1-1 > div:nth-child(2) {
+  @apply md:col-start-1 md:row-start-2 md:!col-span-2;
+}
+.grid_2-1-1 > div:nth-child(3) {
+  @apply md:row-span-2 md:col-start-2 md:row-start-1 md:!col-span-3;
+}
+.grid_2-1-1 > div:nth-child(4) {
+  @apply md:row-span-2 md:col-start-3 md:row-start-1 md:!col-span-3;
+}
+.grid_2-1-1 > div:focus {
+  outline: none;
+}
+.grid_2-1-1 > div img {
+  @apply w-full md:min-h-full;
+}

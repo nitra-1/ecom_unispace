@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="80" viewBox="0 0 120 80">
+  <defs>
+    <clipPath id="clip-Grid_1_1-1-1">
+      <rect width="120" height="80"/>
+    </clipPath>
+  </defs>
+  <g id="Grid_1_1-1-1" data-name="Grid 1/1-1-1" clip-path="url(#clip-Grid_1_1-1-1)">
+    <g id="Group_2142" data-name="Group 2142">
+      <g id="Group_2075" data-name="Group 2075" transform="translate(-1092 583)">
+        <text id="_1" data-name="1" transform="translate(1134 -515)" font-size="12" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">1/1-1-1</tspan></text>
+        <path id="Rectangle_938" data-name="Rectangle 938" d="M6,1A5.006,5.006,0,0,0,1,6V74a5.006,5.006,0,0,0,5,5H114a5.006,5.006,0,0,0,5-5V6a5.006,5.006,0,0,0-5-5H6M6,0H114a6,6,0,0,1,6,6V74a6,6,0,0,1-6,6H6a6,6,0,0,1-6-6V6A6,6,0,0,1,6,0Z" transform="translate(1092 -583)" fill="#707070"/>
+      </g>
+      <g id="Group_2139" data-name="Group 2139">
+        <g id="Group_2085" data-name="Group 2085" transform="translate(-1247.515 -121)">
+          <g id="Group_2084" data-name="Group 2084" transform="translate(-5)">
+            <g id="Group_2063" data-name="Group 2063" transform="translate(1279.515 144)">
+              <path id="Rectangle_786" data-name="Rectangle 786" d="M2,1.5a.5.5,0,0,0-.5.5V14a.5.5,0,0,0,.5.5H64a.5.5,0,0,0,.5-.5V2a.5.5,0,0,0-.5-.5H2M2,0H64a2,2,0,0,1,2,2V14a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z"/>
+            </g>
+          </g>
+        </g>
+        <path id="Line_25" data-name="Line 25" d="M.75,15H-.75V0H.75Z" transform="translate(47.75 23.5)"/>
+        <path id="Line_25-2" data-name="Line 25" d="M.75,15H-.75V0H.75Z" transform="translate(70.75 23)"/>
+        <path id="Line_25-3" data-name="Line 25" d="M.75,19.5H-.75V0H.75Z" transform="translate(47.5 31.5) rotate(90)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,153 @@
+/*----- Componant: Top Navigation Bar ----- */
+$header-height: 65px;
+$width-sidebar: 14rem;
+$width-toggleopen: 4.578rem;
+.app-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1030;
+  border-bottom: 1px solid #eaeaef;
+  background: var(--bs-white);
+  transition: padding-left 0.3s ease;
+  .profile_header .dropdown_arrow_hide::after {
+    display: none;
+  }
+}
+.header-brand-img {
+  line-height: 2rem;
+  vertical-align: middle;
+  width: auto;
+  max-width: 9.375rem;
+}
+
+@media (min-width: 992px) {
+  .app-header {
+    padding-right: 0;
+    padding-left: $width-sidebar;
+    // z-index: 9;
+  }
+}
+
+// ////////////////
+
+.pv-notification-main {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  svg {
+    fill: $light-black;
+    width: 22px;
+    height: 22px;
+    transition: fill 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      animation: bounce 0.5s ease; /* Add a bouncing animation on hover */
+      color: #842029;
+    }
+  }
+
+  .pv-notification-badge {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dc3545;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    //   transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+    pointer-events: none;
+    padding: 5px 10px;
+  }
+
+  &:hover {
+    svg {
+      fill: $primary-color;
+      transform: scale(1.1); /* Add a slight zoom effect on hover */
+    }
+
+    .pv-notification-badge {
+      opacity: 1;
+      animation: bounce 0.5s ease infinite; /* Add a bouncing animation on hover */
+      color: #842029;
+      padding: 6px 12px;
+    }
+  }
+
+  /* Additional animations */
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-12px);
+    }
+    60% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg); /* Add a rotating animation on hover */
+    }
+  }
+}
+.pv-notification-col {
+  border: 1px solid var(--bs-border-color);
+}
+
+.list_suggestions {
+  position: absolute;
+  top: 100%;
+  inset-inline: 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 0 0 4px 4px;
+  max-height: 210px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+
+  & li {
+    padding: 10px 8px 10px 12px;
+    line-height: 1;
+    &:hover,
+    &:active {
+      color: $primary-color;
+      background-color: #eee;
+    }
+  }
+}
+.no_suggetionfound {
+  max-height: 210px;
+  position: absolute;
+  top: 100%;
+  inset-inline: 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 0 0 4px 4px;
+  padding: 10px 12px;
+}

@@ -1,0 +1,51 @@
+/* for input all field css start - text- number */
+.input-wrapper-main {
+  @apply mb-[0.82rem];
+}
+.pv-label-red-required {
+  @apply text-red-500 font-semibold;
+}
+.form-c-label {
+  @apply font-[600] capitalize inline-block text-[15px];
+}
+.form-c-input {
+  @apply placeholder:text-14 block w-[100%] py-2 px-3 text-14 sm:text-base font-[400] text-black bg-white bg-clip-padding border appearance-none rounded-md border-solid border-[#ced4da] m-0 focus:outline-[#ced4da] focus:shadow-sm;
+}
+/* for radio  button */
+.form-c-radio {
+  @apply font-[500] text-black capitalize inline-block mb-0;
+}
+.input-wrapper-radio {
+  @apply flex gap-0 focus:outline-none;
+}
+.m-sub-prdlist div:not(:last-child) .input-wrapper-radio {
+  @apply mb-3;
+}
+
+.input-wrapper-radio input[type='radio'] {
+  @apply appearance-none hidden;
+  -webkit-appearance: none;
+}
+input[type='date'] {
+  @apply appearance-none;
+  -webkit-appearance: none;
+}
+input[type='date']::-webkit-calendar-picker-indicator {
+  @apply hidden;
+}
+.input-wrapper-radio input[type='radio'] + label {
+  @apply text-secondary text-12 inline-flex gap-[0.375rem] cursor-pointer;
+}
+
+.input-wrapper-radio input[type='radio'] + label::before {
+  @apply content-[''] w-4 h-4 mt-[0.125rem] inline-block rounded-full border border-[#010101] shrink-0;
+}
+.input-wrapper-radio input[type='radio']:checked + label::before {
+  @apply border-[0.3125rem] border-primary;
+}
+.input-error-msg {
+  @apply text-red-500 text-14 mt-1;
+}
+.input-text-danger {
+  @apply text-red-600;
+}

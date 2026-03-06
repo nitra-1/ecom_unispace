@@ -1,0 +1,99 @@
+.d-grid {
+  @apply grid;
+}
+.grid-img {
+  @apply w-full min-h-full object-cover;
+}
+.grid-item-image {
+  @apply sm:mb-0 mb-3;
+}
+
+.grid_1-2by1 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:first-child]:row-span-2
+    [&>.grid-item-image:last-child]:col-span-2 gap-6;
+}
+
+.grid_1-2by2 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:first-child]:row-span-2 
+  gap-6;
+}
+
+.grid_1by2-1 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:nth-child(2)]:row-span-2
+  [&>.grid-item-image:first-child]:col-span-2 gap-6;
+}
+
+.grid_1-1by2 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:first-child]:row-span-2
+    [&>.grid-item-image:nth-child(2)]:col-span-2  gap-6;
+}
+
+.grid_2by2-1 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:nth-child(3)]:row-span-2 
+  gap-6;
+}
+
+.grid_2by1-1 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:nth-child(3)]:row-span-2 
+  [&>.grid-item-image:last-child]:col-span-2  gap-6;
+}
+
+.grid_1by2-2by1 {
+  @apply sm:grid block grid-cols-4 [&>.grid-item-image:first-child]:col-span-2 
+  [&>.grid-item-image:last-child]:col-span-2  gap-6;
+}
+
+.grid_2by1-1by2 {
+  @apply sm:grid block  grid-cols-4 [&>.grid-item-image:nth-child(3)]:col-span-2 
+  [&>.grid-item-image:nth-child(4)]:col-span-2  gap-6;
+}
+
+.grid_1-3-1 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:first-child]:row-span-3
+  [&>.grid-item-image:nth-child(3)]:row-span-3  gap-6;
+}
+
+.grid_3-1-3 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:nth-child(2)]:row-span-3  gap-6;
+}
+
+.grid_1-2-1 {
+  @apply sm:grid block grid-cols-3 [&>.gryid-item-image:first-child]:row-span-2
+  [&>.grid-item-image:nth-child(3)]:row-span-2  gap-6;
+}
+
+.grid_2-1-2 {
+  @apply sm:grid block grid-cols-3 [&>.grid-item-image:nth-child(2)]:row-span-2  gap-6;
+}
+
+.grid_1-2by1__50 {
+  @apply sm:grid block grid-cols-4 [&>.grid-item-image:first-child]:row-span-2 
+  [&>.grid-item-image:first-child]:col-span-2
+    [&>.grid-item-image:last-child]:col-span-2  gap-6;
+}
+
+.grid_1-2by2__50 {
+  @apply sm:grid block grid-cols-4 [&>.grid-item-image:first-child]:row-span-2 
+  [&>.grid-item-image:first-child]:col-span-2
+ gap-6;
+}
+.grid__6-without-gap {
+  @apply grid grid-cols-6;
+}
+.w-f{
+  @apply w-full;
+}
+
+/* 
+<divclass name then inner class is :
+
+<div className='grid-item-image'>
+<Image
+      src="/images/grid-img2.png"
+      alt='image'
+      className='grid-img'
+      width='0'
+      height='0'
+      sizes='100vw'
+  />
+</div> */

@@ -1,0 +1,21 @@
+.empty_cart p {
+  @apply text-base;
+}
+.empty_cart {
+  @apply py-16;
+}
+.empty_cart h1 {
+  @apply mb-3 text-[1.75rem];
+}
+.w-f {
+  @apply w-full;
+}
+.emty_cl {
+  @apply max-w-[12.5rem] mx-auto mb-4;
+}
+.empty_fl {
+  @apply flex items-center gap-3 justify-center mt-3;
+}
+.btn_shop_now_login {
+  @apply bg-[#394b67] mt-3 text-white !no-underline hover:bg-[#1f2937];
+}

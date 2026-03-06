@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-warning">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="warning" clip-path="url(#clip-warning)">
+    <path id="noun-warning-5410274" d="M137.255,46.668A20.585,20.585,0,1,0,157.84,67.253,20.585,20.585,0,0,0,137.255,46.668Zm0,26.761A2.058,2.058,0,0,1,135.2,71.37V56.96a2.058,2.058,0,1,1,4.117,0V71.37A2.058,2.058,0,0,1,137.255,73.429Zm0,2.058a2.059,2.059,0,1,0,2.058,2.059A2.059,2.059,0,0,0,137.255,75.487Z" transform="translate(-112.493 -42.491)" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Manage_Return">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Manage_Return" data-name="Manage Return" clip-path="url(#clip-Manage_Return)">
+    <g id="Group_118" data-name="Group 118" transform="translate(153.562 -287)">
+      <path id="Subtraction_28" data-name="Subtraction 28" d="M1426.861,3102.6h0a.933.933,0,0,1,0-1.866h22.206a9.6,9.6,0,0,0,6.983-3.005,10.716,10.716,0,0,0,0-14.629,9.607,9.607,0,0,0-6.983-3h-19.847l5.368,5.091.009.007a.949.949,0,0,1,.306.67.938.938,0,0,1-.229.692.92.92,0,0,1-.673.272.959.959,0,0,1-.69-.275l-7.064-6.725a.982.982,0,0,1,0-1.345l6.62-6.288v.037l.43-.445a.926.926,0,0,1,.669-.285.884.884,0,0,1,.652.283l.005.005a.962.962,0,0,1,.257.672.916.916,0,0,1-.293.662c-1.075,1.017-2.818,2.672-3.971,3.767l-.127.12-.327.311-.5.477-.453.432h19.86a12.192,12.192,0,0,1,0,24.366h-22.208Z" transform="translate(-1571.25 -2774.25)"/>
+    </g>
+  </g>
+</svg>

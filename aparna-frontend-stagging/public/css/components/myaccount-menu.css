@@ -1,0 +1,47 @@
+.order-menu-title {
+  @apply text-[1.25rem] font-[600] text-TextTitle;
+}
+
+.order-sidebar-main {
+  @apply sticky top-[8.0625rem] bg-white rounded;
+}
+
+.order-sidebar-main .order-menu-title {
+  @apply mb-4 font-medium text-black text-opacity-100 text-xl;
+}
+
+.order-sidebar-main p {
+  @apply text-14 text-TextTitle pb-2 pt-2 pl-2;
+}
+
+.order-menu ul li {
+  @apply text-base text-TextTitle border-lightGray;
+}
+
+.order-menu-list li:not(:last-child) a {
+  @apply border-b-[1px];
+}
+
+.order-menu-list li a {
+  @apply p-2 w-full block hover:text-primary text-[#333] opacity-100 font-medium;
+}
+
+.order-menu-list li a.active {
+  @apply border-b-[1px] bg-[#EAEAEF] bg-opacity-100 text-opacity-100;
+}
+
+.order-menu-list li a.active li a {
+  @apply bg-black;
+}
+
+.order-menu {
+  @apply pb-3 sm:pb-0 rounded border border-[#DCDCE4];
+}
+
+.order-menu-list {
+  @apply flex flex-col;
+}
+
+/* ul.order-menu-list li:has(+ li > a.active) a {
+  @apply border-b-0 mb-0;
+} */

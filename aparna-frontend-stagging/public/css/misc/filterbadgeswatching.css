@@ -1,0 +1,36 @@
+.filtered_checked_list .filtered_title {
+  @apply text-black uppercase text-14 font-medium mb-2;
+}
+.filtered_checked_list {
+  @apply mb-4;
+}
+.filtered_badges {
+  @apply inline-flex flex-wrap gap-2 items-center;
+}
+.filtered_badges .m-btn {
+  @apply flex-row-reverse px-[0.4375rem] py-1 font-medium;
+}
+.filtered_badges .m-btn .m-icon {
+  @apply w-[0.875rem] h-[0.875rem];
+}
+.clearall_filtertag {
+  @apply cursor-pointer capitalize text-14 hover:underline;
+}
+.fitlerbtnres_pdlt {
+  @apply inline-flex gap-2 items-center cursor-pointer md:hidden;
+}
+.fitlerbtnres_pdlt span {
+  @apply uppercase text-14 font-medium leading-none;
+}
+.filters_wrapper {
+  @apply mb-14 md:mb-0;
+}
+.res_btnsclearall_applys_filters {
+  @apply grid grid-cols-2 fixed inset-[auto_0_0_0] bg-white md:hidden;
+}
+.res_btnsclearall_applys_filters .m-btn {
+  @apply py-3 rounded-none justify-center text-base;
+}
+.res_btnsclearall_applys_filters .filterapply_btn {
+  @apply text-white;
+}

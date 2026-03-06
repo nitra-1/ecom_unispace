@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-Artboard_2">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_2" data-name="Artboard – 2" clip-path="url(#clip-Artboard_2)">
+    <rect width="200" height="200" fill="#fff"/>
+    <g id="Group_2153" data-name="Group 2153" transform="translate(-51.738 -53.25)">
+      <g id="Group_2154" data-name="Group 2154" transform="translate(67.738 67.25)">
+        <path id="Rectangle_1040" data-name="Rectangle 1040" d="M19.545,7.818A11.741,11.741,0,0,0,7.818,19.545V152.455a11.741,11.741,0,0,0,11.727,11.727h129a11.741,11.741,0,0,0,11.727-11.727V19.545A11.741,11.741,0,0,0,148.545,7.818h-129m0-7.818h129a19.545,19.545,0,0,1,19.545,19.545V152.455A19.545,19.545,0,0,1,148.545,172h-129A19.545,19.545,0,0,1,0,152.455V19.545A19.545,19.545,0,0,1,19.545,0Z"/>
+        <path id="Ellipse_11" data-name="Ellipse 11" d="M19.545,7.818A11.727,11.727,0,1,0,31.273,19.545,11.741,11.741,0,0,0,19.545,7.818m0-7.818A19.545,19.545,0,1,1,0,19.545,19.545,19.545,0,0,1,19.545,0Z" transform="translate(35.182 35.182)"/>
+        <path id="Path_185" data-name="Path 185" d="M17806.293,1772.379a3.911,3.911,0,0,1-2.719-6.722l104.375-100.757a3.915,3.915,0,0,1,5.484.049l41.6,41.633a3.91,3.91,0,1,1-5.531,5.527l-38.883-38.916L17809,1771.283A3.887,3.887,0,0,1,17806.293,1772.379Z" transform="translate(-17788.23 -1600.68)"/>
+      </g>
+    </g>
+  </g>
+</svg>

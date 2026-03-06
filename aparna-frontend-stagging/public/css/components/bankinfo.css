@@ -1,0 +1,12 @@
+.transaction-section {
+  @apply flex w-[100%] gap-4;
+}
+.transaction-input {
+  @apply w-full;
+}
+.transaction-input-phone {
+  @apply w-[50%];
+}
+.transaction-select {
+  @apply w-full border-2 py-1.5;
+}

@@ -1,0 +1,24 @@
+/** Btn Groups **/
+.m-btn-groups.m--horizontal-tbs{
+  box-shadow: inset 0 0 0.4375rem 0.1875rem $input-focus-boxshodow-color;
+  border-radius: 0.3125rem;
+  padding: 0.4375rem;
+  gap: 0.3125rem;
+  .btn-groups-link{
+    border-radius: 0.3125rem;
+    padding: 0.625rem 0.9375rem;
+    &.active{
+      background-color: $primary-hover-color;
+      &:hover{
+        background-color: $primary-hover-color;
+      }
+    }
+    &:is(.active, :hover){
+      color: var(--bs-white);
+    }
+    &:hover{
+      background-color: $primary-hover-color;
+      
+    }
+  }
+}

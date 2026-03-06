@@ -1,0 +1,227 @@
+.m-wishlist-icon {
+  mask-image: url('/icon/add-whishlist.svg');
+}
+.wishlist-checked {
+  mask-image: url('/icon/wishlist-fill.svg');
+}
+.header_store_icon {
+  mask-image: url('/icon/header/our_shop.svg');
+}
+.edit_icon {
+  mask-image: url('/icon/edit.svg');
+}
+.m-cart-icon {
+  mask-image: url('/icon/add-cart.svg');
+  @apply bg-black w-5 h-5;
+}
+.m-bulk-inquiry-icon {
+  mask-image: url('/icon/bulk-inquiry.svg');
+  @apply bg-[#4D4D4D] w-5 h-5;
+}
+.m-add-to-cart-icon {
+  mask-image: url('/icon/bag.svg');
+  @apply bg-primary w-5 h-5;
+}
+.m-buynow-icon {
+  mask-image: url('/icon/buy-now.svg');
+  @apply bg-white w-5 h-5;
+}
+.closetoggle-icon {
+  mask-image: url('/icon/closetoggle-icon.svg');
+}
+
+.pv-headset {
+  mask-image: url('/icon/callicon.svg');
+  @apply bg-black  aspect-square;
+}
+.pv-emailicon {
+  mask-image: url('/icon/emailicon.svg');
+  @apply bg-black  aspect-square;
+}
+.pv-address {
+  mask-image: url('/icon/location.svg');
+  @apply bg-white aspect-square;
+}
+.user-address {
+  mask-image: url('/icon/header/location.svg');
+  @apply bg-black;
+}
+.mp-close {
+  mask-image: url('/icon/close.svg');
+}
+
+.mp-secure {
+  mask-image: url('/icon/safeandsecure.svg');
+  @apply bg-blue-600 aspect-square;
+}
+
+.mp-lock {
+  mask-image: url('/icon/lock.svg');
+  @apply bg-green-600 aspect-square;
+}
+
+.mp-protection {
+  mask-image: url('/icon/Protection.svg');
+  @apply aspect-square bg-black;
+}
+.rating-double-star {
+  mask-image: url('/icon/double-star.svg');
+  @apply aspect-square;
+}
+.white-star {
+  mask-image: url('/icon/white-star-badge.svg');
+  @apply aspect-square;
+}
+
+.black-star {
+  @apply bg-[url('/icon/star-black.svg')] aspect-square;
+}
+
+.rating-fill-icon {
+  @apply bg-[url('/icon/rating-fill.svg')] aspect-square;
+}
+.select-img {
+  display: inline-block;
+  background-color: #ccd2e3;
+  -webkit-mask-image: url('/icon/select-image.svg');
+  mask-image: url('/icon/select-image.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.greaterthan-arrow {
+  mask-image: url('/icon/next-arrow.svg');
+  @apply bg-black aspect-square w-[0.8rem] h-[0.8rem];
+}
+
+.m-red-cancel-icon {
+  mask-image: url('/icon/box-cancel.svg');
+  @apply bg-[#842029] aspect-square w-4 h-5;
+}
+.m-black-cancel-icon {
+  @apply bg-[url('/icon/cancel-icon-black.svg')] aspect-square w-4 h-5;
+}
+
+.right-arrow {
+  mask-image: url('/icon/next-arrow.svg');
+  @apply bg-black aspect-square w-3 h-3;
+}
+
+.download-icon {
+  mask-image: url('/icon/download-icon.svg');
+  @apply bg-cover aspect-square w-4 h-4;
+}
+
+.rating-fill-icon {
+  @apply bg-[url('/icon/rating-fill.svg')] aspect-square;
+}
+.rating-empty-icon {
+  @apply bg-[url('/icon/rating-empty.svg')] aspect-square;
+}
+.order-add-photos-icon {
+  @apply bg-[url('/icon/add-photos-icon.svg')] aspect-square;
+}
+.order-express-tag-icon {
+  @apply bg-[url('/icon/mexpress-tag-icon.svg')] aspect-square w-28 h-7;
+}
+.cash-icon {
+  mask-image: url('/icon/cash-icon.svg');
+  @apply bg-black aspect-square w-4 h-3;
+}
+.placed-icon {
+  mask-image: url('/icon/order/Placed.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+.shipped-icon {
+  mask-image: url('/icon/order/Shipped.svg');
+  @apply bg-[#0073cf] aspect-square w-6
+    h-6;
+}
+.delivered-icon {
+  mask-image: url('/icon/order/Delivered.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+.replaced-icon {
+  mask-image: url('/icon/Replace_Requested.svg');
+  @apply bg-[#0073cf]
+    aspect-square w-6 h-6;
+}
+.cancelled-icon {
+  mask-image: url('/icon/order/Cancelled.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+.close-icon {
+  mask-image: url('/icon/cancel-icon-black.svg');
+  @apply bg-black aspect-square w-5 h-5;
+}
+.confirmed-icon {
+  mask-image: url('/icon/order/Confirmed.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+.packed-icon {
+  mask-image: url('/icon/order/Packed.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+.icon_replace-requested {
+  mask-image: url('/icon/Replace_Requested.svg');
+  @apply bg-[#0073cf]
+    aspect-square w-6 h-6;
+}
+.refund-paid-icon {
+  mask-image: url('/icon/Refund_paid.svg');
+  @apply bg-[#0073cf]
+    aspect-square w-6 h-6;
+}
+.refund-in-process-icon {
+  mask-image: url('/icon/Refund-in-process.svg');
+  @apply bg-[#0073cf]
+    aspect-square w-6 h-6;
+}
+.next-icon {
+  mask-image: url('/icon/Next-icon.svg');
+  @apply bg-black
+    aspect-square w-3 h-3;
+}
+.prev-icon {
+  mask-image: url('/icon/Prev-icon.svg');
+  @apply bg-black
+    aspect-square w-3 h-3 rotate-180;
+}
+.returned-icon {
+  mask-image: url('/icon/order/Returned.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+.returned-requested-icon {
+  mask-image: url('/icon/order/return_requested.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+.returned-rejected-icon {
+  mask-image: url('/icon/order/Failed.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+
+.closetoggle-icon {
+  mask-image: url('/icon/closetoggle-icon.svg');
+  @apply bg-black aspect-square w-4 h-4;
+}
+
+.initiate-icon {
+  @apply bg-[url('/icon/Initiate.svg')] aspect-square w-6 h-6;
+}
+.failed-icon {
+  mask-image: url('/icon/order/Failed.svg');
+  @apply bg-[#0073cf] aspect-square w-6 h-6;
+}
+
+.m-new-address-icon {
+  mask-image: url('/icon/Icon-feather-plus.svg');
+  @apply w-4 h-4;
+}
+
+.m-prdlist-icon {
+  mask-image: url('/icon/menu-dropdown-right.svg');
+  @apply bg-TextTitle w-6 h-6 rotate-90;
+}

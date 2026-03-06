@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Warehouse">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Warehouse" clip-path="url(#clip-Warehouse)">
+    <g id="noun-warehouse-2227911" transform="translate(12.073 19.197)">
+      <path id="Path_250" data-name="Path 250" d="M121.139,307.98a10.579,10.579,0,0,0-10.58,10.58v53.5a13.755,13.755,0,1,0,21.574,14.217H140.3A13.754,13.754,0,0,0,167.3,381.3a10.6,10.6,0,0,0,1.613-5.621,128.136,128.136,0,0,0-12.543-55.051,22.215,22.215,0,0,0-20.047-12.647Zm.621,10.58h14.567a11.639,11.639,0,0,1,10.5,6.631,117.568,117.568,0,0,1,9.754,30.522,34.6,34.6,0,0,1-34.82-37.154Zm-3.08,61.354v0a3.281,3.281,0,1,1-3.1,3.2,3.178,3.178,0,0,1,3.1-3.2Zm34.9.021,0,0a3.271,3.271,0,1,1-3.077,3.183,3.174,3.174,0,0,1,3.077-3.183Z" transform="translate(-104.992 -185.258)" fill="#fff"/>
+      <path id="Path_251" data-name="Path 251" d="M455.01,350v42.322h42.322V350Z" transform="translate(-313.799 -201.873)" fill="#fff"/>
+      <path id="Path_252" data-name="Path 252" d="M455.01,262.5v42.322h42.322V262.5Z" transform="translate(-313.799 -167.274)" fill="#fff"/>
+      <path id="Path_253" data-name="Path 253" d="M367.51,350v42.322h42.322V350Z" transform="translate(-279.2 -201.873)" fill="#fff"/>
+      <path id="Path_255" data-name="Path 255" d="M180.777,241.472q-.893-2.865-1.877-5.677a31.692,31.692,0,0,0-8.744-13.49,19.744,19.744,0,0,0-12.646-5.158V148.653L254.456,105,351.4,148.653V316.6H219.556v-10.58h108.58V179.058H180.778Z" transform="translate(-125.549 -104.995)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

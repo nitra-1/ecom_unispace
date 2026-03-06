@@ -1,0 +1,24 @@
+.checkout-steps{
+    @apply w-full text-[#696B79] flex justify-center items-center leading-5;
+}
+.checkout-main-compo{
+    @apply py-4;
+}
+.step{
+    @apply inline-block tracking-[3px];
+}
+.step1{
+    @apply ml-0 mr-[5px] my-0;
+}
+.stepsactive{
+    @apply text-[#20BD99] border-b-2 border-b-[#20BD99] border-solid font-semibold;
+}
+.divider{
+    @apply inline-block h-1 w-[10%] border-t-[#696B79] border-t border-dashed;
+}
+.step2 {
+    @apply ml-1.5 mr-[5px] my-0;
+}
+.step3{
+    @apply ml-[7px] mr-0 my-0;
+}

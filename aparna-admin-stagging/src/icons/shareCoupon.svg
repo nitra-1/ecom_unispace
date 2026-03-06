@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="0 0 500 500">
+  <defs>
+    <clipPath id="clip-Share_Coupon">
+      <rect width="500" height="500"/>
+    </clipPath>
+  </defs>
+  <g id="Share_Coupon" data-name="Share Coupon" clip-path="url(#clip-Share_Coupon)">
+    <path id="Icon_awesome-share-alt" data-name="Icon awesome-share-alt" d="M281.24,255.673a76.37,76.37,0,0,0-47.771,16.695L151.585,221.19a77.141,77.141,0,0,0,0-33.3l81.884-51.178a76.563,76.563,0,1,0-27.113-43.355l-81.884,51.178a76.7,76.7,0,1,0,0,120.014l81.884,51.178a76.708,76.708,0,1,0,74.883-60.05Z" transform="translate(70.929 45)" fill="#707070"/>
+  </g>
+</svg>

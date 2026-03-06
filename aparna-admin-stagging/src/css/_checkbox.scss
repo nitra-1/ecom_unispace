@@ -1,0 +1,32 @@
+.form-check-input {
+  padding: 6px !important;
+  border: 1px solid;
+  &:checked {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+  &:focus {
+    box-shadow: $input-focus-box-shadow;
+  }
+}
+
+.pv-coustom-radio.ant-switch-checked {
+  background-color: var(--cus-radio);
+  :where(.css-dev-only-do-not-override-fpg3f5).ant-switch.ant-switch-checked {
+    background-color: var(--cus-radio);
+  }
+  &:hover {
+    background-color: var(--cus-radio) !important;
+  }
+  .ant-switch-inner {
+    padding-inline-start: 9px;
+    padding-inline-end: 9px;
+  }
+}
+
+.pv-coustom-radio {
+  .ant-switch-inner {
+    padding-inline-start: 9px;
+    padding-inline-end: 9px;
+  }
+}

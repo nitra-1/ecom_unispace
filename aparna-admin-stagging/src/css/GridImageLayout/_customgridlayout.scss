@@ -1,0 +1,60 @@
+.row-grid{
+  display: grid;
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  gap: 1.5rem;
+}
+.col_10{
+  grid-column: span 10/span 10;
+}
+.col_9{
+  grid-column: span 9/span 9;
+}
+.col_8{
+  grid-column: span 8/span 8;
+}
+.col_7{
+  grid-column: span 7/span 7;
+}
+.col_6{
+  grid-column: span 6/span 6;
+}
+.col_5{
+  grid-column: span 5/span 5;
+}
+.col_4{
+  grid-column: span 4/span 4;
+}
+.col_3{
+  grid-column: span 3/span 3;
+}
+.col_2{
+  grid-column: span 2/span 2;
+}
+.col_1, .col_12{
+  grid-column: span 12/span 12;
+}
+.pv-customgrid-main {
+  position: relative;
+    height: 300px;
+    outline-style: dashed;
+    outline-color: #9c9c9c;
+    outline-width: 2px;
+
+  .img_customgrid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    .pv-addicon-main {
+      svg {
+        width: 5rem;
+        height: 5rem;
+        filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(299deg) brightness(94%) contrast(91%);
+      }
+    }
+  }
+}
+
+.custom_grid_wrapper .row-grid:not(:last-child){
+  margin-bottom: 1.5rem;
+}

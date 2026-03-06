@@ -1,0 +1,105 @@
+.pv-customtoast {
+  @apply fixed flex items-center right-5 top-[30px] z-[9999];
+}
+.pv-customtoast:where(.toast, .column) {
+  @apply flex items-center;
+}
+.pv-customtoast {
+  @apply bg-white list-none w-[200px] md:w-[400px] fixed overflow-hidden rounded justify-between animate-[show\_toast_0.3s_ease_forwards] z-[1000] shadow-[rgba(0,0,0,0.1)_-4px_9px_25px_-6px] mb-2.5 right-[0%] top-[16%];
+}
+@keyframes show_toast {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-5%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+.notifications .toast.hide {
+  @apply animate-[hide\_toast_0.3s_ease_forwards];
+}
+@keyframes hide_toast {
+  0% {
+    transform: translateX(-10%);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(calc(100% + 20px));
+  }
+}
+.pv-customtoast::before {
+  @apply absolute content-[''] h-[3px] w-full animate-[progress_2s_linear_forwards] left-0 bottom-0;
+}
+@keyframes progress {
+  100% {
+    width: 0%;
+  }
+}
+.pv-customtoast.success::before,
+.btn#success {
+  background: #0abf30;
+}
+.pv-customtoast.error::before,
+.btn#error {
+  background: #f24d4c;
+}
+.pv-customtoast.warning::before,
+.btn#warning {
+  background: #e9bd0c;
+}
+.pv-customtoast-icon {
+  @apply md:h-[60px] h-[45px] w-[45px] md:w-[60px] relative after:content-["_"] after:block after:md:w-[30px] after:w-[25px] after:h-auto after:bg-center after:bg-contain after:bg-no-repeat after:z-[1] after:absolute after:md:left-[15px] after:left-[10px] after:inset-0;
+}
+.pv-customtoast-icon.success {
+  @apply bg-[#0abf30] after:content-["_"] after:bg-[url('../../icon/success.svg')];
+}
+
+.pv-customtoast-icon.error {
+  @apply bg-[#f24d4c] after:content-["_"] after:bg-[url('../../icon/error.svg')];
+}
+.pv-customtoast-icon.warning {
+  @apply bg-[#e9bd0c] after:content-["_"] after:bg-[url('../../icon/warning.svg')];
+}
+
+.toast__close-btn {
+  @apply bg-transparent text-base cursor-pointer mr-4 font-semibold border-[none];
+}
+
+.toaster-container {
+  @apply flex justify-center items-center;
+}
+.toaster-content {
+  @apply z-50 fixed bottom-0 flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md transform translate-y-full;
+}
+.toaster-container.show .toaster-content {
+  animation: slideIn 0.2s forwards, fadeOut 0.3s 2.7s forwards;
+}
+.toaster-content .m-icon.success {
+  mask-image: url('/icon/success.svg');
+  @apply flex-shrink-0 w-5 h-5 bg-green-600;
+}
+.toaster-content .m-icon.error {
+  mask-image: url('/icon/error.svg');
+  @apply flex-shrink-0 w-5 h-5 bg-red-600;
+}
+@keyframes slideIn {
+  to {
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeOut {
+  to {
+    transform: translateY(100%);
+  }
+}

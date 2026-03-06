@@ -1,0 +1,25 @@
+.main_nav{
+    @apply flex items-center justify-end mt-8
+}
+.pagination {
+    @apply flex justify-center list-none p-0;
+  }
+  .page-item {
+    @apply mr-2;
+  }
+  .page-link {
+    @apply  w-8 h-8 flex items-center justify-center text-[#333] no-underline bg-[#f0f0f0] rounded transition-[background-color] duration-[0.2s] p-2;
+  }
+  .page-link:hover,
+  .page-link:focus {
+    @apply bg-[#ccc];
+  }
+  .page-item.active .page-link {
+    @apply bg-primary text-white;
+  }
+  .m-icon-prev{
+    @apply bg-[url('/icon/prev.svg')] flex justify-center items-center cursor-pointer;
+  }
+  .m-icon-next{
+    @apply bg-[url('/icon/next.svg')] flex justify-center items-center cursor-pointer;
+  }

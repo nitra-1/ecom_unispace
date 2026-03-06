@@ -1,0 +1,12 @@
+.data_not_found_wrapper{
+    @apply text-center flex flex-col justify-center h-[25rem];
+}
+.data_not_found_img{
+ @apply mx-auto mb-4;   
+}
+.data_not_found_heading{
+    @apply text-black text-24 font-medium mb-3;
+}
+.data_not_found_dec{
+    @apply text-[#878787] text-18 sm:text-[20px];
+}

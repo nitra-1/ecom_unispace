@@ -1,0 +1,114 @@
+.m-icon--percentageDiscount {
+  background-image: url('~icons/percentageDis.svg');
+}
+.m-icon--shared {
+  background-image: url('~icons/shareCoupon.svg');
+  width: 1rem;
+  height: 1rem;
+}
+.switchFilter {
+  width: 0;
+  display: inline-block;
+  background-color: $success;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  border-radius: 0.375rem;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
+  -moz-transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.switch {
+  position: relative;
+  border: 1px solid var(--cus-border);
+  border-radius: 0.375rem;
+  z-index: 1;
+  width: fit-content;
+  label {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    width: 68px;
+    height: 20px;
+    padding: 4px 0;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  input[type='radio'] {
+    visibility: hidden;
+    position: absolute;
+    height: 100%;
+  }
+  input[type='radio']#yes:checked ~ label[for='yes'] {
+    color: white;
+  }
+  input[type='radio']#yes:checked ~ .switchFilter {
+    left: 0;
+    opacity: 1;
+    width: 68px;
+  }
+  input[type='radio']#no:checked ~ label[for='no'] {
+    color: white;
+  }
+  input[type='radio']#no:checked ~ .switchFilter {
+    left: 68px;
+    width: 68px;
+    opacity: 1;
+    background-color: $danger;
+  }
+}
+
+.m-icon--flatDis {
+  background-image: url('~icons/flatDis.svg');
+}
+.m-icon--buyOneDis {
+  background-image: url('~icons/buyOneFree.svg');
+}
+.m-icon--freeShip {
+  background-image: url('~icons/freeShipping.svg');
+}
+.select_coupon_main {
+  .coupon_select {
+    background-color: var(--bg-default);
+  }
+}
+.create-coupon-form {
+  .m-icon--exclamationmark {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('~icons/freeShipping.svg');
+    background-image: url('~icons/exclamation-mark.svg');
+  }
+}
+
+.pv-coupon-disable {
+  background: linear-gradient(to bottom, rgb(0 0 0 / 15%), rgb(0 27 90 / 8%));
+  position: relative;
+}
+
+.pv-coupons-main {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9375rem;
+  @include custom-breakpoint(max-width, bp1120) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pv-coupons-inner {
+    box-shadow: $pv-boxshadow;
+  }
+}
+.pv-random-icongenerate {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  background-color: var(--bs-white);
+  filter: opacity(0.6);
+}

@@ -1,0 +1,52 @@
+.pv-home-thumblinemain {
+  .pv-home-thumblineinner {
+    padding: 0px 20px;
+
+    .pv-home-thumbline {
+      img {
+        width: 185px !important;
+        height: 185px;
+        border-radius: 100px;
+      }
+    }
+  }
+}
+
+.pv-home-thumbline-main {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  .content_Thumbnail {
+    position: relative;
+    z-index: 1;
+    margin-left: 10px;
+  }
+  .title_Thumbnail,
+  .subTitle_Thumbnail {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .title_Thumbnail {
+    font-size: 16px;
+  }
+}
+
+.pv-thumbline-btn-main {
+  .slide_btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-default);
+    line-height: normal;
+    padding: 0.3rem;
+  }
+
+  .pv-thumbline-slide_left {
+    top: 50% !important;
+    left: 2px;
+  }
+
+  .pv-thumbline-slide_right {
+    top: 50% !important;
+    right: -19px !important;
+  }
+}

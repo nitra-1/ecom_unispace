@@ -1,0 +1,26 @@
+.categories-col {
+  @apply flex flex-col justify-center items-center rounded-md;
+}
+.categories-img {
+  @apply w-full h-full;
+}
+.categories-name {
+  @apply mb-2 text-18 font-normal text-[#9F9F9F] capitalize;
+}
+.categories-col:hover .categories-name {
+  @apply text-white;
+}
+.pv-home-thumbline-main {
+  @apply grid;
+}
+
+.content_Thumbnail {
+  @apply flex flex-col relative z-[1] w-full;
+}
+.title_Thumbnail,
+.subTitle_Thumbnail {
+  @apply flex text-ellipsis whitespace-nowrap overflow-hidden;
+}
+.title_Thumbnail {
+  @apply flex mt-2 text-sm sm:text-base text-TextTitle whitespace-normal font-medium;
+}
