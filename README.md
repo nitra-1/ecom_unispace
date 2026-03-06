@@ -13,6 +13,7 @@ ecom_unispace/
 ├── Worker-APIs-2/              # Orders · Users services (planned)
 └── docs/
     ├── architecture.md         # System architecture, modules, API & data-flow
+    ├── checkout-flow.md        # End-to-end checkout flow (frontend → API → backend)
     ├── env-vars.md             # Required environment variables
     └── readme.md               # .NET Core controllers reference
 ```
@@ -22,6 +23,7 @@ ecom_unispace/
 | Topic | Document |
 |---|---|
 | Architecture, modules, API structure, data flow | [docs/architecture.md](docs/architecture.md) |
+| Checkout flow – frontend to backend | [docs/checkout-flow.md](docs/checkout-flow.md) |
 | Environment variables | [docs/env-vars.md](docs/env-vars.md) |
 | .NET Core controllers reference | [docs/readme.md](docs/readme.md) |
 
