@@ -12,6 +12,7 @@ ecom_unispace/
 ├── Worker-APIs-1/              # Catalogue · IDServer · Logs services (planned)
 ├── Worker-APIs-2/              # Orders · Users services (planned)
 └── docs/
+    ├── admin-panel.md          # Admin panel capabilities reference
     ├── architecture.md         # System architecture, modules, API & data-flow
     ├── checkout-flow.md        # End-to-end checkout flow (frontend → API → backend)
     ├── env-vars.md             # Required environment variables
@@ -22,6 +23,7 @@ ecom_unispace/
 
 | Topic | Document |
 |---|---|
+| Admin panel capabilities | [docs/admin-panel.md](docs/admin-panel.md) |
 | Architecture, modules, API structure, data flow | [docs/architecture.md](docs/architecture.md) |
 | Checkout flow – frontend to backend | [docs/checkout-flow.md](docs/checkout-flow.md) |
 | Environment variables | [docs/env-vars.md](docs/env-vars.md) |
