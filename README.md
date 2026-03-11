@@ -16,7 +16,8 @@ ecom_unispace/
     ├── architecture.md         # System architecture, modules, API & data-flow
     ├── checkout-flow.md        # End-to-end checkout flow (frontend → API → backend)
     ├── env-vars.md             # Required environment variables
-    └── readme.md               # .NET Core controllers reference
+    ├── readme.md               # .NET Core controllers reference
+    └── appointment-section.md  # Appointment (consultation-cum-sale) section solution design
 ```
 
 ## Quick links
@@ -28,6 +29,7 @@ ecom_unispace/
 | Checkout flow – frontend to backend | [docs/checkout-flow.md](docs/checkout-flow.md) |
 | Environment variables | [docs/env-vars.md](docs/env-vars.md) |
 | .NET Core controllers reference | [docs/readme.md](docs/readme.md) |
+| Appointment section – consultation-cum-sale design | [docs/appointment-section.md](docs/appointment-section.md) |
 
 ## Getting started
 
