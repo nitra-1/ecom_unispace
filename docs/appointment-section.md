@@ -3,6 +3,8 @@
 > This document is the solution design for the Aparna platform's **Appointment Booking** feature.  
 > The feature lets customers schedule a **consultation-cum-sale** session with a product specialist for a chosen category.  
 > The prototype HTML page is at [`docs/booking.html`](booking.html).  
+> For the High Level Design see [appointment-hld.md](appointment-hld.md).  
+> For the Low Level Design see [appointment-lld.md](appointment-lld.md).  
 > For the platform architecture see [architecture.md](architecture.md).  
 > For environment variables see [env-vars.md](env-vars.md).
 
