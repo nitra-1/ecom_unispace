@@ -1,0 +1,270 @@
+/* =========================================================
+   Appointment booking page styles
+   Place at: src/app/appointment/appointment.module.css
+   ========================================================= */
+
+/* CSS variables */
+:root {
+  --slot-available-bg:      #d4f8d4;
+  --slot-available-border:  #28a745;
+  --slot-full-bg:           #f8d4d4;
+  --slot-full-border:       #dc3545;
+  --slot-selected-bg:       #007bff;
+  --slot-selected-color:    #ffffff;
+}
+
+/* Page layout */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.subheading {
+  color: #555;
+  margin-bottom: 28px;
+}
+
+/* Form elements */
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.select,
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.select:focus,
+.input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* Slot grid */
+.slotGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .slotGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Slot card */
+.slot {
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.875rem;
+  transition: box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #fff;
+  cursor: default;
+}
+
+.slotAvailable {
+  background-color: var(--slot-available-bg);
+  border-color: var(--slot-available-border);
+  cursor: pointer;
+}
+
+.slotAvailable:hover {
+  box-shadow: 0 0 0 2px var(--slot-available-border);
+}
+
+.slotFull {
+  background-color: var(--slot-full-bg);
+  border-color: var(--slot-full-border);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.slotSelected {
+  background-color: var(--slot-selected-bg) !important;
+  border-color: var(--slot-selected-bg) !important;
+  color: var(--slot-selected-color);
+  font-weight: 600;
+}
+
+.slotTime {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.slotStatus {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Skeleton loader */
+.slotSkeleton {
+  height: 60px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Legend */
+.slotLegend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.legendDot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.legendDotAvailable { background: var(--slot-available-border); }
+.legendDotFull      { background: var(--slot-full-border); }
+
+/* No slots message */
+.noSlots {
+  color: #888;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Confirm button */
+.confirmBtn {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin-top: 24px;
+  background: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirmBtn:hover:not(.confirmBtnDisabled) {
+  background: #0056b3;
+}
+
+.confirmBtnDisabled {
+  background: #b0c4de;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error messages */
+.errorMsg {
+  color: var(--slot-full-border);
+  font-size: 0.875rem;
+  margin-top: 6px;
+}
+
+/* Confirmation card (used in AppointmentConfirmed.jsx) */
+.confirmCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 28px;
+  max-width: 560px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.confirmIcon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.confirmTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #28a745;
+}
+
+.confirmDetails {
+  text-align: left;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.confirmDetails dt {
+  font-weight: 600;
+  color: #555;
+}
+
+.confirmDetails dd {
+  margin: 0;
+}
+
+.meetingLink {
+  color: #007bff;
+  word-break: break-all;
+}
+
+.bookAnotherLink {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
