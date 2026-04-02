@@ -1,0 +1,31 @@
+{
+  "name": "appointment-booking-frontend",
+  "version": "1.0.0",
+  "description": "Frontend components for the Appointment Booking Module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "moment": "^2.30.1",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-datepicker": "^8.7.0",
+    "react-dom": "^18",
+    "sweetalert2": "^11.7.32"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  },
+  "notes": {
+    "integration": "These components are designed to be copied into an existing Next.js or Create React App project. They rely only on the packages listed above."
+  }
+}
