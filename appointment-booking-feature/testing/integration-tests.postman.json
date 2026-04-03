@@ -1,0 +1,305 @@
+{
+  "info": {
+    "name": "Aparna Appointment Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "aparna-appointment-booking-v1"
+  },
+  "variable": [
+    { "key": "base_url", "value": "https://api.aparna.hashtechy.space/api", "type": "string" },
+    { "key": "token", "value": "", "type": "string" },
+    { "key": "sectionId", "value": "1", "type": "string" },
+    { "key": "slotId", "value": "1", "type": "string" },
+    { "key": "bookingId", "value": "1", "type": "string" },
+    { "key": "customerId", "value": "CUST-001", "type": "string" },
+    { "key": "today", "value": "2026-04-10", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Sections",
+      "item": [
+        {
+          "name": "Get All Sections",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/Appointment/Section/GetAll", "host": ["{{base_url}}"], "path": ["Appointment","Section","GetAll"] }
+          }
+        },
+        {
+          "name": "Get Section by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/Appointment/Section/{{sectionId}}", "host": ["{{base_url}}"], "path": ["Appointment","Section","{{sectionId}}"] }
+          }
+        },
+        {
+          "name": "Create Section (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sectionName\": \"Test Section\",\n  \"description\": \"A test section\",\n  \"location\": \"Floor 1\",\n  \"imageUrl\": \"https://cdn.aparna.com/test.jpg\",\n  \"isActive\": true\n}"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Section", "host": ["{{base_url}}"], "path": ["Appointment","Section"] }
+          }
+        },
+        {
+          "name": "Update Section (Admin)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sectionName\": \"Updated Section\",\n  \"description\": \"Updated description\",\n  \"location\": \"Floor 2\",\n  \"isActive\": true\n}"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Section/{{sectionId}}", "host": ["{{base_url}}"], "path": ["Appointment","Section","{{sectionId}}"] }
+          }
+        },
+        {
+          "name": "Delete Section (Admin)",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/Appointment/Section/{{sectionId}}", "host": ["{{base_url}}"], "path": ["Appointment","Section","{{sectionId}}"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Capacity",
+      "item": [
+        {
+          "name": "Get Capacity by Section",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/Appointment/Capacity/GetBySection/{{sectionId}}", "host": ["{{base_url}}"], "path": ["Appointment","Capacity","GetBySection","{{sectionId}}"] }
+          }
+        },
+        {
+          "name": "Create Capacity",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sectionId\": 1,\n  \"dayOfWeek\": 1,\n  \"hourOfDay\": 10,\n  \"salespersonCount\": 3,\n  \"appointmentDurationMinutes\": 30,\n  \"isActive\": true\n}"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Capacity", "host": ["{{base_url}}"], "path": ["Appointment","Capacity"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Slots",
+      "item": [
+        {
+          "name": "Get Slot Availability",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/Appointment/Slot/GetAvailability/{{sectionId}}?date={{today}}",
+              "host": ["{{base_url}}"],
+              "path": ["Appointment","Slot","GetAvailability","{{sectionId}}"],
+              "query": [{ "key": "date", "value": "{{today}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Real-Time Slots",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/Appointment/Slot/GetRealTime/{{sectionId}}?date={{today}}",
+              "host": ["{{base_url}}"],
+              "path": ["Appointment","Slot","GetRealTime","{{sectionId}}"],
+              "query": [{ "key": "date", "value": "{{today}}" }]
+            }
+          }
+        },
+        {
+          "name": "Generate Slots (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sectionId\": 1,\n  \"startDate\": \"2026-05-01\",\n  \"endDate\": \"2026-05-31\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Slot/Generate", "host": ["{{base_url}}"], "path": ["Appointment","Slot","Generate"] }
+          }
+        },
+        {
+          "name": "Block Slot (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"slotId\": {{slotId}},\n  \"blockReason\": \"Staff training day\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Slot/Block", "host": ["{{base_url}}"], "path": ["Appointment","Slot","Block"] }
+          }
+        },
+        {
+          "name": "Unblock Slot (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"slotId\": {{slotId}} }"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Slot/Unblock", "host": ["{{base_url}}"], "path": ["Appointment","Slot","Unblock"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"slotId\": {{slotId}},\n  \"customerId\": \"{{customerId}}\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"email\": \"john.smith@example.com\",\n  \"phoneNumber\": \"+919876543210\",\n  \"appointmentType\": \"Consultation\",\n  \"notes\": \"Interested in L-shaped kitchen\"\n}"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Booking/Create", "host": ["{{base_url}}"], "path": ["Appointment","Booking","Create"] }
+          }
+        },
+        {
+          "name": "Get Customer Bookings",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/Appointment/Booking/GetCustomerBookings", "host": ["{{base_url}}"], "path": ["Appointment","Booking","GetCustomerBookings"] }
+          }
+        },
+        {
+          "name": "Get Booking by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/Appointment/Booking/{{bookingId}}", "host": ["{{base_url}}"], "path": ["Appointment","Booking","{{bookingId}}"] }
+          }
+        },
+        {
+          "name": "Reschedule Booking",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"newSlotId\": 5 }"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Booking/Reschedule/{{bookingId}}", "host": ["{{base_url}}"], "path": ["Appointment","Booking","Reschedule","{{bookingId}}"] }
+          }
+        },
+        {
+          "name": "Cancel Booking",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/Appointment/Booking/Cancel/{{bookingId}}", "host": ["{{base_url}}"], "path": ["Appointment","Booking","Cancel","{{bookingId}}"] }
+          }
+        },
+        {
+          "name": "Search Bookings (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{base_url}}/Appointment/Booking/Search?query=john&status=Confirmed&sectionId=1",
+              "host": ["{{base_url}}"],
+              "path": ["Appointment","Booking","Search"],
+              "query": [
+                { "key": "query", "value": "john" },
+                { "key": "status", "value": "Confirmed" },
+                { "key": "sectionId", "value": "1" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reminders",
+      "item": [
+        {
+          "name": "Get Upcoming Reminders (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/Appointment/Reminder/GetUpcoming", "host": ["{{base_url}}"], "path": ["Appointment","Reminder","GetUpcoming"] }
+          }
+        },
+        {
+          "name": "Send Reminder (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"bookingId\": {{bookingId}} }"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Reminder/Send", "host": ["{{base_url}}"], "path": ["Appointment","Reminder","Send"] }
+          }
+        },
+        {
+          "name": "Get Reminder Preferences",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/Appointment/Reminder/Preferences/{{customerId}}", "host": ["{{base_url}}"], "path": ["Appointment","Reminder","Preferences","{{customerId}}"] }
+          }
+        },
+        {
+          "name": "Update Reminder Preferences",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reminderDaysBefore\": 1,\n  \"reminderHourBefore\": 2,\n  \"enableEmailReminder\": true,\n  \"enableSmsReminder\": false\n}"
+            },
+            "url": { "raw": "{{base_url}}/Appointment/Reminder/Preferences/{{customerId}}", "host": ["{{base_url}}"], "path": ["Appointment","Reminder","Preferences","{{customerId}}"] }
+          }
+        }
+      ]
+    }
+  ]
+}
