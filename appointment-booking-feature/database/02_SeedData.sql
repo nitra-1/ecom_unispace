@@ -141,6 +141,7 @@ PRINT 'Inserted sample slots';
 -- Sample Bookings
 -- ─────────────────────────────────────────────────────────────
 DECLARE @FirstSlotId INT = (SELECT TOP 1 SlotId FROM AppointmentSlot WHERE SectionId = 1 ORDER BY SlotDate, StartTime);
+DECLARE @SecondSlotId INT = (SELECT TOP 1 SlotId FROM AppointmentSlot WHERE SectionId = 1 AND SlotId <> ISNULL(@FirstSlotId, 0) ORDER BY SlotDate, StartTime);
 
 IF @FirstSlotId IS NOT NULL AND NOT EXISTS (SELECT 1 FROM AppointmentBooking WHERE BookingNumber = 'APT-2026-000001')
 BEGIN
@@ -149,12 +150,19 @@ BEGIN
     VALUES
         ('APT-2026-000001', 'CUST-001', @FirstSlotId,
          'Rahul', 'Sharma', 'rahul.sharma@example.com', '+919876543210',
-         'Consultation', 'Interested in L-shaped modular kitchen', 'Confirmed'),
+         'Consultation', 'Interested in L-shaped modular kitchen', 'Confirmed');
+    PRINT 'Inserted first sample booking';
+END
 
-        ('APT-2026-000002', 'CUST-002', @FirstSlotId + 1,
+IF @SecondSlotId IS NOT NULL AND NOT EXISTS (SELECT 1 FROM AppointmentBooking WHERE BookingNumber = 'APT-2026-000002')
+BEGIN
+    INSERT INTO AppointmentBooking
+        (BookingNumber, CustomerId, SlotId, FirstName, LastName, Email, PhoneNumber, AppointmentType, Notes, BookingStatus)
+    VALUES
+        ('APT-2026-000002', 'CUST-002', @SecondSlotId,
          'Priya', 'Mehta', 'priya.mehta@example.com', '+919876543211',
          'Viewing', NULL, 'Confirmed');
-    PRINT 'Inserted sample bookings';
+    PRINT 'Inserted second sample booking';
 END
 GO
 
