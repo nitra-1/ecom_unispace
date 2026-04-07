@@ -92,19 +92,14 @@ namespace AppointmentBooking.Controllers
         {
             try
             {
-                // Look up sectionId before blocking so we can send a targeted SignalR event
-                var sectionId = await _appointmentService.GetSlotSectionIdAsync(request.SlotId);
-
-                var success = await _appointmentService.BlockSlotAsync(request.SlotId, request.BlockReason);
-                if (!success)
+                // BlockSlotAsync returns the sectionId in one DB round-trip (null = not found)
+                var sectionId = await _appointmentService.BlockSlotAsync(request.SlotId, request.BlockReason);
+                if (sectionId == null)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
 
                 // Notify only clients watching the affected section
-                if (sectionId.HasValue)
-                {
-                    await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
-                        .SendAsync("SlotBlocked", new { slotId = request.SlotId });
-                }
+                await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
+                    .SendAsync("SlotBlocked", new { slotId = request.SlotId });
                 await _hub.Clients.Group("admin")
                     .SendAsync("SlotBlocked", new { slotId = request.SlotId });
 
@@ -133,18 +128,13 @@ namespace AppointmentBooking.Controllers
         {
             try
             {
-                // Look up sectionId before unblocking for targeted broadcast
-                var sectionId = await _appointmentService.GetSlotSectionIdAsync(request.SlotId);
-
-                var success = await _appointmentService.UnblockSlotAsync(request.SlotId);
-                if (!success)
+                // UnblockSlotAsync returns the sectionId in one DB round-trip (null = not found)
+                var sectionId = await _appointmentService.UnblockSlotAsync(request.SlotId);
+                if (sectionId == null)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
 
-                if (sectionId.HasValue)
-                {
-                    await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
-                        .SendAsync("SlotUnblocked", new { slotId = request.SlotId });
-                }
+                await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
+                    .SendAsync("SlotUnblocked", new { slotId = request.SlotId });
                 await _hub.Clients.Group("admin")
                     .SendAsync("SlotUnblocked", new { slotId = request.SlotId });
 

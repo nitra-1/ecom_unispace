@@ -65,7 +65,13 @@ namespace AppointmentBooking.Services
             {
                 try
                 {
-                    await _http.PostAsJsonAsync(LogEndpoint, entry, stoppingToken);
+                    var response = await _http.PostAsJsonAsync(LogEndpoint, entry, stoppingToken);
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        _logger.LogWarning(
+                            "Fire-and-forget audit log was rejected: Status={Status}, Action={Action}",
+                            (int)response.StatusCode, entry.Action);
+                    }
                 }
                 catch (OperationCanceledException)
                 {
