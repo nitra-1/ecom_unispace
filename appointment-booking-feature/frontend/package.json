@@ -18,7 +18,9 @@
     "date-fns": "^3.6.0",
     "react-datepicker": "^6.9.0",
     "react-hot-toast": "^2.4.1",
-    "clsx": "^2.1.0"
+    "clsx": "^2.1.0",
+    "@microsoft/signalr": "^8.0.0",
+    "nookies": "^2.5.2"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3",

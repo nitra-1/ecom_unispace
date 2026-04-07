@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
+using AppointmentBooking.Hubs;
+using AppointmentBooking.Middleware;
 using AppointmentBooking.Services;
 using AppointmentBooking.Models.DTOs;
 
@@ -11,13 +14,19 @@ namespace AppointmentBooking.Controllers
     {
         private readonly IAppointmentService _appointmentService;
         private readonly ISlotGenerationService _slotGenerationService;
+        private readonly IAuditLogService _audit;
+        private readonly IHubContext<AppointmentHub> _hub;
 
         public AppointmentSlotController(
             IAppointmentService appointmentService,
-            ISlotGenerationService slotGenerationService)
+            ISlotGenerationService slotGenerationService,
+            IAuditLogService audit,
+            IHubContext<AppointmentHub> hub)
         {
             _appointmentService = appointmentService;
             _slotGenerationService = slotGenerationService;
+            _audit = audit;
+            _hub = hub;
         }
 
         /// <summary>Returns slot availability for a section on a date. Public.</summary>
@@ -87,6 +96,19 @@ namespace AppointmentBooking.Controllers
                 if (!success)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
 
+                // Notify all clients watching the section that this slot is now blocked
+                await _hub.Clients.All.SendAsync("SlotBlocked", new { slotId = request.SlotId });
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "SlotBlocked",
+                    EntityType = "Slot",
+                    EntityId = request.SlotId.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                    Details = request.BlockReason,
+                });
+
                 return Ok(new { success = true, data = (object)null, message = "Slot blocked" });
             }
             catch (Exception ex)
@@ -105,6 +127,17 @@ namespace AppointmentBooking.Controllers
                 var success = await _appointmentService.UnblockSlotAsync(request.SlotId);
                 if (!success)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
+
+                await _hub.Clients.All.SendAsync("SlotUnblocked", new { slotId = request.SlotId });
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "SlotUnblocked",
+                    EntityType = "Slot",
+                    EntityId = request.SlotId.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                });
 
                 return Ok(new { success = true, data = (object)null, message = "Slot unblocked" });
             }
@@ -125,6 +158,19 @@ namespace AppointmentBooking.Controllers
             try
             {
                 var booking = await _appointmentService.CreateBookingAsync(request, forceBook: true);
+
+                await _hub.Clients.Group("admin").SendAsync("BookingCreated", booking);
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "ForceBookCreated",
+                    EntityType = "Booking",
+                    EntityId = booking?.BookingId.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                    Details = $"SlotId={request.SlotId}",
+                });
+
                 return Ok(new { success = true, data = booking, message = "Booking force-created" });
             }
             catch (Exception ex)

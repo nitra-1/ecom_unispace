@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using AppointmentBooking.Middleware;
 using AppointmentBooking.Services;
 using AppointmentBooking.Models.DTOs;
 
@@ -10,10 +11,12 @@ namespace AppointmentBooking.Controllers
     public class AppointmentSectionController : ControllerBase
     {
         private readonly IAppointmentService _service;
+        private readonly IAuditLogService _audit;
 
-        public AppointmentSectionController(IAppointmentService service)
+        public AppointmentSectionController(IAppointmentService service, IAuditLogService audit)
         {
             _service = service;
+            _audit = audit;
         }
 
         /// <summary>Returns all active appointment sections.</summary>
@@ -60,6 +63,17 @@ namespace AppointmentBooking.Controllers
             try
             {
                 var created = await _service.CreateSectionAsync(request);
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "SectionCreated",
+                    EntityType = "Section",
+                    EntityId = created.SectionId.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                    Details = $"SectionName={created.SectionName}",
+                });
+
                 return CreatedAtAction(nameof(GetById), new { id = created.SectionId },
                     new { success = true, data = created, message = "Section created" });
             }
@@ -83,6 +97,15 @@ namespace AppointmentBooking.Controllers
                 if (updated == null)
                     return NotFound(new { success = false, data = (object)null, message = "Section not found" });
 
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "SectionUpdated",
+                    EntityType = "Section",
+                    EntityId = id.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                });
+
                 return Ok(new { success = true, data = updated, message = "Section updated" });
             }
             catch (Exception ex)
@@ -101,6 +124,15 @@ namespace AppointmentBooking.Controllers
                 var success = await _service.DeleteSectionAsync(id);
                 if (!success)
                     return NotFound(new { success = false, data = (object)null, message = "Section not found" });
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "SectionDeleted",
+                    EntityType = "Section",
+                    EntityId = id.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                });
 
                 return Ok(new { success = true, data = (object)null, message = "Section deleted" });
             }
