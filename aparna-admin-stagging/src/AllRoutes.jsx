@@ -77,6 +77,10 @@ import SubscriptionTabbing from './pages/subscription/SubscriptionTabbing.jsx'
 import RefundList from './pages/Order/RefundList/RefundList.jsx'
 import BulkInquiry from './pages/settings/BulkInquiry/BulkInquiry.jsx'
 import RMCInquiry from './pages/settings/RMCInquiry/RMCInquiry.jsx'
+// Appointment Booking – admin view for Kitchen and Wardrobe appointments.
+// Accessed via the Settings → Appointment tab, and now also as a direct
+// deep-linkable route so admins can bookmark or share the URL.
+import BookAppointment from './pages/settings/BookAppointment/BookAppointment.jsx'
 
 /* ---------------------- Contact ---------------------- */
 
@@ -231,6 +235,12 @@ const AllRoutes = () => {
         <Route exact path="/bulk-inquiry" element={<BulkInquiry />} />
 
         <Route exact path="/rmc-inquiry" element={<RMCInquiry />} />
+
+        {/* Appointment Booking – standalone deep-link route.
+            The component is also rendered inside Settings.jsx via the
+            #appointment tab, but having a dedicated route lets admins
+            bookmark /appointments directly. */}
+        <Route exact path="/appointments" element={<BookAppointment />} />
       </Route>
 
       {/* ------------------- 404 Not Found ------------------- */}

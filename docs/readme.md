@@ -808,13 +808,42 @@ Manages design-service booking records submitted via the storefront.
 ### `AppointmentDataController`
 
 **Route prefix:** `AppointmentData/`
+**Service location:** `Worker-APIs-2/Appointments/`
+**ORM:** Entity Framework 6 – Database-First (scaffolded from `AppointmentData` and `AppointmentSection` SQL Server tables)
 
-Handles appointment / showroom-visit bookings from customers.
+Handles appointment / showroom-visit bookings from customers and provides admin management endpoints.
 
 | Method | Endpoint | Description |
 |---|---|---|
-| POST | `AppointmentData` | Create a new appointment booking |
-| GET | `AppointmentData/Search` | Search appointment records |
+| POST | `AppointmentData` | Create a new appointment booking (called by `AppointmentBookig.jsx`). After a successful save, broadcasts a SignalR `ReceiveMessage` event and posts an audit log to `POST /api/Log`. |
+| GET | `AppointmentData/Search` | Paginated, filtered search. Accepts `PageIndex`, `PageSize`, `searchText`, `AppointmentFor`, `AppointmentDay`, `Status`, `UserId`. Returns `{ code, message, data[], pagination }`. Used by both the admin appointment lists and the customer "My Appointments" page. |
+| GET | `AppointmentData/{id}` | Retrieve a single appointment record by integer ID. |
+| PUT | `AppointmentData` | Update appointment status (called by `BookAppointmentForm.jsx` in the admin panel). Only persists the `Status` and `UpdatedAt` fields. Broadcasts a SignalR status-change event. |
+| DELETE | `AppointmentData/{id}` | Permanently delete an appointment record (admin only). |
+
+### `AppointmentSectionController`
+
+**Route prefix:** `Appointment/Section/`
+**Service location:** `Worker-APIs-2/Appointments/`
+
+Manages the lookup list of bookable sections (e.g. "Kitchen", "Wardrobe"). Admins can add, activate, and deactivate sections without code changes; the customer booking modal and admin tabs are driven by this data.
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `Appointment/Section` | List all sections (active and inactive) – for admin management. |
+| GET | `Appointment/Section/Active` | List only active sections – for the customer booking modal dropdown. No authentication required. |
+| GET | `Appointment/Section/{id}` | Retrieve a single section by ID. |
+| POST | `Appointment/Section` | Create a new bookable section. Rejects duplicate names. |
+| PUT | `Appointment/Section` | Update a section's name or active status. |
+| DELETE | `Appointment/Section/{id}` | Delete a section (existing appointment records are preserved). |
+
+#### Real-time notifications
+
+The rebuilt service exposes a SignalR hub at `/Hubs/appointmentHub`. The admin panel connects to this hub using the existing `useSignalRConnection` hook and listens for `ReceiveMessage` events, which are broadcast whenever a new appointment is booked or its status changes.
+
+#### Database schema
+
+Run `Worker-APIs-2/Appointments/Migrations/001_CreateAppointmentTables.sql` once against the target SQL Server database to create the `AppointmentData` and `AppointmentSection` tables with appropriate indexes.
 
 ### `ContactUsController`
 

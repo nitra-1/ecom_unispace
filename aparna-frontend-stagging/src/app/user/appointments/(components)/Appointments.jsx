@@ -2,85 +2,65 @@
 import EmptyComponent from '@/components/EmptyComponent'
 import Loader from '@/components/Loader'
 import MyaccountMenu from '@/components/MyaccountMenu'
-import axiosProvider from '@/lib/AxiosProvider'
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+// Redux thunks and actions from the new appointmentSlice
+import {
+  fetchAppointments,
+  setActiveFilter
+} from '@/redux/features/appointmentSlice'
 
 const Appointments = () => {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState()
+  const dispatch = useDispatch()
 
-  const [pageIndex, setPageIndex] = useState(1)
-  const [pageSize, setPageSize] = useState(10)
-  const [totalRecords, setTotalRecords] = useState(0)
+  // Read appointment state from Redux (populated by fetchAppointments thunk)
+  const { list: data, pagination, loading, activeFilter } = useSelector(
+    (state) => state.appointments
+  )
+  const pageIndex = activeFilter?.pageIndex ?? 1
+  const pageSize  = activeFilter?.pageSize  ?? 10
 
+  // Derive current user from the persisted user slice
   const { user } = useSelector((state) => state.user)
+  const email    = user?.emailId ?? user?.ownerEmail
 
-  // not getting emailId while responsive
-  const email = user?.emailId ?? user?.ownerEmail
-
-  const fetchData = async (pi, ps) => {
-    if (!email) return
-
-    try {
-      setLoading(true)
-      const response = await axiosProvider({
-        method: 'GET',
-        endpoint: 'AppointmentData/Search',
-        queryString: `?UserId=${user?.userId}&pi=${pi}&ps=${ps}`
-      })
-      if (response.data.code === 200) {
-        setData(response.data.data)
-
-        // This is the key line for pagination
-        setTotalRecords(response.data.pagination.recordCount || 0)
-      } else {
-        setData([])
-        setTotalRecords(0)
-      }
-    } catch (error) {
-      console.error('Failed to fetch appointments:', error)
-      setData([])
-      setTotalRecords(0)
-    } finally {
-      setLoading(false)
-    }
-  }
-
+  // Fetch appointments when user or pagination changes
   useEffect(() => {
-    fetchData(pageIndex, pageSize)
-  }, [email, pageIndex, pageSize])
+    if (!user?.userId) return
+    dispatch(fetchAppointments({ userId: user.userId, pageIndex, pageSize }))
+  }, [email, pageIndex, pageSize, dispatch, user?.userId])
 
-  const totalPages = Math.ceil(totalRecords / pageSize)
-  const canGoPrev = pageIndex > 1
-  const canGoNext = pageIndex < totalPages
+  // Pagination helpers
+  const totalPages = pagination?.pageCount  ?? 0
+  const canGoPrev  = pageIndex > 1
+  const canGoNext  = pageIndex < totalPages
 
-  // --- ADDED: Scroll to top handler ---
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  // --- UPDATED: Page change handlers with scroll ---
   const handlePrevPage = () => {
     if (canGoPrev) {
-      setPageIndex((prev) => prev - 1)
+      dispatch(setActiveFilter({ pageIndex: pageIndex - 1 }))
       handleScrollToTop()
     }
   }
 
   const handleNextPage = () => {
     if (canGoNext) {
-      setPageIndex((prev) => prev + 1)
+      dispatch(setActiveFilter({ pageIndex: pageIndex + 1 }))
       handleScrollToTop()
     }
   }
 
   const handlePageClick = (page) => {
     if (page !== pageIndex) {
-      setPageIndex(page)
+      dispatch(setActiveFilter({ pageIndex: page }))
       handleScrollToTop()
     }
   }
+
+  // Date formatting helper - accepts both ISO 8601 and "DD/MM/YYYY"
   const formatDate = (dateString) => {
     if (!dateString) return '-'
     let date = new Date(dateString)
@@ -151,7 +131,7 @@ const Appointments = () => {
                 </tbody>
               </table>
 
-              {/* --- REPLACED: Pagination Block --- */}
+              {/* Pagination */}
               <div className="flex justify-between items-center px-6 py-4 border-t border-gray-200">
                 <button
                   onClick={handlePrevPage}
@@ -202,7 +182,7 @@ const Appointments = () => {
           <EmptyComponent
             title={' No Appointments Yet'}
             description={
-              'You haven’t booked any appointments—schedule one to get started.'
+              "You haven't booked any appointments-schedule one to get started."
             }
             alt={'empty_Add'}
             src={'/images/empty_cart.png'}

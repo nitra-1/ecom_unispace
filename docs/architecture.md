@@ -55,6 +55,7 @@ The backend is currently served as a single hosted API at `https://api.aparna.ha
 | `Worker-APIs-1/Logs` | Log service | Audit log ingestion and retrieval |
 | `Worker-APIs-2/Orders` | Orders service | Cart, checkout, order lifecycle, returns, refunds |
 | `Worker-APIs-2/Users` | Users service | Customer and admin account management |
+| `Worker-APIs-2/Appointments` | **Appointment Booking service** | Appointment creation, search, status management, sections CRUD, SignalR hub |
 
 ### 2.2 Authentication model
 
@@ -64,16 +65,39 @@ The backend is currently served as a single hosted API at `https://api.aparna.ha
 
 ### 2.3 Real-time communication
 
-Two SignalR hubs are exposed by the backend and consumed by the admin panel:
+Three SignalR hubs are exposed by the backend:
 
 | Hub | Path | Purpose |
 |---|---|---|
 | Upload Progress | `/Hubs/uploadProgressHub` | Track bulk file/image upload progress |
 | Notifications | `/Hubs/notificationsLiveHub` | Push live notifications to logged-in admin users |
+| **Appointments** | `/Hubs/appointmentHub` | Broadcast appointment events (new bookings, status changes) to admin panel in real time |
 
 ### 2.4 Audit logging
 
 The admin Axios provider automatically calls `POST /api/Log` after every successful `POST`, `PUT`, and `DELETE` request, recording the user ID, action type, URL, and before/after payload for audit purposes.
+
+The rebuilt Appointment Booking service also calls `POST /api/Log` server-side (from `AppointmentDataController` and `AppointmentSectionController`) to ensure all appointment mutations are logged even when the mutation originates from the customer frontend.
+
+### 2.5 Appointment Booking service (EF6 Database-First)
+
+The service lives in `Worker-APIs-2/Appointments/` and is a self-contained ASP.NET Core 8 application.
+
+**Technology choices:**
+- ORM: Entity Framework 6 (`EntityFramework` NuGet package) with Database-First scaffolding
+- Auth: JWT Bearer (same secret/issuer/audience as `IDServer`)
+- Real-time: SignalR hub at `/Hubs/appointmentHub`
+- JSON: Newtonsoft.Json with `ReferenceLoopHandling.Ignore` for EF6 navigation properties
+
+**Database:**
+- `AppointmentData` – booking records
+- `AppointmentSection` – lookup table for bookable sections (Kitchen, Wardrobe, …)
+- Baseline SQL in `Worker-APIs-2/Appointments/Migrations/001_CreateAppointmentTables.sql`
+
+**Key design decisions:**
+1. `AppointmentFor` is stored as a string (section name) rather than an FK to `AppointmentSection.Id`. This is a deliberate denormalisation that preserves backward compatibility with the live API and existing frontend consumers.
+2. The Search endpoint accepts both the admin panel's `PageIndex`/`PageSize` query params and the customer frontend's `pi`/`ps` aliases.
+3. Status updates via `PUT AppointmentData` only persist the `Status` and `UpdatedAt` fields, ignoring all read-only fields round-tripped from Formik state.
 
 ---
 
