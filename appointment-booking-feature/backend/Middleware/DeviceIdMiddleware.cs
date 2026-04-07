@@ -36,6 +36,7 @@ namespace AppointmentBooking.Middleware
             else
             {
                 context.Items[ItemKey] = null;
+                // Log the path only — not the user-provided header value — to prevent log forging
                 _logger.LogDebug("Request to {Path} is missing the {Header} header",
                     context.Request.Path, HeaderName);
             }

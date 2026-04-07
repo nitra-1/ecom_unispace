@@ -165,6 +165,12 @@ namespace AppointmentBooking.Services
             return true;
         }
 
+        public async Task<int?> GetSlotSectionIdAsync(int slotId)
+        {
+            var slot = await _db.Slots.FindAsync(slotId);
+            return slot?.SectionId;
+        }
+
         // ── Bookings ──────────────────────────────────────────────────────────
 
         public async Task<AppointmentBookingResponse?> CreateBookingAsync(CreateAppointmentRequest request, bool forceBook = false)
@@ -385,6 +391,7 @@ namespace AppointmentBooking.Services
             BookingNumber = booking.BookingNumber,
             CustomerId = booking.CustomerId,
             SlotId = booking.SlotId,
+            SectionId = booking.Slot?.SectionId ?? 0,
             SlotDate = booking.Slot?.SlotDate.ToString("yyyy-MM-dd") ?? string.Empty,
             StartTime = booking.Slot?.StartTime.ToString("HH:mm") ?? string.Empty,
             EndTime = booking.Slot?.EndTime.ToString("HH:mm") ?? string.Empty,

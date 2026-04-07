@@ -112,6 +112,7 @@ namespace AppointmentBooking.Services
                 BookingNumber = booking.BookingNumber,
                 CustomerId = booking.CustomerId,
                 SlotId = booking.SlotId,
+                SectionId = booking.Slot?.SectionId ?? 0,
                 SlotDate = booking.Slot?.SlotDate.ToString("yyyy-MM-dd") ?? string.Empty,
                 StartTime = booking.Slot?.StartTime.ToString("HH:mm") ?? string.Empty,
                 EndTime = booking.Slot?.EndTime.ToString("HH:mm") ?? string.Empty,

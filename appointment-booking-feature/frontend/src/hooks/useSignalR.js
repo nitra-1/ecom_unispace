@@ -17,6 +17,9 @@
  *       SlotUnblocked:  (data)    => refetch(),
  *     },
  *   })
+ *
+ * Note: Wrap `handlers` in useMemo if defined inline to avoid unnecessary
+ * re-registrations.
  */
 
 import { useEffect, useRef, useState } from 'react'
@@ -32,6 +35,13 @@ const HUB_URL = process.env.NEXT_PUBLIC_SIGNALR_URL ?? 'https://api.aparna.hasht
 export function useSignalR({ sectionId, handlers = {} } = {}) {
   const [isConnected, setIsConnected] = useState(false)
   const connectionRef = useRef(null)
+
+  // Keep a stable ref to the latest handlers so registered callbacks always
+  // see the most recent state/dispatch without recreating the connection.
+  const handlersRef = useRef(handlers)
+  useEffect(() => {
+    handlersRef.current = handlers
+  })
 
   useEffect(() => {
     const token = getUserToken()
@@ -52,9 +62,13 @@ export function useSignalR({ sectionId, handlers = {} } = {}) {
 
     connectionRef.current = connection
 
-    // Register all event handlers passed by the caller
-    Object.entries(handlers).forEach(([event, handler]) => {
-      connection.on(event, handler)
+    // Register each event by forwarding to the latest handler via the ref.
+    // This avoids stale closures while still keeping the connection stable.
+    const registeredEvents = Object.keys(handlers)
+    registeredEvents.forEach((event) => {
+      connection.on(event, (...args) => {
+        handlersRef.current[event]?.(...args)
+      })
     })
 
     // Lifecycle callbacks
@@ -82,8 +96,8 @@ export function useSignalR({ sectionId, handlers = {} } = {}) {
       }
       connection.stop().catch(() => {})
     }
-    // Intentionally omitting `handlers` from deps to avoid re-creating the
-    // connection on every render — callers should memoize their handler objects.
+    // Connection is re-created only when sectionId changes.
+    // handlers are kept fresh via handlersRef so they don't need to be a dep.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionId])
 

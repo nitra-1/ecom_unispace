@@ -24,6 +24,8 @@ namespace AppointmentBooking.Services
         Task<IEnumerable<SlotAvailabilityResponse>> GetRealTimeSlotAvailabilityAsync(int sectionId, DateOnly date);
         Task<bool> BlockSlotAsync(int slotId, string? blockReason);
         Task<bool> UnblockSlotAsync(int slotId);
+        /// <summary>Returns the SectionId for a slot, or null if not found.</summary>
+        Task<int?> GetSlotSectionIdAsync(int slotId);
 
         // Bookings
         Task<AppointmentBookingResponse?> CreateBookingAsync(CreateAppointmentRequest request, bool forceBook = false);

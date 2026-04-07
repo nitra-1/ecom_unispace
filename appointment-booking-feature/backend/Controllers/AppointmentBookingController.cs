@@ -41,7 +41,7 @@ namespace AppointmentBooking.Controllers
                     return Conflict(new { success = false, data = (object)null, message = "Slot is fully booked or not available" });
 
                 // Notify all clients watching this section that a slot was updated
-                await _hub.Clients.Group(AppointmentHub.GroupName(booking.SlotId))
+                await _hub.Clients.Group(AppointmentHub.GroupName(booking.SectionId))
                     .SendAsync("BookingCreated", booking);
 
                 // Notify admin group so the dashboard refreshes automatically
@@ -122,7 +122,7 @@ namespace AppointmentBooking.Controllers
                     return NotFound(new { success = false, data = (object)null, message = "Booking or new slot not found" });
 
                 // Push update to affected section groups
-                await _hub.Clients.Group(AppointmentHub.GroupName(request.NewSlotId))
+                await _hub.Clients.Group(AppointmentHub.GroupName(updated.SectionId))
                     .SendAsync("BookingRescheduled", updated);
                 await _hub.Clients.Group("admin").SendAsync("BookingRescheduled", updated);
 

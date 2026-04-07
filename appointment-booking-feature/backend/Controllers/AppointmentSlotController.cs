@@ -92,12 +92,21 @@ namespace AppointmentBooking.Controllers
         {
             try
             {
+                // Look up sectionId before blocking so we can send a targeted SignalR event
+                var sectionId = await _appointmentService.GetSlotSectionIdAsync(request.SlotId);
+
                 var success = await _appointmentService.BlockSlotAsync(request.SlotId, request.BlockReason);
                 if (!success)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
 
-                // Notify all clients watching the section that this slot is now blocked
-                await _hub.Clients.All.SendAsync("SlotBlocked", new { slotId = request.SlotId });
+                // Notify only clients watching the affected section
+                if (sectionId.HasValue)
+                {
+                    await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
+                        .SendAsync("SlotBlocked", new { slotId = request.SlotId });
+                }
+                await _hub.Clients.Group("admin")
+                    .SendAsync("SlotBlocked", new { slotId = request.SlotId });
 
                 _audit.LogFireAndForget(new AuditLogEntry
                 {
@@ -124,11 +133,20 @@ namespace AppointmentBooking.Controllers
         {
             try
             {
+                // Look up sectionId before unblocking for targeted broadcast
+                var sectionId = await _appointmentService.GetSlotSectionIdAsync(request.SlotId);
+
                 var success = await _appointmentService.UnblockSlotAsync(request.SlotId);
                 if (!success)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
 
-                await _hub.Clients.All.SendAsync("SlotUnblocked", new { slotId = request.SlotId });
+                if (sectionId.HasValue)
+                {
+                    await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
+                        .SendAsync("SlotUnblocked", new { slotId = request.SlotId });
+                }
+                await _hub.Clients.Group("admin")
+                    .SendAsync("SlotUnblocked", new { slotId = request.SlotId });
 
                 _audit.LogFireAndForget(new AuditLogEntry
                 {

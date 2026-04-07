@@ -38,6 +38,13 @@ export function useSignalR({ sectionId, isAdmin = false, handlers = {} } = {}) {
   const [isConnected, setIsConnected] = useState(false)
   const connectionRef = useRef(null)
 
+  // Keep a stable ref to the latest handlers so registered callbacks always
+  // see the most recent state/dispatch without recreating the connection.
+  const handlersRef = useRef(handlers)
+  useEffect(() => {
+    handlersRef.current = handlers
+  })
+
   useEffect(() => {
     // Admin panel stores JWT in localStorage
     const token = localStorage.getItem('token')
@@ -56,9 +63,12 @@ export function useSignalR({ sectionId, isAdmin = false, handlers = {} } = {}) {
 
     connectionRef.current = connection
 
-    // Register caller-provided event handlers
-    Object.entries(handlers).forEach(([event, handler]) => {
-      connection.on(event, handler)
+    // Register each event by forwarding through the ref to avoid stale closures.
+    const registeredEvents = Object.keys(handlers)
+    registeredEvents.forEach((event) => {
+      connection.on(event, (...args) => {
+        handlersRef.current[event]?.(...args)
+      })
     })
 
     connection.onreconnecting(() => setIsConnected(false))
@@ -89,6 +99,8 @@ export function useSignalR({ sectionId, isAdmin = false, handlers = {} } = {}) {
     return () => {
       connection.stop().catch(() => {})
     }
+    // Connection is re-created only when sectionId or isAdmin changes.
+    // handlers are kept fresh via handlersRef so they don't need to be a dep.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionId, isAdmin])
 
