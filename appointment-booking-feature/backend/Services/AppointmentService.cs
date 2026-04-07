@@ -138,10 +138,10 @@ namespace AppointmentBooking.Services
             return slots.Select(MapToSlotResponse);
         }
 
-        public async Task<bool> BlockSlotAsync(int slotId, string? blockReason)
+        public async Task<int?> BlockSlotAsync(int slotId, string? blockReason)
         {
             var slot = await _db.Slots.FindAsync(slotId);
-            if (slot == null) return false;
+            if (slot == null) return null;
 
             slot.IsBlocked = true;
             slot.BlockReason = blockReason;
@@ -149,20 +149,26 @@ namespace AppointmentBooking.Services
             slot.ColorCode = "#6b7280";
             slot.UpdatedAt = DateTime.UtcNow;
             await _db.SaveChangesAsync();
-            return true;
+            return slot.SectionId;
         }
 
-        public async Task<bool> UnblockSlotAsync(int slotId)
+        public async Task<int?> UnblockSlotAsync(int slotId)
         {
             var slot = await _db.Slots.FindAsync(slotId);
-            if (slot == null) return false;
+            if (slot == null) return null;
 
             slot.IsBlocked = false;
             slot.BlockReason = null;
             slot.UpdatedAt = DateTime.UtcNow;
             slot.RefreshStatus();
             await _db.SaveChangesAsync();
-            return true;
+            return slot.SectionId;
+        }
+
+        public async Task<int?> GetSlotSectionIdAsync(int slotId)
+        {
+            var slot = await _db.Slots.FindAsync(slotId);
+            return slot?.SectionId;
         }
 
         // ── Bookings ──────────────────────────────────────────────────────────
@@ -385,6 +391,7 @@ namespace AppointmentBooking.Services
             BookingNumber = booking.BookingNumber,
             CustomerId = booking.CustomerId,
             SlotId = booking.SlotId,
+            SectionId = booking.Slot?.SectionId ?? 0,
             SlotDate = booking.Slot?.SlotDate.ToString("yyyy-MM-dd") ?? string.Empty,
             StartTime = booking.Slot?.StartTime.ToString("HH:mm") ?? string.Empty,
             EndTime = booking.Slot?.EndTime.ToString("HH:mm") ?? string.Empty,

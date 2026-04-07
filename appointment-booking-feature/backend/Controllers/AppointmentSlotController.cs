@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
+using AppointmentBooking.Hubs;
+using AppointmentBooking.Middleware;
 using AppointmentBooking.Services;
 using AppointmentBooking.Models.DTOs;
 
@@ -11,13 +14,19 @@ namespace AppointmentBooking.Controllers
     {
         private readonly IAppointmentService _appointmentService;
         private readonly ISlotGenerationService _slotGenerationService;
+        private readonly IAuditLogService _audit;
+        private readonly IHubContext<AppointmentHub> _hub;
 
         public AppointmentSlotController(
             IAppointmentService appointmentService,
-            ISlotGenerationService slotGenerationService)
+            ISlotGenerationService slotGenerationService,
+            IAuditLogService audit,
+            IHubContext<AppointmentHub> hub)
         {
             _appointmentService = appointmentService;
             _slotGenerationService = slotGenerationService;
+            _audit = audit;
+            _hub = hub;
         }
 
         /// <summary>Returns slot availability for a section on a date. Public.</summary>
@@ -83,9 +92,26 @@ namespace AppointmentBooking.Controllers
         {
             try
             {
-                var success = await _appointmentService.BlockSlotAsync(request.SlotId, request.BlockReason);
-                if (!success)
+                // BlockSlotAsync returns the sectionId in one DB round-trip (null = not found)
+                var sectionId = await _appointmentService.BlockSlotAsync(request.SlotId, request.BlockReason);
+                if (sectionId == null)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
+
+                // Notify only clients watching the affected section
+                await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
+                    .SendAsync("SlotBlocked", new { slotId = request.SlotId });
+                await _hub.Clients.Group("admin")
+                    .SendAsync("SlotBlocked", new { slotId = request.SlotId });
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "SlotBlocked",
+                    EntityType = "Slot",
+                    EntityId = request.SlotId.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                    Details = request.BlockReason,
+                });
 
                 return Ok(new { success = true, data = (object)null, message = "Slot blocked" });
             }
@@ -102,9 +128,24 @@ namespace AppointmentBooking.Controllers
         {
             try
             {
-                var success = await _appointmentService.UnblockSlotAsync(request.SlotId);
-                if (!success)
+                // UnblockSlotAsync returns the sectionId in one DB round-trip (null = not found)
+                var sectionId = await _appointmentService.UnblockSlotAsync(request.SlotId);
+                if (sectionId == null)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
+
+                await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
+                    .SendAsync("SlotUnblocked", new { slotId = request.SlotId });
+                await _hub.Clients.Group("admin")
+                    .SendAsync("SlotUnblocked", new { slotId = request.SlotId });
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "SlotUnblocked",
+                    EntityType = "Slot",
+                    EntityId = request.SlotId.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                });
 
                 return Ok(new { success = true, data = (object)null, message = "Slot unblocked" });
             }
@@ -125,6 +166,19 @@ namespace AppointmentBooking.Controllers
             try
             {
                 var booking = await _appointmentService.CreateBookingAsync(request, forceBook: true);
+
+                await _hub.Clients.Group("admin").SendAsync("BookingCreated", booking);
+
+                _audit.LogFireAndForget(new AuditLogEntry
+                {
+                    Action = "ForceBookCreated",
+                    EntityType = "Booking",
+                    EntityId = booking?.BookingId.ToString(),
+                    PerformedBy = User.Identity?.Name,
+                    DeviceId = HttpContext.GetDeviceId(),
+                    Details = $"SlotId={request.SlotId}",
+                });
+
                 return Ok(new { success = true, data = booking, message = "Booking force-created" });
             }
             catch (Exception ex)
