@@ -26,6 +26,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using AppointmentBooking.Models;
+using BookingEntity = AppointmentBooking.Models.AppointmentBooking;
 
 namespace AppointmentBooking.DbContext
 {
@@ -56,7 +57,7 @@ namespace AppointmentBooking.DbContext
         public virtual DbSet<AppointmentSlot> Slots { get; set; } = null!;
 
         /// <summary>dbo.AppointmentBooking — customer bookings.</summary>
-        public virtual DbSet<AppointmentBooking> Bookings { get; set; } = null!;
+        public virtual DbSet<BookingEntity> Bookings { get; set; } = null!;
 
         /// <summary>dbo.AppointmentFeedback — post-appointment ratings.</summary>
         public virtual DbSet<AppointmentFeedback> Feedbacks { get; set; } = null!;
@@ -258,7 +259,7 @@ namespace AppointmentBooking.DbContext
             // AppointmentBooking
             // SQL: dbo.AppointmentBooking
             // ────────────────────────────────────────────────────────────────
-            modelBuilder.Entity<AppointmentBooking>(entity =>
+            modelBuilder.Entity<BookingEntity>(entity =>
             {
                 entity.ToTable("AppointmentBooking");
 

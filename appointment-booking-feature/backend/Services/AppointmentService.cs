@@ -21,6 +21,7 @@ using Microsoft.EntityFrameworkCore;
 using AppointmentBooking.DbContext;
 using AppointmentBooking.Models;
 using AppointmentBooking.Models.DTOs;
+using BookingEntity = AppointmentBooking.Models.AppointmentBooking;
 
 namespace AppointmentBooking.Services
 {
@@ -238,7 +239,7 @@ namespace AppointmentBooking.Services
                     sequence = last + 1;
 
                 // Create the booking entity (maps to dbo.AppointmentBooking)
-                var booking = new AppointmentBooking
+                var booking = new BookingEntity
                 {
                     BookingNumber = $"APT-{year}-{sequence:D6}",
                     SlotId = request.SlotId,
@@ -434,7 +435,7 @@ namespace AppointmentBooking.Services
             BlockReason = slot.BlockReason,
         };
 
-        private static AppointmentBookingResponse MapToBookingResponse(AppointmentBooking booking) => new()
+        private static AppointmentBookingResponse MapToBookingResponse(BookingEntity booking) => new()
         {
             BookingId = booking.BookingId,
             BookingNumber = booking.BookingNumber,
