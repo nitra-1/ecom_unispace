@@ -2,13 +2,13 @@
  * SectionForm.jsx — Formik-based form for creating/editing appointment sections.
  *
  * ┌─────────────────────────────────────────────────────────────────────────────┐
- * │ INTEGRATION WITH EF6 DATABASE-FIRST BACKEND                               │
+ * │ INTEGRATION WITH EF CORE DATABASE-FIRST BACKEND                               │
  * │                                                                            │
  * │ This form submits to the AppointmentSectionController:                     │
  * │   POST api/Appointment/Section         (create)                            │
  * │   PUT  api/Appointment/Section/{id}    (update)                            │
  * │                                                                            │
- * │ The backend model is dbo.AppointmentSection (EF6 DB-First scaffolded).     │
+ * │ The backend model is dbo.AppointmentSection (EF Core DB-First scaffolded).     │
  * │ All column mappings are in AppointmentDbContext.OnModelCreating().          │
  * │                                                                            │
  * │ Form fields map to the SectionRequest DTO:                                 │
@@ -29,7 +29,7 @@ import { Switch, Button, message } from 'antd'
 import { appointmentAdminApi } from '../../lib/appointmentAdminApi'
 
 // Yup validation schema — mirrors the DB column constraints from
-// dbo.AppointmentSection (scaffolded via EF6 Database-First)
+// dbo.AppointmentSection (scaffolded via EF Core Database-First)
 const validationSchema = Yup.object({
   sectionName: Yup.string().required('Section name is required').max(100),
   description: Yup.string().max(500),

@@ -2,13 +2,13 @@
  * CapacityForm.jsx — Formik-based form for creating/editing capacity rules.
  *
  * ┌─────────────────────────────────────────────────────────────────────────────┐
- * │ INTEGRATION WITH EF6 DATABASE-FIRST BACKEND                               │
+ * │ INTEGRATION WITH EF CORE DATABASE-FIRST BACKEND                               │
  * │                                                                            │
  * │ This form submits to the AppointmentCapacityController:                    │
  * │   POST api/Appointment/Capacity         (create)                           │
  * │   PUT  api/Appointment/Capacity/{id}    (update)                           │
  * │                                                                            │
- * │ The backend model is dbo.AppointmentCapacity (EF6 DB-First scaffolded).    │
+ * │ The backend model is dbo.AppointmentCapacity (EF Core DB-First scaffolded).    │
  * │ All column mappings are in AppointmentDbContext.OnModelCreating().          │
  * │                                                                            │
  * │ Form fields map to the CapacityRequest DTO:                                │

@@ -2,7 +2,7 @@
  * appointmentAdminApi.js — Admin Panel API client for the Appointment Booking feature.
  *
  * ┌─────────────────────────────────────────────────────────────────────────────┐
- * │ INTEGRATION WITH EF6 DATABASE-FIRST BACKEND                               │
+ * │ INTEGRATION WITH EF CORE DATABASE-FIRST BACKEND                               │
  * │                                                                            │
  * │ This file consumes the rebuilt .NET 8 Appointment APIs backed by           │
  * │ EF Core Database-First scaffolded models (no Code-First migrations).       │
@@ -166,7 +166,7 @@ const request = async (method, path, data = null, params = null) => {
 // The endpoint paths match the [Route] attributes on the .NET controllers.
 export const appointmentAdminApi = {
   // ── Sections ────────────────────────────────────────────────────────────────
-  // Backend: AppointmentSectionController (EF6 DB-First → dbo.AppointmentSection)
+  // Backend: AppointmentSectionController (EF Core DB-First → dbo.AppointmentSection)
   // Admin form: SectionForm.jsx (Formik → SectionRequest DTO)
   getAllSections: () => request('GET', 'Appointment/Section/GetAll'),
   getSectionById: (id) => request('GET', `Appointment/Section/${id}`),
@@ -175,7 +175,7 @@ export const appointmentAdminApi = {
   deleteSection: (id) => request('DELETE', `Appointment/Section/${id}`),
 
   // ── Capacity ─────────────────────────────────────────────────────────────────
-  // Backend: AppointmentCapacityController (EF6 DB-First → dbo.AppointmentCapacity)
+  // Backend: AppointmentCapacityController (EF Core DB-First → dbo.AppointmentCapacity)
   // Admin form: CapacityForm.jsx (Formik → CapacityRequest DTO)
   getCapacityBySection: (sectionId) =>
     request('GET', `Appointment/Capacity/GetBySection/${sectionId}`),
@@ -184,7 +184,7 @@ export const appointmentAdminApi = {
   deleteCapacity: (id) => request('DELETE', `Appointment/Capacity/${id}`),
 
   // ── Slots ────────────────────────────────────────────────────────────────────
-  // Backend: AppointmentSlotController (EF6 DB-First → dbo.AppointmentSlot)
+  // Backend: AppointmentSlotController (EF Core DB-First → dbo.AppointmentSlot)
   getSlotAvailability: (sectionId, date) =>
     request('GET', `Appointment/Slot/GetAvailability/${sectionId}`, null, { date }),
   generateSlots: (payload) => request('POST', 'Appointment/Slot/Generate', payload),
@@ -193,7 +193,7 @@ export const appointmentAdminApi = {
   forceBookSlot: (payload) => request('POST', 'Appointment/Slot/ForceBook', payload),
 
   // ── Bookings ──────────────────────────────────────────────────────────────────
-  // Backend: AppointmentBookingController (EF6 DB-First → dbo.AppointmentBooking)
+  // Backend: AppointmentBookingController (EF Core DB-First → dbo.AppointmentBooking)
   searchAppointments: (queryString) =>
     request('GET', `Appointment/Booking/Search?${queryString}`),
   getBookingById: (id) => request('GET', `Appointment/Booking/${id}`),
@@ -202,7 +202,7 @@ export const appointmentAdminApi = {
     request('PUT', `Appointment/Booking/Reschedule/${id}`, payload),
 
   // ── Reminders ─────────────────────────────────────────────────────────────────
-  // Backend: AppointmentReminderController (EF6 DB-First → dbo.AppointmentReminderPreference)
+  // Backend: AppointmentReminderController (EF Core DB-First → dbo.AppointmentReminderPreference)
   getUpcomingReminders: () => request('GET', 'Appointment/Reminder/GetUpcoming'),
   sendReminder: (payload) => request('POST', 'Appointment/Reminder/Send', payload),
   getReminderPreferences: (customerId) =>

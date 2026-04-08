@@ -2,7 +2,7 @@
  * appointmentApi.js — Customer Frontend API client for the Appointment Booking feature.
  *
  * ┌─────────────────────────────────────────────────────────────────────────────┐
- * │ INTEGRATION WITH EF6 DATABASE-FIRST BACKEND                               │
+ * │ INTEGRATION WITH EF CORE DATABASE-FIRST BACKEND                               │
  * │                                                                            │
  * │ This file consumes the rebuilt .NET 8 Appointment APIs backed by           │
  * │ EF Core Database-First scaffolded models (no Code-First migrations).       │
@@ -34,7 +34,7 @@ import axiosProvider from '@/lib/AxiosProvider'
  */
 export const appointmentApi = {
   // ── Sections ────────────────────────────────────────────────────────────────
-  // Backend: AppointmentSectionController (EF6 DB-First → dbo.AppointmentSection)
+  // Backend: AppointmentSectionController (EF Core DB-First → dbo.AppointmentSection)
 
   /** Fetch all active sections. Used to populate the section browser on page load. */
   getAllSections: () =>
@@ -45,7 +45,7 @@ export const appointmentApi = {
     axiosProvider({ method: 'GET', endpoint: `Appointment/Section/${id}` }),
 
   // ── Slots ────────────────────────────────────────────────────────────────────
-  // Backend: AppointmentSlotController (EF6 DB-First → dbo.AppointmentSlot)
+  // Backend: AppointmentSlotController (EF Core DB-First → dbo.AppointmentSlot)
 
   /**
    * Get slot availability for a section on a specific date.
@@ -74,7 +74,7 @@ export const appointmentApi = {
     }),
 
   // ── Bookings ─────────────────────────────────────────────────────────────────
-  // Backend: AppointmentBookingController (EF6 DB-First → dbo.AppointmentBooking)
+  // Backend: AppointmentBookingController (EF Core DB-First → dbo.AppointmentBooking)
 
   /**
    * Create a new appointment booking (public endpoint — no JWT required).
@@ -133,7 +133,7 @@ export const appointmentApi = {
     }),
 
   // ── Reminders ────────────────────────────────────────────────────────────────
-  // Backend: AppointmentReminderController (EF6 DB-First → dbo.AppointmentReminderPreference)
+  // Backend: AppointmentReminderController (EF Core DB-First → dbo.AppointmentReminderPreference)
 
   /**
    * Get reminder preferences for a customer.

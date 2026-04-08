@@ -2,7 +2,7 @@
  * appointmentSlice.js — Redux Toolkit slice for appointment state management.
  *
  * ┌─────────────────────────────────────────────────────────────────────────────┐
- * │ INTEGRATION WITH EF6 DATABASE-FIRST BACKEND                               │
+ * │ INTEGRATION WITH EF CORE DATABASE-FIRST BACKEND                               │
  * │                                                                            │
  * │ This slice manages client-side state for the Appointment Booking feature.  │
  * │ Data flows from the EF Core DB-First backend → appointmentApi.js → here.  │
@@ -26,7 +26,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 /** @type {import('@reduxjs/toolkit').SliceState} */
 const initialState = {
-  /** All active showroom sections (from dbo.AppointmentSection via EF6 DB-First) */
+  /** All active showroom sections (from dbo.AppointmentSection via EF Core DB-First) */
   sections: [],
   /** Currently selected section for booking */
   selectedSection: null,
