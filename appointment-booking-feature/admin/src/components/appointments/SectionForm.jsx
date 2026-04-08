@@ -1,9 +1,35 @@
+/**
+ * SectionForm.jsx — Formik-based form for creating/editing appointment sections.
+ *
+ * ┌─────────────────────────────────────────────────────────────────────────────┐
+ * │ INTEGRATION WITH EF6 DATABASE-FIRST BACKEND                               │
+ * │                                                                            │
+ * │ This form submits to the AppointmentSectionController:                     │
+ * │   POST api/Appointment/Section         (create)                            │
+ * │   PUT  api/Appointment/Section/{id}    (update)                            │
+ * │                                                                            │
+ * │ The backend model is dbo.AppointmentSection (EF6 DB-First scaffolded).     │
+ * │ All column mappings are in AppointmentDbContext.OnModelCreating().          │
+ * │                                                                            │
+ * │ Form fields map to the SectionRequest DTO:                                 │
+ * │   sectionName → SectionRequest.SectionName (max 100, required)            │
+ * │   description → SectionRequest.Description (max 500, optional)            │
+ * │   location    → SectionRequest.Location    (max 200, optional)            │
+ * │   imageUrl    → SectionRequest.ImageUrl    (max 500, optional URL)        │
+ * │   isActive    → SectionRequest.IsActive    (bool, default true)           │
+ * │                                                                            │
+ * │ The Yup validation below mirrors the SQL Server column constraints.        │
+ * └─────────────────────────────────────────────────────────────────────────────┘
+ */
+
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { Switch, Button, message } from 'antd'
 import { appointmentAdminApi } from '../../lib/appointmentAdminApi'
 
+// Yup validation schema — mirrors the DB column constraints from
+// dbo.AppointmentSection (scaffolded via EF6 Database-First)
 const validationSchema = Yup.object({
   sectionName: Yup.string().required('Section name is required').max(100),
   description: Yup.string().max(500),

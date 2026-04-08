@@ -1,3 +1,25 @@
+// =============================================================================
+// AppointmentCapacityController.cs — CRUD endpoints for capacity rules.
+//
+// Route prefix: api/Appointment/Capacity
+// All endpoints require Admin role (set at controller level).
+//
+// Endpoints:
+//   GET    /GetBySection/{sectionId} — Get all capacity rules for a section
+//   POST   /                         — Create a new capacity rule
+//   PUT    /{id}                     — Update an existing capacity rule
+//   DELETE /{id}                     — Delete a capacity rule
+//
+// Capacity rules define how many salespersons are available per section/day/hour.
+// The SlotGenerationService reads these rules to create AppointmentSlot rows.
+//
+// Admin calls: appointmentAdminApi.getCapacityBySection(),
+//              appointmentAdminApi.createCapacity(), etc.
+//
+// The CapacityForm component in the admin panel uses Formik to bind to the
+// CapacityRequest DTO and submits to these endpoints.
+// =============================================================================
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using AppointmentBooking.Services;
@@ -7,7 +29,7 @@ namespace AppointmentBooking.Controllers
 {
     [ApiController]
     [Route("api/Appointment/Capacity")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")] // All capacity endpoints are admin-only
     public class AppointmentCapacityController : ControllerBase
     {
         private readonly IAppointmentService _service;
@@ -17,7 +39,7 @@ namespace AppointmentBooking.Controllers
             _service = service;
         }
 
-        /// <summary>Returns capacity rules for a section.</summary>
+        /// <summary>Returns all capacity rules for a given section.</summary>
         [HttpGet("GetBySection/{sectionId:int}")]
         public async Task<IActionResult> GetBySection(int sectionId)
         {
@@ -32,7 +54,10 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Creates a capacity rule.</summary>
+        /// <summary>
+        /// Creates a new capacity rule. The CapacityRequest DTO binds to
+        /// the Formik form fields in the admin panel's CapacityForm component.
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CapacityRequest request)
         {
@@ -50,7 +75,7 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Updates a capacity rule.</summary>
+        /// <summary>Updates an existing capacity rule by ID.</summary>
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] CapacityRequest request)
         {
@@ -71,7 +96,7 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Deletes a capacity rule.</summary>
+        /// <summary>Deletes a capacity rule by ID (hard delete).</summary>
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
