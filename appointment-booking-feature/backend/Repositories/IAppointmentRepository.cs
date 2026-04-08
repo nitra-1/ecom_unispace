@@ -1,5 +1,6 @@
 using AppointmentBooking.Models;
 using AppointmentBooking.Models.DTOs;
+using BookingEntity = AppointmentBooking.Models.AppointmentBooking;
 
 namespace AppointmentBooking.Repositories
 {
@@ -15,10 +16,10 @@ namespace AppointmentBooking.Repositories
         Task<AppointmentCapacity> UpdateCapacityAsync(AppointmentCapacity capacity);
         Task DeleteCapacityAsync(int capacityId);
 
-        Task<AppointmentBooking?> GetBookingByIdAsync(int bookingId);
-        Task<IEnumerable<AppointmentBooking>> GetBookingsByCustomerAsync(string customerId);
-        Task<AppointmentBooking> CreateBookingAsync(AppointmentBooking booking);
-        Task<AppointmentBooking> UpdateBookingAsync(AppointmentBooking booking);
+        Task<BookingEntity?> GetBookingByIdAsync(int bookingId);
+        Task<IEnumerable<BookingEntity>> GetBookingsByCustomerAsync(string customerId);
+        Task<BookingEntity> CreateBookingAsync(BookingEntity booking);
+        Task<BookingEntity> UpdateBookingAsync(BookingEntity booking);
 
         Task<AppointmentReminderPreference?> GetReminderPreferencesAsync(string customerId);
         Task<AppointmentReminderPreference> UpsertReminderPreferencesAsync(AppointmentReminderPreference pref);

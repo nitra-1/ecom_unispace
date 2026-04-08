@@ -1,3 +1,29 @@
+/**
+ * CapacityForm.jsx — Formik-based form for creating/editing capacity rules.
+ *
+ * ┌─────────────────────────────────────────────────────────────────────────────┐
+ * │ INTEGRATION WITH EF CORE DATABASE-FIRST BACKEND                               │
+ * │                                                                            │
+ * │ This form submits to the AppointmentCapacityController:                    │
+ * │   POST api/Appointment/Capacity         (create)                           │
+ * │   PUT  api/Appointment/Capacity/{id}    (update)                           │
+ * │                                                                            │
+ * │ The backend model is dbo.AppointmentCapacity (EF Core DB-First scaffolded).    │
+ * │ All column mappings are in AppointmentDbContext.OnModelCreating().          │
+ * │                                                                            │
+ * │ Form fields map to the CapacityRequest DTO:                                │
+ * │   sectionId                → FK to dbo.AppointmentSection                  │
+ * │   dayOfWeek                → 0=Sun…6=Sat (NULL if specificDate is set)     │
+ * │   specificDate             → Overrides dayOfWeek for one-off dates         │
+ * │   hourOfDay                → 0–23                                          │
+ * │   salespersonCount         → TINYINT 1–50                                  │
+ * │   appointmentDurationMinutes → TINYINT (default 30)                        │
+ * │   isActive                 → BIT                                           │
+ * │                                                                            │
+ * │ The SlotGenerationService reads these rules to create AppointmentSlot rows.│
+ * └─────────────────────────────────────────────────────────────────────────────┘
+ */
+
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'

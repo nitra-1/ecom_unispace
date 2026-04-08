@@ -1,3 +1,21 @@
+// =============================================================================
+// AppointmentSectionController.cs — CRUD endpoints for appointment sections.
+//
+// Route prefix: api/Appointment/Section
+//
+// Endpoints:
+//   GET    /GetAll     — All active sections (public)
+//   GET    /{id}       — Single section by ID (public)
+//   POST   /           — Create a new section (Admin only)
+//   PUT    /{id}       — Update a section (Admin only)
+//   DELETE /{id}       — Soft-delete a section (Admin only, sets IsActive=false)
+//
+// Frontend calls: appointmentApi.getAllSections(), appointmentApi.getSectionById(id)
+// Admin calls: appointmentAdminApi.createSection(), .updateSection(), .deleteSection()
+//
+// The section model maps to dbo.AppointmentSection (EF Core Database-First).
+// =============================================================================
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using AppointmentBooking.Middleware;
@@ -19,7 +37,11 @@ namespace AppointmentBooking.Controllers
             _audit = audit;
         }
 
-        /// <summary>Returns all active appointment sections.</summary>
+        /// <summary>
+        /// Returns all active appointment sections. Public endpoint.
+        /// The frontend calls this on page load to populate the section browser.
+        /// Only sections with IsActive=true are returned.
+        /// </summary>
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
@@ -34,7 +56,7 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Returns a single section by ID.</summary>
+        /// <summary>Returns a single section by ID. Public endpoint.</summary>
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -52,7 +74,11 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Creates a new section. Admin only.</summary>
+        /// <summary>
+        /// Creates a new section. Admin only.
+        /// The admin panel sends a SectionRequest DTO from the Formik-based
+        /// SectionForm component.
+        /// </summary>
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] SectionRequest request)
@@ -64,6 +90,7 @@ namespace AppointmentBooking.Controllers
             {
                 var created = await _service.CreateSectionAsync(request);
 
+                // Audit log for traceability
                 _audit.LogFireAndForget(new AuditLogEntry
                 {
                     Action = "SectionCreated",
@@ -74,6 +101,7 @@ namespace AppointmentBooking.Controllers
                     Details = $"SectionName={created.SectionName}",
                 });
 
+                // Return 201 Created with a Location header pointing to GetById
                 return CreatedAtAction(nameof(GetById), new { id = created.SectionId },
                     new { success = true, data = created, message = "Section created" });
             }
@@ -83,7 +111,10 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Updates an existing section. Admin only.</summary>
+        /// <summary>
+        /// Updates an existing section. Admin only.
+        /// The admin panel sends the full SectionRequest DTO (not a partial patch).
+        /// </summary>
         [HttpPut("{id:int}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, [FromBody] SectionRequest request)
@@ -114,7 +145,10 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Soft-deletes a section (IsActive = false). Admin only.</summary>
+        /// <summary>
+        /// Soft-deletes a section (sets IsActive=false). Admin only.
+        /// The section is not physically removed so existing bookings remain valid.
+        /// </summary>
         [HttpDelete("{id:int}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)

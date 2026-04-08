@@ -1,3 +1,25 @@
+// =============================================================================
+// AppointmentBookingController.cs — CRUD endpoints for appointment bookings.
+//
+// Route prefix: api/Appointment/Booking
+//
+// This controller handles the customer-facing booking lifecycle:
+//   POST   /Create                 — Create a new booking (public)
+//   GET    /GetCustomerBookings    — List all bookings for the authenticated user
+//   GET    /{bookingId}            — Get a single booking by ID
+//   PUT    /Reschedule/{bookingId} — Move a booking to a different slot
+//   DELETE /Cancel/{bookingId}     — Cancel a booking (releases the slot)
+//   GET    /Search                 — Admin-only search with filters
+//
+// Every mutation (create/reschedule/cancel):
+//   1. Calls the service layer to perform the DB change
+//   2. Pushes a SignalR event so connected clients update in real-time
+//   3. Fires an audit log entry (POST /api/Log) for traceability
+//
+// Response shape: { success: bool, data: object|null, message: string }
+// This shape is expected by both the Next.js frontend and React admin panel.
+// =============================================================================
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
@@ -13,6 +35,7 @@ namespace AppointmentBooking.Controllers
     [Route("api/Appointment/Booking")]
     public class AppointmentBookingController : ControllerBase
     {
+        // Injected via DI (configured in Program.cs)
         private readonly IAppointmentService _service;
         private readonly IAuditLogService _audit;
         private readonly IHubContext<AppointmentHub> _hub;
@@ -27,34 +50,45 @@ namespace AppointmentBooking.Controllers
             _hub = hub;
         }
 
-        /// <summary>Creates a new booking. Public endpoint.</summary>
+        /// <summary>
+        /// Creates a new booking. This is a public endpoint (no [Authorize]) so
+        /// guest users can book without logging in. The frontend sends the
+        /// customer ID from cookies when available.
+        ///
+        /// The service layer uses pessimistic locking (SQL UPDLOCK) to prevent
+        /// double-booking when multiple users click "Book" at the same time.
+        /// </summary>
         [HttpPost("Create")]
         public async Task<IActionResult> Create([FromBody] CreateAppointmentRequest request)
         {
+            // ASP.NET Core validates [Required] attributes on the DTO automatically
             if (!ModelState.IsValid)
                 return BadRequest(new { success = false, data = (object)null, message = "Validation failed" });
 
             try
             {
+                // forceBook: false = respect slot capacity limits (normal flow)
                 var booking = await _service.CreateBookingAsync(request, forceBook: false);
                 if (booking == null)
                     return Conflict(new { success = false, data = (object)null, message = "Slot is fully booked or not available" });
 
-                // Notify all clients watching this section that a slot was updated
+                // ── SignalR: push real-time update to all connected clients ──
+                // Notify clients watching this section (customer frontend)
                 await _hub.Clients.Group(AppointmentHub.GroupName(booking.SectionId))
                     .SendAsync("BookingCreated", booking);
 
                 // Notify admin group so the dashboard refreshes automatically
                 await _hub.Clients.Group("admin").SendAsync("BookingCreated", booking);
 
-                // Fire-and-forget audit log — does not block the response
+                // ── Audit log: fire-and-forget POST to /api/Log ─────────────
+                // Does not block the HTTP response — errors are swallowed
                 _audit.LogFireAndForget(new AuditLogEntry
                 {
                     Action = "BookingCreated",
                     EntityType = "Booking",
                     EntityId = booking.BookingId.ToString(),
                     PerformedBy = request.CustomerId ?? "guest",
-                    DeviceId = HttpContext.GetDeviceId(),
+                    DeviceId = HttpContext.GetDeviceId(), // From DeviceIdMiddleware
                     Details = $"BookingNumber={booking.BookingNumber};SlotId={booking.SlotId}",
                 });
 
@@ -62,6 +96,7 @@ namespace AppointmentBooking.Controllers
             }
             catch (InvalidOperationException ex)
             {
+                // Service throws this when the slot is blocked or full
                 return Conflict(new { success = false, data = (object)null, message = ex.Message });
             }
             catch (Exception ex)
@@ -70,11 +105,17 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Returns all bookings for the authenticated customer.</summary>
+        /// <summary>
+        /// Returns all bookings for the authenticated customer.
+        /// The customer ID is extracted from the JWT claims.
+        /// Frontend calls: appointmentApi.getCustomerBookings()
+        /// </summary>
         [HttpGet("GetCustomerBookings")]
         [Authorize]
         public async Task<IActionResult> GetCustomerBookings()
         {
+            // Extract customer ID from the JWT token claims
+            // The auth service may use different claim types, so we check both
             var customerId = User.FindFirstValue(ClaimTypes.NameIdentifier)
                 ?? User.FindFirstValue("customerId");
 
@@ -92,7 +133,10 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Returns a single booking by ID.</summary>
+        /// <summary>
+        /// Returns a single booking by ID. Public endpoint — used by both
+        /// the customer frontend and admin panel.
+        /// </summary>
         [HttpGet("{bookingId:int}")]
         public async Task<IActionResult> GetById(int bookingId)
         {
@@ -110,7 +154,10 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Reschedules a booking to a new slot.</summary>
+        /// <summary>
+        /// Reschedules a booking to a new slot. Requires authentication.
+        /// The service releases the old slot and books the new one atomically.
+        /// </summary>
         [HttpPut("Reschedule/{bookingId:int}")]
         [Authorize]
         public async Task<IActionResult> Reschedule(int bookingId, [FromBody] RescheduleRequest request)
@@ -148,7 +195,11 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Cancels a booking.</summary>
+        /// <summary>
+        /// Cancels a booking and releases the slot capacity.
+        /// Uses HTTP DELETE because the booking is logically removed
+        /// (status set to "Cancelled", slot capacity decremented).
+        /// </summary>
         [HttpDelete("Cancel/{bookingId:int}")]
         [Authorize]
         public async Task<IActionResult> Cancel(int bookingId)
@@ -178,7 +229,10 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Searches appointments by query, status, date range. Admin only.</summary>
+        /// <summary>
+        /// Searches appointments by query, status, date range. Admin only.
+        /// The admin panel calls: appointmentAdminApi.searchAppointments(queryString)
+        /// </summary>
         [HttpGet("Search")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Search(

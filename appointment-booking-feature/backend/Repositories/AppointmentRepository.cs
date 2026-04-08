@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using AppointmentBooking.DbContext;
 using AppointmentBooking.Models;
+using BookingEntity = AppointmentBooking.Models.AppointmentBooking;
 
 namespace AppointmentBooking.Repositories
 {
@@ -60,26 +61,26 @@ namespace AppointmentBooking.Repositories
             }
         }
 
-        public async Task<AppointmentBooking?> GetBookingByIdAsync(int bookingId)
+        public async Task<BookingEntity?> GetBookingByIdAsync(int bookingId)
             => await _db.Bookings
                 .Include(b => b.Slot).ThenInclude(s => s.Section)
                 .FirstOrDefaultAsync(b => b.BookingId == bookingId);
 
-        public async Task<IEnumerable<AppointmentBooking>> GetBookingsByCustomerAsync(string customerId)
+        public async Task<IEnumerable<BookingEntity>> GetBookingsByCustomerAsync(string customerId)
             => await _db.Bookings
                 .Include(b => b.Slot).ThenInclude(s => s.Section)
                 .Where(b => b.CustomerId == customerId)
                 .OrderByDescending(b => b.CreatedAt)
                 .ToListAsync();
 
-        public async Task<AppointmentBooking> CreateBookingAsync(AppointmentBooking booking)
+        public async Task<BookingEntity> CreateBookingAsync(BookingEntity booking)
         {
             _db.Bookings.Add(booking);
             await _db.SaveChangesAsync();
             return booking;
         }
 
-        public async Task<AppointmentBooking> UpdateBookingAsync(AppointmentBooking booking)
+        public async Task<BookingEntity> UpdateBookingAsync(BookingEntity booking)
         {
             _db.Bookings.Update(booking);
             await _db.SaveChangesAsync();

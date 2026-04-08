@@ -1,3 +1,27 @@
+// =============================================================================
+// AppointmentSlotController.cs — Slot availability and management endpoints.
+//
+// Route prefix: api/Appointment/Slot
+//
+// Endpoints:
+//   GET  /GetAvailability/{sectionId}?date=YYYY-MM-DD — Public slot query
+//   GET  /GetRealTime/{sectionId}?date=YYYY-MM-DD     — Real-time (no cache)
+//   POST /Generate    — Admin: generate slots from capacity rules
+//   POST /Block       — Admin: block a slot (prevent bookings)
+//   POST /Unblock     — Admin: unblock a slot
+//   POST /ForceBook   — Admin: force-book a slot (ignores capacity limits)
+//
+// Frontend calls:
+//   appointmentApi.getSlotAvailability(sectionId, date)
+//   appointmentApi.getRealTimeSlots(sectionId, date)
+//
+// Admin calls:
+//   appointmentAdminApi.generateSlots(payload)
+//   appointmentAdminApi.blockSlot(payload)
+//   appointmentAdminApi.unblockSlot(payload)
+//   appointmentAdminApi.forceBookSlot(payload)
+// =============================================================================
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
@@ -29,7 +53,12 @@ namespace AppointmentBooking.Controllers
             _hub = hub;
         }
 
-        /// <summary>Returns slot availability for a section on a date. Public.</summary>
+        /// <summary>
+        /// Returns slot availability for a section on a given date.
+        /// Public endpoint — used by the customer frontend to display the
+        /// slot-selector grid. Each slot includes status, colour code, and
+        /// available capacity.
+        /// </summary>
         [HttpGet("GetAvailability/{sectionId:int}")]
         public async Task<IActionResult> GetAvailability(int sectionId, [FromQuery] string date)
         {
@@ -47,7 +76,11 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Returns real-time slot availability, bypassing cache. Public.</summary>
+        /// <summary>
+        /// Returns real-time slot availability, bypassing the EF change-tracker
+        /// cache. Use this when you need guaranteed up-to-date data (e.g. after
+        /// a SignalR push event tells the UI to refresh).
+        /// </summary>
         [HttpGet("GetRealTime/{sectionId:int}")]
         public async Task<IActionResult> GetRealTime(int sectionId, [FromQuery] string date)
         {
@@ -65,7 +98,11 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Generates slots for a date range based on capacity rules. Admin only.</summary>
+        /// <summary>
+        /// Generates slots for a date range based on capacity rules. Admin only.
+        /// The SlotGenerationService reads capacity rules from the DB and creates
+        /// AppointmentSlot rows for each hour in the range, skipping duplicates.
+        /// </summary>
         [HttpPost("Generate")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Generate([FromBody] GenerateSlotsRequest request)
@@ -85,19 +122,23 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Blocks a slot. Admin only.</summary>
+        /// <summary>
+        /// Blocks a slot so no more bookings can be made against it. Admin only.
+        /// Sends a SignalR event to both the section group and admin group so
+        /// the frontend immediately greys out the slot.
+        /// </summary>
         [HttpPost("Block")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Block([FromBody] BlockSlotRequest request)
         {
             try
             {
-                // BlockSlotAsync returns the sectionId in one DB round-trip (null = not found)
+                // BlockSlotAsync returns the sectionId of the slot (null = not found)
                 var sectionId = await _appointmentService.BlockSlotAsync(request.SlotId, request.BlockReason);
                 if (sectionId == null)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
 
-                // Notify only clients watching the affected section
+                // Notify clients watching the affected section
                 await _hub.Clients.Group(AppointmentHub.GroupName(sectionId.Value))
                     .SendAsync("SlotBlocked", new { slotId = request.SlotId });
                 await _hub.Clients.Group("admin")
@@ -121,14 +162,16 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Unblocks a slot. Admin only.</summary>
+        /// <summary>
+        /// Unblocks a previously blocked slot. Admin only.
+        /// The service recalculates the slot status based on current capacity.
+        /// </summary>
         [HttpPost("Unblock")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Unblock([FromBody] UnblockSlotRequest request)
         {
             try
             {
-                // UnblockSlotAsync returns the sectionId in one DB round-trip (null = not found)
                 var sectionId = await _appointmentService.UnblockSlotAsync(request.SlotId);
                 if (sectionId == null)
                     return NotFound(new { success = false, data = (object)null, message = "Slot not found" });
@@ -155,7 +198,11 @@ namespace AppointmentBooking.Controllers
             }
         }
 
-        /// <summary>Force-books a slot on behalf of a customer. Admin only.</summary>
+        /// <summary>
+        /// Force-books a slot on behalf of a customer. Admin only.
+        /// Unlike normal booking, this ignores capacity limits and blocked status.
+        /// Used when an admin needs to accommodate a VIP or override restrictions.
+        /// </summary>
         [HttpPost("ForceBook")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ForceBook([FromBody] CreateAppointmentRequest request)
@@ -165,6 +212,7 @@ namespace AppointmentBooking.Controllers
 
             try
             {
+                // forceBook: true = ignore slot capacity and blocked status
                 var booking = await _appointmentService.CreateBookingAsync(request, forceBook: true);
 
                 await _hub.Clients.Group("admin").SendAsync("BookingCreated", booking);

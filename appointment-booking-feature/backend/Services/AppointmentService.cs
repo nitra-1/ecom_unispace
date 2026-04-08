@@ -1,7 +1,27 @@
+// =============================================================================
+// AppointmentService.cs — Core business logic for appointments.
+//
+// This service operates on EF Core Database-First scaffolded models.
+// The DbContext (AppointmentDbContext) maps to SQL Server tables using Fluent API.
+//
+// Key patterns:
+//   • Pessimistic locking (SQL UPDLOCK) for booking creation to prevent double-booking
+//   • Transactions for multi-table atomic operations (book/reschedule/cancel)
+//   • AsNoTracking for read-only queries (real-time slot availability)
+//   • Mapper methods to convert entities to DTOs before returning to controllers
+//
+// For junior developers:
+//   • _db is the EF Core DbContext — think of it as a gateway to all DB tables.
+//   • _db.Sections, _db.Slots, _db.Bookings are the table collections (DbSet).
+//   • .ToListAsync() executes the SQL query. Until that call, it's just building SQL.
+//   • .Include() / .ThenInclude() loads related tables (JOIN in SQL terms).
+// =============================================================================
+
 using Microsoft.EntityFrameworkCore;
 using AppointmentBooking.DbContext;
 using AppointmentBooking.Models;
 using AppointmentBooking.Models.DTOs;
+using BookingEntity = AppointmentBooking.Models.AppointmentBooking;
 
 namespace AppointmentBooking.Services
 {
@@ -15,6 +35,7 @@ namespace AppointmentBooking.Services
         }
 
         // ── Sections ─────────────────────────────────────────────────────────
+        // Maps to dbo.AppointmentSection (DB-First scaffolded model)
 
         public async Task<IEnumerable<AppointmentSection>> GetAllSectionsAsync()
             => await _db.Sections.Where(s => s.IsActive).OrderBy(s => s.SectionName).ToListAsync();
@@ -24,6 +45,7 @@ namespace AppointmentBooking.Services
 
         public async Task<AppointmentSection> CreateSectionAsync(SectionRequest request)
         {
+            // Map DTO fields to the DB-First scaffolded entity
             var section = new AppointmentSection
             {
                 SectionName = request.SectionName,
@@ -43,6 +65,7 @@ namespace AppointmentBooking.Services
             var section = await _db.Sections.FindAsync(sectionId);
             if (section == null) return null;
 
+            // Update only the fields that the admin form sends
             section.SectionName = request.SectionName;
             section.Description = request.Description;
             section.Location = request.Location;
@@ -59,6 +82,7 @@ namespace AppointmentBooking.Services
             var section = await _db.Sections.FindAsync(sectionId);
             if (section == null) return false;
 
+            // Soft delete — set IsActive to false so existing bookings remain valid
             section.IsActive = false;
             section.UpdatedAt = DateTime.UtcNow;
             await _db.SaveChangesAsync();
@@ -66,6 +90,7 @@ namespace AppointmentBooking.Services
         }
 
         // ── Capacity ─────────────────────────────────────────────────────────
+        // Maps to dbo.AppointmentCapacity (DB-First scaffolded model)
 
         public async Task<IEnumerable<AppointmentCapacity>> GetCapacityBySectionAsync(int sectionId)
             => await _db.Capacities.Where(c => c.SectionId == sectionId).ToListAsync();
@@ -110,15 +135,17 @@ namespace AppointmentBooking.Services
         {
             var capacity = await _db.Capacities.FindAsync(capacityId);
             if (capacity == null) return false;
-            _db.Capacities.Remove(capacity);
+            _db.Capacities.Remove(capacity); // Hard delete — capacity rules can be recreated
             await _db.SaveChangesAsync();
             return true;
         }
 
         // ── Slots ─────────────────────────────────────────────────────────────
+        // Maps to dbo.AppointmentSlot (DB-First scaffolded model)
 
         public async Task<IEnumerable<SlotAvailabilityResponse>> GetSlotAvailabilityAsync(int sectionId, DateOnly date)
         {
+            // Standard tracked query — uses EF change-tracker cache for performance
             var slots = await _db.Slots
                 .Where(s => s.SectionId == sectionId && s.SlotDate == date)
                 .OrderBy(s => s.StartTime)
@@ -129,7 +156,8 @@ namespace AppointmentBooking.Services
 
         public async Task<IEnumerable<SlotAvailabilityResponse>> GetRealTimeSlotAvailabilityAsync(int sectionId, DateOnly date)
         {
-            // Bypass EF cache by using AsNoTracking
+            // AsNoTracking bypasses EF change-tracker — always hits the DB
+            // Use this after a SignalR push event to get guaranteed-fresh data
             var slots = await _db.Slots.AsNoTracking()
                 .Where(s => s.SectionId == sectionId && s.SlotDate == date)
                 .OrderBy(s => s.StartTime)
@@ -146,10 +174,10 @@ namespace AppointmentBooking.Services
             slot.IsBlocked = true;
             slot.BlockReason = blockReason;
             slot.SlotStatus = "Blocked";
-            slot.ColorCode = "#6b7280";
+            slot.ColorCode = "#6b7280"; // gray-500
             slot.UpdatedAt = DateTime.UtcNow;
             await _db.SaveChangesAsync();
-            return slot.SectionId;
+            return slot.SectionId; // Return sectionId so the controller knows which SignalR group to notify
         }
 
         public async Task<int?> UnblockSlotAsync(int slotId)
@@ -160,7 +188,7 @@ namespace AppointmentBooking.Services
             slot.IsBlocked = false;
             slot.BlockReason = null;
             slot.UpdatedAt = DateTime.UtcNow;
-            slot.RefreshStatus();
+            slot.RefreshStatus(); // Recalculate status based on current capacity
             await _db.SaveChangesAsync();
             return slot.SectionId;
         }
@@ -172,13 +200,17 @@ namespace AppointmentBooking.Services
         }
 
         // ── Bookings ──────────────────────────────────────────────────────────
+        // Maps to dbo.AppointmentBooking (DB-First scaffolded model)
 
         public async Task<AppointmentBookingResponse?> CreateBookingAsync(CreateAppointmentRequest request, bool forceBook = false)
         {
-            // Atomic capacity check + decrement using pessimistic concurrency
+            // Use a transaction with pessimistic locking to prevent double-booking.
+            // SQL UPDLOCK holds a row-level lock until the transaction commits,
+            // so concurrent booking attempts on the same slot are serialised.
             await using var transaction = await _db.Database.BeginTransactionAsync();
             try
             {
+                // Lock the slot row to prevent concurrent modifications
                 var slot = await _db.Slots
                     .FromSqlRaw("SELECT * FROM AppointmentSlot WITH (UPDLOCK) WHERE SlotId = {0}", request.SlotId)
                     .FirstOrDefaultAsync();
@@ -186,13 +218,16 @@ namespace AppointmentBooking.Services
                 if (slot == null)
                     throw new InvalidOperationException("Slot not found");
 
+                // Unless force-booking (admin override), check availability
                 if (!forceBook && (slot.IsBlocked || slot.AvailableCapacity <= 0))
                     throw new InvalidOperationException("Slot is not available for booking");
 
+                // Increment booked count and recalculate status
                 slot.BookedCount++;
                 slot.UpdatedAt = DateTime.UtcNow;
                 slot.RefreshStatus();
 
+                // Generate sequential booking number: APT-2026-000001
                 var year = DateTime.UtcNow.Year;
                 var lastBooking = await _db.Bookings
                     .Where(b => b.BookingNumber.StartsWith($"APT-{year}-"))
@@ -203,7 +238,8 @@ namespace AppointmentBooking.Services
                 if (lastBooking != null && int.TryParse(lastBooking.BookingNumber.Split('-').Last(), out var last))
                     sequence = last + 1;
 
-                var booking = new AppointmentBooking
+                // Create the booking entity (maps to dbo.AppointmentBooking)
+                var booking = new BookingEntity
                 {
                     BookingNumber = $"APT-{year}-{sequence:D6}",
                     SlotId = request.SlotId,
@@ -222,7 +258,7 @@ namespace AppointmentBooking.Services
                 await _db.SaveChangesAsync();
                 await transaction.CommitAsync();
 
-                // Reload with navigation properties
+                // Reload navigation properties for the response DTO
                 await _db.Entry(booking).Reference(b => b.Slot).LoadAsync();
                 await _db.Entry(booking.Slot).Reference(s => s.Section).LoadAsync();
 
@@ -237,6 +273,7 @@ namespace AppointmentBooking.Services
 
         public async Task<IEnumerable<AppointmentBookingResponse>> GetCustomerBookingsAsync(string customerId)
         {
+            // Include related Slot and Section for the response DTO
             var bookings = await _db.Bookings
                 .Include(b => b.Slot)
                     .ThenInclude(s => s.Section)
@@ -259,12 +296,14 @@ namespace AppointmentBooking.Services
 
         public async Task<AppointmentBookingResponse?> RescheduleBookingAsync(int bookingId, int newSlotId)
         {
+            // Atomic operation: release old slot + book new slot
             await using var transaction = await _db.Database.BeginTransactionAsync();
             try
             {
                 var booking = await _db.Bookings.Include(b => b.Slot).FirstOrDefaultAsync(b => b.BookingId == bookingId);
                 if (booking == null) return null;
 
+                // Lock the new slot to prevent concurrent booking
                 var newSlot = await _db.Slots
                     .FromSqlRaw("SELECT * FROM AppointmentSlot WITH (UPDLOCK) WHERE SlotId = {0}", newSlotId)
                     .FirstOrDefaultAsync();
@@ -272,7 +311,7 @@ namespace AppointmentBooking.Services
                 if (newSlot == null || newSlot.IsBlocked || newSlot.AvailableCapacity <= 0)
                     throw new InvalidOperationException("New slot is not available");
 
-                // Release old slot
+                // Release capacity from the old slot
                 var oldSlot = await _db.Slots.FindAsync(booking.SlotId);
                 if (oldSlot != null)
                 {
@@ -281,11 +320,12 @@ namespace AppointmentBooking.Services
                     oldSlot.RefreshStatus();
                 }
 
-                // Book new slot
+                // Book the new slot
                 newSlot.BookedCount++;
                 newSlot.UpdatedAt = DateTime.UtcNow;
                 newSlot.RefreshStatus();
 
+                // Point the booking to the new slot
                 booking.SlotId = newSlotId;
                 booking.UpdatedAt = DateTime.UtcNow;
 
@@ -303,6 +343,7 @@ namespace AppointmentBooking.Services
 
         public async Task<bool> CancelBookingAsync(int bookingId)
         {
+            // Atomic: set status to Cancelled + release slot capacity
             await using var transaction = await _db.Database.BeginTransactionAsync();
             try
             {
@@ -312,6 +353,7 @@ namespace AppointmentBooking.Services
                 booking.BookingStatus = "Cancelled";
                 booking.UpdatedAt = DateTime.UtcNow;
 
+                // Release the slot capacity so other customers can book
                 var slot = await _db.Slots.FindAsync(booking.SlotId);
                 if (slot != null)
                 {
@@ -335,10 +377,12 @@ namespace AppointmentBooking.Services
             string? query, string? status, int? sectionId,
             DateOnly? startDate, DateOnly? endDate, int limit = 50)
         {
+            // Build a dynamic LINQ query with optional filters
             var q = _db.Bookings
                 .Include(b => b.Slot).ThenInclude(s => s.Section)
                 .AsQueryable();
 
+            // Text search across customer name, email, and booking number
             if (!string.IsNullOrWhiteSpace(query))
             {
                 var lower = query.ToLower();
@@ -349,12 +393,15 @@ namespace AppointmentBooking.Services
                     b.BookingNumber.Contains(query));
             }
 
+            // Filter by booking status (Confirmed, Cancelled, etc.)
             if (!string.IsNullOrWhiteSpace(status))
                 q = q.Where(b => b.BookingStatus == status);
 
+            // Filter by section
             if (sectionId.HasValue)
                 q = q.Where(b => b.Slot.SectionId == sectionId.Value);
 
+            // Filter by date range
             if (startDate.HasValue)
                 q = q.Where(b => b.Slot.SlotDate >= startDate.Value);
 
@@ -370,6 +417,9 @@ namespace AppointmentBooking.Services
         }
 
         // ── Mappers ───────────────────────────────────────────────────────────
+        // Convert DB-First scaffolded entities to DTOs for the API response.
+        // This keeps the EF entities out of the HTTP response and prevents
+        // circular reference issues with navigation properties.
 
         private static SlotAvailabilityResponse MapToSlotResponse(AppointmentSlot slot) => new()
         {
@@ -385,7 +435,7 @@ namespace AppointmentBooking.Services
             BlockReason = slot.BlockReason,
         };
 
-        private static AppointmentBookingResponse MapToBookingResponse(AppointmentBooking booking) => new()
+        private static AppointmentBookingResponse MapToBookingResponse(BookingEntity booking) => new()
         {
             BookingId = booking.BookingId,
             BookingNumber = booking.BookingNumber,

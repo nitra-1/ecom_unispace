@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using AppointmentBooking.DbContext;
 using AppointmentBooking.Models;
 using AppointmentBooking.Models.DTOs;
+using BookingEntity = AppointmentBooking.Models.AppointmentBooking;
 
 namespace AppointmentBooking.Services
 {
@@ -104,7 +105,7 @@ namespace AppointmentBooking.Services
             return existing;
         }
 
-        private static Task<AppointmentBookingResponse> MapBookingAsync(AppointmentBooking booking)
+        private static Task<AppointmentBookingResponse> MapBookingAsync(BookingEntity booking)
         {
             var response = new AppointmentBookingResponse
             {
